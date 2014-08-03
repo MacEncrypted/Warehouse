@@ -1,87 +1,163 @@
 <!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<title>Welcome to CodeIgniter-Addons</title>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<style type="text/css">
+<title>Simple Responsive Template</title>
+<meta name="description" content="Simple Responsive Template is a template for responsive web design. Mobile first, responsive grid layout, toggle menu, navigation bar with unlimited drop downs, responsive slideshow">
+<meta name="keywords" content="">
 
-			::selection{ background-color: #E13300; color: white; }
-			::moz-selection{ background-color: #E13300; color: white; }
-			::webkit-selection{ background-color: #E13300; color: white; }
+<!-- Mobile viewport -->
+<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
-			body {
-				background-color: #fff;
-				margin: 40px;
-				font: 13px/20px normal Helvetica, Arial, sans-serif;
-				color: #4F5155;
-			}
+<link rel="shortcut icon" href="images/favicon.ico"  type="image/x-icon" />
 
-			a {
-				color: #003399;
-				background-color: transparent;
-				font-weight: normal;
-			}
+<!-- CSS-->
+<!-- Google web fonts. You can get your own bundle at http://www.google.com/fonts. Don't forget to update the CSS accordingly!-->
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif|Ubuntu' rel='stylesheet' type='text/css'>
 
-			h1 {
-				color: #444;
-				background-color: transparent;
-				border-bottom: 1px solid #D0D0D0;
-				font-size: 19px;
-				font-weight: normal;
-				margin: 0 0 14px 0;
-				padding: 14px 15px 10px 15px;
-			}
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="js/flexslider/flexslider.css" />
+<link rel="stylesheet" href="css/basic-style.css">
 
-			code {
-				font-family: Consolas, Monaco, Courier New, Courier, monospace;
-				font-size: 12px;
-				background-color: #f9f9f9;
-				border: 1px solid #D0D0D0;
-				color: #002166;
-				display: block;
-				margin: 14px 0 14px 0;
-				padding: 12px 10px 12px 10px;
-			}
+<!-- end CSS-->
+    
+<!-- JS-->
+<script src="js/libs/modernizr-2.6.2.min.js"></script>
+<!-- end JS-->
 
-			#body{
-				margin: 0 15px 0 15px;
-			}
+</head>
 
-			p.footer{
-				text-align: right;
-				font-size: 11px;
-				border-top: 1px solid #D0D0D0;
-				line-height: 32px;
-				padding: 0 10px 0 10px;
-				margin: 20px 0 0 0;
-			}
+<body id="home">
+<!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
 
-			#container{
-				margin: 10px;
-				border: 1px solid #D0D0D0;
-				-webkit-box-shadow: 0 0 8px #D0D0D0;
-			}
-		</style>
-	</head>
-	<body>
+  
+<!-- header area -->
+    <header class="wrapper clearfix">
+		       
+        <div id="banner">        
+        	<div id="logo"><a href="basic.html"><img src="images/basic-logo.svg" alt="logo"></a></div> 
+        </div>
+        
+        <!-- main navigation -->
+        <nav id="topnav" role="navigation">
+        <div class="menu-toggle">Menu</div>  
+        	<ul class="srt-menu" id="menu-main-navigation">
+            <li><a href="basic.html">Home page</a></li>
+            <li class="current"><a href="basic-internal.html">Internal page demo</a></li>
+			<li><a href="#">menu item 3</a>
+				<ul>
+					<li>
+						<a href="#">menu item 3.1</a>
+					</li>
+					<li class="current">
+						<a href="#">menu item 3.2</a>
+						<ul>
+							<li class="current"><a href="#">menu item 3.2.1</a></li>
+							<li><a href="#">menu item 3.2.2 with longer link name</a></li>
+							<li><a href="#">menu item 3.2.3</a></li>
+							<li><a href="#">menu item 3.2.4</a></li>
+							<li><a href="#">menu item 3.2.5</a></li>
+						</ul>
+					</li>
+					<li><a href="#">menu item 3.3</a></li>
+					<li><a href="#">menu item 3.4</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu item 4</a>
+				<ul>
+					<li><a href="#">menu item 4.1</a></li>
+					<li><a href="#">menu item 4.2</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">menu item 5</a>
+			</li>	
+		</ul>     
+		</nav><!-- #topnav -->
+  
+    </header><!-- end header -->
+ 
+ 
+<section id="page-header" class="clearfix">    
+<!-- responsive FlexSlider image slideshow -->
+<div class="wrapper">
+	<h1>Internal page header</h1>
+    </div>
 
-		<div id="container">
-			<h1>Home page of CodeIgniter-Addons project!</h1>
+</section>
 
-			<div id="body">
-				<p>All sources are available on GitHub.</p>
 
-				<code><a href="https://github.com/Wampirue/CodeIgniter-Addons">https://github.com/Wampirue/CodeIgniter-Addons</a></code>
+<!-- main content area -->   
+<div class="wrapper" id="main"> 
+    
+<!-- content area -->    
+	<section id="content">
+    
+                <h1>Header 1</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                               
+<h2>Header 2</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                
+<h3>Header 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                
+<h4>Header 4</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                
+      <h5>Header 5</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                
 
-				<p>Users-Login-Addon preview:</p>
+</section><!-- #end content area -->
+      
+      
+    <!-- left sidebar -->    
+    <aside>
+        <h2>Secondary Section menu</h2>
+            <nav id="secondary-navigation">
+                    <ul>
+                        <li><a href="#">menu item</a></li>
+                        <li class="current"><a href="#">current menu item</a></li>
+                        <li><a href="#">menu item</a></li>
+                        <li><a href="#">menu item</a></li>
+                        <li><a href="#">menu item</a></li>
+                    </ul>
+             </nav>
+      </aside><!-- #end left sidebar -->
+   
+  </div><!-- #end div #main .wrapper -->
+    
 
-				<code><a href="<?php echo base_url(); ?>users/login"><?php echo base_url(); ?>users/login</a></code>
 
-			</div>
+<!-- footer area -->    
+<footer>
+	<div id="colophon" class="wrapper clearfix">
+    	footer stuff
+    </div>
+    
+    <!--You can NOT remove this attribution statement from any page, unless you get the permission from prowebdesign.ro--><div id="attribution" class="wrapper clearfix" style="color:#666; font-size:11px;">Site built with <a href="http://www.prowebdesign.ro/simple-responsive-template/" target="_blank" title="Simple Responsive Template is a free software by www.prowebdesign.ro" style="color:#777;">Simple Responsive Template</a></div><!--end attribution-->
+    
+</footer><!-- #end footer area --> 
 
-			<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
-		</div>
 
-	</body>
+<!-- jQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/libs/jquery-1.9.0.min.js">\x3C/script>')</script>
+
+<script defer src="js/flexslider/jquery.flexslider-min.js"></script>
+
+<!-- fire ups - read this file!  -->   
+<script src="js/main.js"></script>
+
+</body>
 </html>
