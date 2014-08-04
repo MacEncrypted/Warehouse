@@ -60,6 +60,7 @@
 					<?php if ($this->session->userdata('user_lvl')) { ?>	
 					<li><a href="#">Ogólne</a>
 						<ul>
+							<li><a href="<?php echo base_url(); ?>main/status">Stan</a></li>
 							<li><a href="<?php echo base_url(); ?>main/reports">Raporty</a></li>
 							<li><a href="<?php echo base_url(); ?>main/notes">Notatki</a></li>
 						</ul>
@@ -68,9 +69,13 @@
 					<?php if ($this->session->userdata('user_lvl')) { ?>	
 					<li><a href="#">Magazyn</a>
 						<ul>
-							<li><a href="<?php echo base_url(); ?>warehouse/library">Biblioteka</a></li>
-							<li><a href="<?php echo base_url(); ?>warehouse/add">Dodaj</a></li>
-							<li><a href="<?php echo base_url(); ?>warehouse/sent">Wyślij</a></li>
+							<li><a href="<?php echo base_url(); ?>warehouse/library">Biblioteka</a></li>							
+							<li><a href="<?php echo base_url(); ?>warehouse/add/packing">Dodaj Packing</a></li>
+							<li><a href="<?php echo base_url(); ?>warehouse/add/returner">Dodaj Zwrot</a></li>
+							<?php if ($this->session->userdata('user_id')) { ?>
+								<li><a href="<?php echo base_url(); ?>warehouse/add/admin">Dodaj Korektę</a></li>
+							<?php } ?>
+							<li><a href="<?php echo base_url(); ?>warehouse/add/sent">Wyślij</a></li>
 						</ul>
 					</li>
 					<?php } ?>

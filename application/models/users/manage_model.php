@@ -11,7 +11,7 @@ class Manage_model extends CI_Model {
 	}
 
 	public function getList() {
-		$query = $this->db->query("SELECT * FROM users");
+		$query = $this->db->query("SELECT * FROM users WHERE deleted='0'");
 
 		$users = array();
 
@@ -54,6 +54,6 @@ class Manage_model extends CI_Model {
 	}
 
 	public function delUser($id) {
-		$this->db->query("DELETE FROM users WHERE id='$id'");
+		$this->db->query("UPDATE users SET passwd='', deleted='1' WHERE id='$id'");
 	}
 }
