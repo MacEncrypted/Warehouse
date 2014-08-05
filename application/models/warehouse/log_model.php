@@ -41,4 +41,52 @@ class Log_model extends CI_Model {
 		
 		return $products;
 	}
+	
+	public function getReports($start, $end) {
+				
+		$starts = date("Y-m-d H:i:s", strtotime($start));
+		$ends = date("Y-m-d H:i:s", strtotime($end));
+				
+		$reports = array();
+		$this->load->model('warehouse/library_model');
+		$products = $this->library_model->getList();
+		
+		foreach ($products as $product) {
+			$id = $product['id'];
+			$report = array();
+			
+			$query = $this->db->query("SELECT "
+					. "products.id AS pid, "
+					. "products.name AS pname, "
+					. "log.date AS date, "
+					. "users.id AS uid, "
+					. "users.login AS login, "
+					. "log.action AS action, "
+					. "log.amount AS amount "
+					. "FROM log "
+					. "JOIN products ON log.id_product=products.id "
+					. "JOIN users ON log.id_user=users.id "
+					. "WHERE id_product='$id' AND (date BETWEEN '$starts' AND '$ends')");
+
+				if ($query->num_rows() > 0) {
+
+					foreach ($query->result() as $row) {
+						$log = array();
+						$log['pid'] = $row->pid;
+						$log['pname'] = $row->pname;
+						$log['date'] = $row->date;
+						$log['uid'] = $row->uid;
+						$log['login'] = $row->login;
+						$log['action'] = $row->action;
+						$log['amount'] = $row->amount;
+						$report[] = $log;
+					}
+				}
+			
+			
+			$reports[$id] = $report;
+		}
+		
+		return $reports;
+	}
 }

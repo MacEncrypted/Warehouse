@@ -16,12 +16,16 @@
 	<section id="content" class="wide-content">
 		<a href="<?php echo base_url(); ?>users/manage/edit/0">Nowy</a>
 		<table>
-			<tr><th>Id</th><th>Login</th><th>Level</th><th>Akcje</th></tr>
+			<tr><th>#</th><th>Login</th><th>Level</th><th>Akcje</th></tr>
+			<?php $i = 1; ?>
 			<?php foreach ($users as $user) { ?>
 				<tr>
-					<td><?php echo $user['id']; ?></td>
-					<td><?php echo $user['login']; ?></td>
-					<td><?php echo $user['level']; ?></td>
+					<td><?php echo $i++; ?></td>
+					<td><b><?php echo $user['login']; ?><b></td>
+					<td>
+						<?php if($user['level']==1) { echo 'Magazynier'; } ?>
+						<?php if($user['level']==2) { echo 'Administrator'; } ?>
+					</td>
 					<td>
 						<a href="<?php echo base_url(); ?>users/manage/del/<?php echo $user['id']; ?>">Kasuj</a>
 						<a href="<?php echo base_url(); ?>users/manage/edit/<?php echo $user['id']; ?>">Edytuj</a>

@@ -15,7 +15,7 @@
 <!-- content area -->    
 	<section id="content" class="wide-content">
     
-		Bla bla bla
+		Wersja testowa.
 		
 		
 </section><!-- #end content area -->

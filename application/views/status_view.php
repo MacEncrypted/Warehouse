@@ -16,7 +16,7 @@
 	<section id="content" class="wide-content">
     
 		<table>
-			<tr><th>Id</th><th>Nazwa</th><th>Opis</th><th>Amount</th></tr>
+			<tr><th>Id</th><th>Nazwa</th><th>Opis</th><th>Ilość</th></tr>
 			<?php foreach ($products as $product) { ?>
 				<tr>
 					<td><?php echo $product['id']; ?></td>

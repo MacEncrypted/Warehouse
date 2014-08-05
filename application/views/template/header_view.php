@@ -43,12 +43,15 @@
 
 			<div id="banner">        
 				<?php if ($this->session->userdata('user_id')) { ?>
-					<a href="?logout=true">Logout</a> <?php echo $this->session->userdata('user_login'); ?>
+				<form action="" method="POST">
+					<input type="submit" name="logout" value="logout">
+				</form>
+					<?php echo $this->session->userdata('user_login'); ?>
 				<?php }  else { ?>
 				<form action="" method="POST">
 					<input type="text" name="login">
 					<input type="password" name="passwd">
-					<input type="submit">
+					<input type="submit" value="login">
 				</form>
 				<?php } ?>
 			</div>

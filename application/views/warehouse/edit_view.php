@@ -16,7 +16,9 @@
 <section id="content" class="wide-content">
 		<form action="" method="POST">
 			<input type="hidden" name="sent" value="yes">
+			<div class="label">Nazwa produktu:</div>
 					<input type="text" name="name" value="<?php if (isset($user['name'])) { echo $user['name']; } ?>" required>
+			<div class="label">Opis produktu:</div>
 					<input type="text" name="desc" value="<?php if (isset($user['desc'])) { echo $user['desc']; } ?>" required>
 					<input type="submit">
 		</form>

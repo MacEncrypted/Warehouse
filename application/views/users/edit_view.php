@@ -3,7 +3,7 @@
 <section id="page-header" class="clearfix">    
 <!-- responsive FlexSlider image slideshow -->
 <div class="wrapper">
-	<h1>Zarządzanie użytkownikami</h1>
+	<h1>Dodawanie / edycja użytkownika</h1>
     </div>
 
 </section>
@@ -16,10 +16,16 @@
 <section id="content" class="wide-content">
 		<form action="" method="POST">
 			<input type="hidden" name="sent" value="yes">
+			<div class="label">Login:</div>
 					<input type="text" name="login" value="<?php if (isset($user['login'])) { echo $user['login']; } ?>" required>
+			<div class="label">Hasło:</div>
 					<input type="password" name="passwd" value="" required>
-					<input type="number" name="level" value="<?php if (isset($user['level'])) { echo $user['level']; } ?>" required>
-					<input type="submit">
+					<div class="label">Uprawnienia:</div>
+					<select name="level">						
+						<option value="1" <?php if (isset($user['level'])&&($user['level']==1)) { echo 'selected="true"'; } ?>>Magazynier</option>
+						<option value="2" <?php if (isset($user['level'])&&($user['level']==2)) { echo 'selected="true"'; } ?>>Administrator</option>
+					</select>
+					<input type="submit" value="ZAPISZ">
 		</form>
 </section><!-- #end content area -->
          

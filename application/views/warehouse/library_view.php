@@ -23,7 +23,9 @@
 					<td><?php echo $product['name']; ?></td>
 					<td><?php echo $product['desc']; ?></td>
 					<td>
+						<?php if ($this->session->userdata('admin_lvl')) { ?>
 						<a href="<?php echo base_url(); ?>warehouse/library/del/<?php echo $product['id']; ?>">Kasuj</a>
+						<?php } ?>
 						<a href="<?php echo base_url(); ?>warehouse/library/edit/<?php echo $product['id']; ?>">Edytuj</a>
 					</td>
 				</tr>

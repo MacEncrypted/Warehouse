@@ -23,4 +23,15 @@ class Main extends CI_Controller {
 		$data['products'] = $this->log_model->getStatusList();
 		$this->load->view('status_view', $data);
 	}
+	
+	public function reports() {
+		$data = array();
+		if($this->input->post('sent')) {		
+			$data['reports'] = $this->log_model->getReports($this->input->post('start'),$this->input->post('end'));
+			$generate['start'] = $this->input->post('start');
+			$generate['end'] = $this->input->post('end');
+			$data['generate'] = $generate;		
+		}
+		$this->load->view('reports_view', $data);
+	}
 }

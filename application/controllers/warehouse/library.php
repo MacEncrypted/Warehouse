@@ -40,6 +40,9 @@ class Library extends CI_Controller {
 	}
 	
 	public function del($id) {
+		if (!$this->session->userdata('admin_lvl')) {
+			die('Access restricted!');
+		}
 		$this->library_model->delProduct($id);			
 		redirect('warehouse/library','refresh');
 	}
