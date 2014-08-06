@@ -42,54 +42,62 @@
 		<header class="wrapper clearfix">
 
 			<div id="banner">        
-				<?php if ($this->session->userdata('user_id')) { ?>
-				<form action="" method="POST">
-					<input type="submit" name="logout" value="logout">
-				</form>
-					<?php echo $this->session->userdata('user_login'); ?>
-				<?php }  else { ?>
-				<form action="" method="POST">
-					<input type="text" name="login">
-					<input type="password" name="passwd">
-					<input type="submit" value="login">
-				</form>
-				<?php } ?>
+				<img src="http://encrypted.pl/img/logo-small.png" height="50" width="195">
 			</div>
 
 			<!-- main navigation -->
 			<nav id="topnav" role="navigation">
 				<div class="menu-toggle">Menu</div>
-					<ul class="srt-menu" id="menu-main-navigation">
+				<ul class="srt-menu" id="menu-main-navigation">
 					<?php if ($this->session->userdata('user_lvl')) { ?>	
-					<li><a href="#">Ogólne</a>
-						<ul>
-							<li><a href="<?php echo base_url(); ?>main/status">Stan</a></li>
-							<li><a href="<?php echo base_url(); ?>main/reports">Raporty</a></li>
-							<li><a href="<?php echo base_url(); ?>main/notes">Notatki</a></li>
-						</ul>
-					</li>
+						<li><a href="#">Ogólne</a>
+							<ul>
+								<li><a href="<?php echo base_url(); ?>main/status">Stan</a></li>
+								<li><a href="<?php echo base_url(); ?>main/reports">Raporty</a></li>								
+								<li><a href="<?php echo base_url(); ?>main/notes">Notatki</a></li>
+							</ul>
+						</li>
 					<?php } ?>
 					<?php if ($this->session->userdata('user_lvl')) { ?>	
-					<li><a href="#">Magazyn</a>
-						<ul>
-							<li><a href="<?php echo base_url(); ?>warehouse/library">Biblioteka</a></li>							
-							<li><a href="<?php echo base_url(); ?>warehouse/add/packing">Dodaj Packing</a></li>
-							<li><a href="<?php echo base_url(); ?>warehouse/add/returner">Dodaj Zwrot</a></li>
-							<?php if ($this->session->userdata('user_id')) { ?>
-								<li><a href="<?php echo base_url(); ?>warehouse/add/admin">Dodaj Korektę</a></li>
-							<?php } ?>
-							<li><a href="<?php echo base_url(); ?>warehouse/add/sent">Wyślij</a></li>
-						</ul>
-					</li>
+						<li><a href="#">Magazyn</a>
+							<ul>
+								<li><a href="<?php echo base_url(); ?>warehouse/library">Biblioteka</a></li>							
+								<li><a href="<?php echo base_url(); ?>warehouse/add/packing">Dodaj Packing</a></li>
+								<li><a href="<?php echo base_url(); ?>warehouse/add/returner">Dodaj Zwrot</a></li>
+								<?php if ($this->session->userdata('user_id')) { ?>
+									<li><a href="<?php echo base_url(); ?>warehouse/add/admin">Dodaj Korektę</a></li>
+								<?php } ?>
+								<li><a href="<?php echo base_url(); ?>warehouse/add/sent">Wyślij</a></li>
+							</ul>
+						</li>
 					<?php } ?>
 					<?php if ($this->session->userdata('admin_lvl')) { ?>	
-					<li><a href="#">Użytkownicy</a>
-						<ul>
-							<li><a href="<?php echo base_url(); ?>users/manage">Zarządzaj</a></li>
-						</ul>
-					</li>
+						<li><a href="#">Użytkownicy</a>
+							<ul>
+								<li><a href="<?php echo base_url(); ?>users/manage">Zarządzaj</a></li>
+							</ul>
+						</li>
 					<?php } ?>
-					</ul>     
-			</nav><!-- #topnav -->
+					<li><a href="#">Logowanie</a>
+						<ul>							
+							<li class="loginli">								
+								<?php if ($this->session->userdata('user_id')) { ?>
+								Użytkownik: <b><?php echo $this->session->userdata('user_login'); ?></b>	
+									<form action="" method="POST">
+										<input type="submit" name="logout" value="Wyloguj">
+									</form>
 
+								<?php } else { ?>
+									<form action="" method="POST">
+										Login:
+										<input type="text" name="login">
+										Hasło:
+										<input type="password" name="passwd">
+										<input type="submit" value="Zaloguj">
+									</form>
+								<?php } ?></li>
+						</ul>						
+					</li>
+				</ul>     
+			</nav><!-- #topnav -->
 		</header><!-- end header -->
