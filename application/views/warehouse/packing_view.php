@@ -3,11 +3,7 @@
 <section id="page-header" class="clearfix">    
 <!-- responsive FlexSlider image slideshow -->
 <div class="wrapper">
-	<?php if (isset($user['name'])) { ?> 
-		<h1>Edycja produktu: <?php echo $user['name']; ?></h1>
-	<?php } else { ?>
-		<h1>Dodawanie produktu</h1>
-	<?php } ?>
+	<h1>Zarządzanie produktami</h1>
     </div>
 
 </section>
@@ -17,19 +13,9 @@
 <div class="wrapper" id="main"> 
     
 <!-- content area -->    
-<section id="content" class="wide-content">
-		<div class="grid_4">
-			<form action="" method="POST">				
-				<input type="hidden" name="sent" value="yes">
-				<div class="label">Nazwa produktu:</div>
-						<input type="text" name="name" value="<?php if (isset($user['name'])) { echo $user['name']; } ?>" required>
-				<div class="label">Opis produktu:</div>
-						<input type="text" name="desc" value="<?php if (isset($user['desc'])) { echo $user['desc']; } ?>" required>
-						<input type="submit" >
-			</form>
-		</div>
-		<div class="grid_8">
-			<table>
+	<section id="content" class="wide-content">
+		<a href="<?php echo base_url(); ?>warehouse/library/edit/0">Nowy</a>
+		<table>
 			<tr><th>Id</th><th>Nazwa</th><th>Opis</th><th>Akcje</th></tr>
 			<?php foreach ($products as $product) { ?>
 				<tr>
@@ -44,8 +30,7 @@
 					</td>
 				</tr>
 			<?php } ?>			
-			</table>
-		</div>
+		</table>
 </section><!-- #end content area -->
          
 </div><!-- #end div #main .wrapper -->

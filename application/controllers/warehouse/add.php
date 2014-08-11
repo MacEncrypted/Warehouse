@@ -1,5 +1,10 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+/*
+ * 1 - produkcja
+ * 
+ * 
+ * 
+ */
 class Add extends CI_Controller {
 	
 	public function __construct() {
@@ -15,16 +20,18 @@ class Add extends CI_Controller {
 	{
 		
 	}
-			
-	public function packing() {		
+		
+	// id = 1
+	public function production() {		
 		$data = array();
 		$data['products'] = $this->library_model->getList();
+		$data['reports'] = $this->log_model->getList(1);
 		
 		if($this->input->post('sent')) {
 				$this->log_model->addAction($this->input->post('id'), $this->input->post('amount'), 1);
 				redirect('main/status','refresh');
 			} else {
-				$this->load->view('warehouse/add/packing_view', $data);
+				$this->load->view('warehouse/add/production_view', $data);
 			}
 	}
 	

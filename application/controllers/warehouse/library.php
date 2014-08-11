@@ -12,13 +12,12 @@ class Library extends CI_Controller {
 
 	public function index()
 	{
-		$data = array();
-		$data['products'] = $this->library_model->getList();
-		$this->load->view('warehouse/library_view', $data);
+		$this->edit(0);
 	}
 	
 	public function edit($id) {		
 		$data = array();
+		$data['products'] = $this->library_model->getList();
 		if($id == 0) {
 			// add new	
 			if($this->input->post('sent')) {
@@ -45,17 +44,5 @@ class Library extends CI_Controller {
 		}
 		$this->library_model->delProduct($id);			
 		redirect('warehouse/library','refresh');
-	}
-	
-	public function addpacking() {
-		
-		$data['products'] = $this->library_model->getList();
-		
-		if($this->input->post('sent')) {
-				$this->library_model->addProduct($this->input->post('id'), $this->input->post('amount'));
-				redirect('main/status','refresh');
-			} else {
-				$this->load->view('warehouse/addpacking_view', $data);
-			}
 	}
 }

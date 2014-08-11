@@ -71,6 +71,14 @@
 							</ul>
 						</li>
 					<?php } ?>
+					<?php if ($this->session->userdata('user_lvl')) { ?>	
+						<li><a href="#">Biblioteka</a>
+							<ul>
+								<li><a href="<?php echo base_url(); ?>warehouse/library">Produkty</a></li>							
+								<li><a href="<?php echo base_url(); ?>warehouse/packing">Packing listy</a></li>
+							</ul>
+						</li>
+					<?php } ?>
 					<?php if ($this->session->userdata('admin_lvl')) { ?>	
 						<li><a href="#">Użytkownicy</a>
 							<ul>
