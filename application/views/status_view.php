@@ -16,13 +16,15 @@
 	<section id="content" class="wide-content">
     
 		<table>
-			<tr><th>Id</th><th>Nazwa</th><th>Opis</th><th>Ilość</th></tr>
-			<?php foreach ($products as $product) { ?>
+			<tr><th>Id</th><th>Nazwa</th><th>Magazyn</th><th>W drodze</th><th>Produkcja</th><th>Total</th></tr>
+			<?php foreach ($products as $product) { $sum = 0;?>
 				<tr>
 					<td><?php echo $product['id']; ?></td>
 					<td><?php echo $product['name']; ?></td>
-					<td><?php echo $product['desc']; ?></td>
-					<td><?php echo $product['sum']; ?></td>
+					<td><?php echo $product['magazyn_sum']; $sum += $product['magazyn_sum']; ?></td>
+					<td><?php echo $product['onway_sum']; $sum += $product['onway_sum']; ?></td>
+					<td><?php echo $product['production_sum']; $sum += $product['production_sum']; ?></td>
+					<td><?php echo $sum; ?></td>
 				</tr>
 			<?php } ?>			
 		</table>

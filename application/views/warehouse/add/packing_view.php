@@ -3,7 +3,7 @@
 <section id="page-header" class="clearfix">    
 <!-- responsive FlexSlider image slideshow -->
 <div class="wrapper">
-	<h1>Dodawanie produktu do produkcji</h1>
+	<h1>Dodawanie packing listy w transporcie</h1>
     </div>
 
 </section>
@@ -25,19 +25,27 @@
 				</option>
 				<?php } ?>
 			</select>
+			<div class="label">Packing lista:</div>
+			<select name="pckgid">
+				<?php foreach ($packings as $product) { ?>
+				<option value="<?php if (isset($product['id'])) { echo $product['id']; } ?>">
+					<?php if (isset($product['name'])) { echo $product['name']; } ?>
+				</option>
+				<?php } ?>
+			</select>
 			<div class="label">Ilość:</div>
-			<input type="number" name="amount">
+			<input type="number" name="amount" required>
 			<input type="submit">
 		</form>
 	</div>
 	<div class="grid_8">
 		<table>
-			<tr><th>Id</th><th>Produkt</th><th>Ilość</th></tr>
-			<?php foreach ($reports as $report) { $sum = 0;?>
+			<tr><th>Produkt</th><th>Ilość</th><th>Packing lista</th></tr>
+			<?php foreach ($reports as $report) { ?>
 				<tr>
-					<td><?php echo $report['id']; ?></td>
 					<td><?php echo $report['name']; ?></td>
 					<td><?php echo $report['sum']; ?></td>
+					<td><?php echo $report['packing']; ?></td>
 				</tr>
 			<?php } ?>
 		</table>

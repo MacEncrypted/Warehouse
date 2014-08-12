@@ -20,7 +20,7 @@ class Main extends CI_Controller {
 	
 	public function status() {
 		$data = array();
-		$data['products'] = $this->log_model->getStatusList();
+		$data['products'] = $this->log_model->getNewStatusList();
 		$this->load->view('status_view', $data);
 	}
 	

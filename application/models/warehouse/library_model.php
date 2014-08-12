@@ -28,6 +28,25 @@ class Library_model extends CI_Model {
 		
 		return $products;
 	}
+	
+	public function getPackingsList() {
+		$query = $this->db->query("SELECT * FROM packings WHERE deleted='0'");
+
+		$products = array();
+
+		if ($query->num_rows() > 0) {
+			
+			foreach ($query->result() as $row) {
+				$product = array();
+				$product['id'] = $row->id;
+				$product['name'] = $row->name;
+				$product['desc'] = $row->description;
+				$products[] = $product;
+			}
+		}
+		
+		return $products;
+	}
 
 	public function addProduct($name, $desc) {
 		$this->db->query("INSERT INTO products (name, description) VALUES ('$name', '$desc')");

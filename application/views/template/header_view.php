@@ -50,24 +50,29 @@
 				<div class="menu-toggle">Menu</div>
 				<ul class="srt-menu" id="menu-main-navigation">
 					<?php if ($this->session->userdata('user_lvl')) { ?>	
-						<li><a href="#">Ogólne</a>
-							<ul>
-								<li><a href="<?php echo base_url(); ?>main/status">Stan</a></li>
-								<li><a href="<?php echo base_url(); ?>main/reports">Raporty</a></li>								
-								<li><a href="<?php echo base_url(); ?>main/notes">Notatki</a></li>
+						<li><a href="#">Produkcja</a>
+							<ul>						
+								<li><a href="<?php echo base_url(); ?>warehouse/add/production">W produkcji</a></li>
+							</ul>
+						</li>
+					<?php } ?>
+					<?php if ($this->session->userdata('user_lvl')) { ?>	
+						<li><a href="#">W drodze</a>
+							<ul>						
+								<li><a href="<?php echo base_url(); ?>warehouse/add/onway">Packing transport</a></li>
 							</ul>
 						</li>
 					<?php } ?>
 					<?php if ($this->session->userdata('user_lvl')) { ?>	
 						<li><a href="#">Magazyn</a>
-							<ul>
-								<li><a href="<?php echo base_url(); ?>warehouse/library">Biblioteka</a></li>							
-								<li><a href="<?php echo base_url(); ?>warehouse/add/packing">Dodaj Packing</a></li>
-								<li><a href="<?php echo base_url(); ?>warehouse/add/returner">Dodaj Zwrot</a></li>
+							<ul>						
+								<li><a href="<?php echo base_url(); ?>warehouse/add/packing">Packing na magazyn</a></li>
+								<li><a href="<?php echo base_url(); ?>warehouse/add/returner">Zwrot</a></li>
 								<?php if ($this->session->userdata('user_id')) { ?>
-									<li><a href="<?php echo base_url(); ?>warehouse/add/admin">Dodaj Korektę</a></li>
+									<li><a href="<?php echo base_url(); ?>warehouse/add/admin">Dodaj Korekta</a></li>
 								<?php } ?>
-								<li><a href="<?php echo base_url(); ?>warehouse/add/sent">Wyślij</a></li>
+								<li><a href="<?php echo base_url(); ?>warehouse/add/sent">Wydanie towaru</a></li>								
+								<li><a href="<?php echo base_url(); ?>main/status">Stan magazynu</a></li>
 							</ul>
 						</li>
 					<?php } ?>
@@ -83,6 +88,14 @@
 						<li><a href="#">Użytkownicy</a>
 							<ul>
 								<li><a href="<?php echo base_url(); ?>users/manage">Zarządzaj</a></li>
+							</ul>
+						</li>
+					<?php } ?>
+					<?php if ($this->session->userdata('user_lvl')) { ?>	
+						<li><a href="#">System</a>
+							<ul>
+								<li><a href="<?php echo base_url(); ?>main/reports">Log systemowy</a></li>								
+								<li><a href="<?php echo base_url(); ?>main/notes">Notatki</a></li>
 							</ul>
 						</li>
 					<?php } ?>
