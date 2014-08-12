@@ -95,7 +95,7 @@
 						<li><a href="#">System</a>
 							<ul>
 								<li><a href="<?php echo base_url(); ?>main/reports">Log systemowy</a></li>								
-								<li><a href="<?php echo base_url(); ?>main/notes">Notatki</a></li>
+								<li><a href="<?php echo base_url(); ?>notes/manage">Notatki</a></li>
 							</ul>
 						</li>
 					<?php } ?>

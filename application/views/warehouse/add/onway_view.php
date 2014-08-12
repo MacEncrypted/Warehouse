@@ -3,7 +3,7 @@
 <section id="page-header" class="clearfix">    
 <!-- responsive FlexSlider image slideshow -->
 <div class="wrapper">
-	<h1>Dodawanie packing listy na magazyn</h1>
+	<h1>Dodawanie packing listy w transporcie</h1>
     </div>
 
 </section>

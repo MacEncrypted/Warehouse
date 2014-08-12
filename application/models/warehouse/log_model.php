@@ -119,7 +119,7 @@ class Log_model extends CI_Model {
 				. "products.name AS name, "
 				. "products.description AS description, "
 				. "magazyn.sum AS magazyn_sum, "
-				. "magazyn.sum AS production_sum, "
+				. "production.sum AS production_sum, "
 				. "onway.sum AS onway_sum "
 				. "FROM products "
 				. "LEFT JOIN (SELECT id_product, sum(amount) AS sum FROM `log` WHERE action=2 OR action=3 OR action=4 OR action=6 "
@@ -128,7 +128,7 @@ class Log_model extends CI_Model {
 				. "LEFT JOIN (SELECT id_product, id_packing, sum(amount) AS sum FROM `log` WHERE action=5 OR action=6 "
 				. "GROUP BY 1) AS onway "
 				. "ON products.id=onway.id_product "
-				. "LEFT JOIN (SELECT id_product, sum(amount) AS sum FROM `log` WHERE action=5 OR action=1 "
+				. "LEFT JOIN (SELECT id_product, sum(amount) AS sum FROM `log` WHERE action=1 OR action=5 "
 				. "GROUP BY 1 ORDER BY 2) AS production "
 				. "ON products.id=production.id_product "
 				. "WHERE products.deleted='0' ORDER BY id";
@@ -159,14 +159,9 @@ class Log_model extends CI_Model {
 		$starts = date("Y-m-d H:i:s", strtotime($start));
 		$ends = date("Y-m-d H:i:s", strtotime($end));
 				
-		$reports = array();
+		$report = array();
 		$this->load->model('warehouse/library_model');
-		$products = $this->library_model->getList();
-		
-		foreach ($products as $product) {
-			$id = $product['id'];
-			$report = array();
-			
+					
 			$query = $this->db->query("SELECT "
 					. "products.id AS pid, "
 					. "products.name AS pname, "
@@ -178,7 +173,7 @@ class Log_model extends CI_Model {
 					. "FROM log "
 					. "JOIN products ON log.id_product=products.id "
 					. "JOIN users ON log.id_user=users.id "
-					. "WHERE id_product='$id' AND (date BETWEEN '$starts' AND '$ends')");
+					. "WHERE (date BETWEEN '$starts' AND '$ends')");
 
 				if ($query->num_rows() > 0) {
 
@@ -189,16 +184,23 @@ class Log_model extends CI_Model {
 						$log['date'] = $row->date;
 						$log['uid'] = $row->uid;
 						$log['login'] = $row->login;
-						$log['action'] = $row->action;
+						$log['action'] = $this->getLongActionName($row->action);
 						$log['amount'] = $row->amount;
 						$report[] = $log;
 					}
 				}
-			
-			
-			$reports[$id] = $report;
+							
+		return $report;
+	}
+	
+	private function getLongActionName($action) {
+		switch ($action) {
+			case 1: return 'zmiana w produkcji';
+			case 2: return 'zwrot'; 
+			case 3: return 'admin';
+			case 4: return 'wysyłka';
+			case 5: return 'w drodze';
+			case 6: return 'packing na magazyn';
 		}
-		
-		return $reports;
 	}
 }

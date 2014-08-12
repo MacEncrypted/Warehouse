@@ -25,28 +25,19 @@
 		</form>
 		
 		<?php if(isset($generate)) { ?>		
-			<?php foreach ($reports as $report) { $sum = 0;?>
 				<table>
 					<tr><th>Produkt</th><th>Data</th><th>Użytkownik</th><th>Akcja</th><th>Ilość</th></tr>
-				<?php foreach ($report as $log) { ?>
-					<tr>
-					<td><?php echo $log['pname']; ?></td>
-					<td><?php echo $log['date']; ?></td>
-					<td><?php echo $log['login']; ?></td>
+				<?php foreach ($reports as $log) { ?>
+					<tr>						
+					<td><?php echo $log['date']; ?></td>					
+					<td><?php echo $log['login']; ?></td>					
 					<td><?php echo $log['action']; ?></td>
-					<td><?php $sum += $log['amount']; echo $log['amount']; ?></td>
+					<td><?php echo $log['pname']; ?></td>
+					<td><?php echo $log['amount']; ?></td>
 				</tr>
 				<?php } ?>
-					<tr>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td>SUMA: <b><?php echo $sum; ?></b></td>
-					</tr>
 				</table>
 			<?php } ?>
-		<?php } ?>
 		
 		
 </section><!-- #end content area -->
