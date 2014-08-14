@@ -26,7 +26,7 @@
 		
 		<?php if(isset($generate)) { ?>		
 				<table>
-					<tr><th>Produkt</th><th>Data</th><th>Użytkownik</th><th>Akcja</th><th>Ilość</th></tr>
+					<tr><th>Data</th><th>Użytkownik</th><th>Akcja</th><th>Produkt</th><th>Ilość</th></tr>
 				<?php foreach ($reports as $log) { ?>
 					<tr>						
 					<td><?php echo $log['date']; ?></td>					

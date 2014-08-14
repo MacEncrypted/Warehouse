@@ -3,7 +3,7 @@
 <section id="page-header" class="clearfix">    
 <!-- responsive FlexSlider image slideshow -->
 <div class="wrapper">
-	<h1>Dodawanie produktu - korekta administratora</h1>
+	<h1>Korekta stanu na magazynie</h1>
     </div>
 
 </section>

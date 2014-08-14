@@ -1,10 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-/*
- * 1 - produkcja
- * 
- * 
- * 
- */
+
 class Add extends CI_Controller {
 	
 	public function __construct() {
@@ -22,7 +17,10 @@ class Add extends CI_Controller {
 	}
 		
 	// id = 1
-	public function production() {		
+	public function production() {	
+		if (!$this->session->userdata('admin_lvl')) {
+			die('Access restricted!');
+		}
 		$data = array();		
 		if($this->input->post('sent')) {
 				$this->log_model->addAction($this->input->post('id'), $this->input->post('amount'), 1);

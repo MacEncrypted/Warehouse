@@ -17,7 +17,7 @@ class Log_model extends CI_Model {
 				. "products.description AS description, "
 				. "counter.sum AS sum "
 				. "FROM products LEFT JOIN (SELECT id_product, sum(amount) AS sum FROM `log` WHERE action=$group OR action=5 GROUP BY 1 ORDER BY 2) AS counter "
-				. "ON products.id=counter.id_product WHERE products.deleted='0' ORDER BY id");
+				. "ON products.id=counter.id_product WHERE products.deleted='0' ORDER BY id DESC");
 
 		$products = array();
 
@@ -54,7 +54,7 @@ class Log_model extends CI_Model {
 				. "ON products.id=counter.id_product "
 				. "JOIN packings "
 				. "ON counter.id_packing = packings.id "
-				. "WHERE products.deleted='0' AND counter.sum<>0 ORDER BY id";
+				. "WHERE products.deleted='0' AND counter.sum<>0 ORDER BY id DESC";
 				
 		$query = $this->db->query($q);
 
@@ -173,7 +173,8 @@ class Log_model extends CI_Model {
 					. "FROM log "
 					. "JOIN products ON log.id_product=products.id "
 					. "JOIN users ON log.id_user=users.id "
-					. "WHERE (date BETWEEN '$starts' AND '$ends')");
+					. "WHERE (date BETWEEN '$starts' AND '$ends') "
+					. "ORDER BY log.id DESC");
 
 				if ($query->num_rows() > 0) {
 
@@ -196,10 +197,10 @@ class Log_model extends CI_Model {
 	private function getLongActionName($action) {
 		switch ($action) {
 			case 1: return 'zmiana w produkcji';
-			case 2: return 'zwrot'; 
-			case 3: return 'admin';
-			case 4: return 'wysyłka';
-			case 5: return 'w drodze';
+			case 2: return 'zwrot na magazyn'; 
+			case 3: return 'korekta magazynu';
+			case 4: return 'wydanie z magazynu';
+			case 5: return 'zmiana w packing list';
 			case 6: return 'packing na magazyn';
 		}
 	}

@@ -3,7 +3,7 @@
 <section id="page-header" class="clearfix">    
 <!-- responsive FlexSlider image slideshow -->
 <div class="wrapper">
-	<h1>Wysyłanie produktu</h1>
+	<h1>Wydanie towaru</h1>
     </div>
 
 </section>

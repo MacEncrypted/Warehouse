@@ -49,7 +49,7 @@
 			<nav id="topnav" role="navigation">
 				<div class="menu-toggle">Menu</div>
 				<ul class="srt-menu" id="menu-main-navigation">
-					<?php if ($this->session->userdata('user_lvl')) { ?>	
+					<?php if ($this->session->userdata('admin_lvl')) { ?>	
 						<li><a href="#">Produkcja</a>
 							<ul>						
 								<li><a href="<?php echo base_url(); ?>warehouse/add/production">W produkcji</a></li>
@@ -57,7 +57,7 @@
 						</li>
 					<?php } ?>
 					<?php if ($this->session->userdata('user_lvl')) { ?>	
-						<li><a href="#">W drodze</a>
+						<li><a href="#">Dodanie packing listy</a>
 							<ul>						
 								<li><a href="<?php echo base_url(); ?>warehouse/add/onway">Packing transport</a></li>
 							</ul>
@@ -66,17 +66,17 @@
 					<?php if ($this->session->userdata('user_lvl')) { ?>	
 						<li><a href="#">Magazyn</a>
 							<ul>						
-								<li><a href="<?php echo base_url(); ?>warehouse/add/packing">Packing na magazyn</a></li>
+								<li><a href="<?php echo base_url(); ?>warehouse/add/packing">Przyjęcie towaru – packing lista</a></li>
 								<li><a href="<?php echo base_url(); ?>warehouse/add/returner">Zwrot</a></li>
 								<?php if ($this->session->userdata('user_id')) { ?>
-									<li><a href="<?php echo base_url(); ?>warehouse/add/admin">Dodaj Korekta</a></li>
+									<li><a href="<?php echo base_url(); ?>warehouse/add/admin">Korekta</a></li>
 								<?php } ?>
 								<li><a href="<?php echo base_url(); ?>warehouse/add/sent">Wydanie towaru</a></li>								
 								<li><a href="<?php echo base_url(); ?>main/status">Stan magazynu</a></li>
 							</ul>
 						</li>
 					<?php } ?>
-					<?php if ($this->session->userdata('user_lvl')) { ?>	
+					<?php if ($this->session->userdata('admin_lvl')) { ?>	
 						<li><a href="#">Biblioteka</a>
 							<ul>
 								<li><a href="<?php echo base_url(); ?>warehouse/library">Produkty</a></li>							
