@@ -77,5 +77,5 @@ CREATE TABLE IF NOT EXISTS `users` (
 -- Insert primary user
 -- login: root
 -- passwd: root (md5)
-INSERT INTO `users` (`id`, `login`, `passwd`, `level`) VALUES ('1', 'root', '63a9f0ea7bb98050796b649e85481845', '2');
+INSERT INTO `users` (`id`, `login`, `passwd`) VALUES ('1', 'root', '63a9f0ea7bb98050796b649e85481845');
 

@@ -1,7 +1,7 @@
 <!-- footer area -->    
 <footer>
 	<div id="colophon" class="wrapper clearfix">
-    	Warehouse by Encrypted.pl v.1.0
+    	Warehouse by Encrypted.pl v.0.9
     </div>
     
     <!--You can NOT remove this attribution statement from any page, unless you get the permission from prowebdesign.ro-->
