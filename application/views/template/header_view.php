@@ -99,22 +99,22 @@
 							</ul>
 						</li>
 					<?php } ?>
-					<li><a href="#">Logowanie</a>
+					<li><a href="#"><?php echo $this->lang->line('menu_login'); ?></a>
 						<ul>							
 							<li class="loginli">								
 								<?php if ($this->session->userdata('user_id')) { ?>
-								Użytkownik: <b><?php echo $this->session->userdata('user_login'); ?></b>	
+								<?php echo $this->lang->line('menu_login_user'); ?><b><?php echo $this->session->userdata('user_login'); ?></b>	
 									<form action="" method="POST">
-										<input type="submit" name="logout" value="Wyloguj">
+										<input type="submit" name="logout" value="<?php echo $this->lang->line('menu_login_logout'); ?>">
 									</form>
 
 								<?php } else { ?>
 									<form action="" method="POST">
-										Login:
+										<?php echo $this->lang->line('menu_login_login'); ?>
 										<input type="text" name="login">
-										Hasło:
+										<?php echo $this->lang->line('menu_login_passwd'); ?>
 										<input type="password" name="passwd">
-										<input type="submit" value="Zaloguj">
+										<input type="submit" value="<?php echo $this->lang->line('menu_login_signin'); ?>">
 									</form>
 								<?php } ?></li>
 						</ul>						
