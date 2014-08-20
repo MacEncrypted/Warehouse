@@ -1,9 +1,8 @@
 <?php $this->load->view('template/header_view.php'); ?>
 
 <section id="page-header" class="clearfix">    
-<!-- responsive FlexSlider image slideshow -->
 <div class="wrapper">
-	<h1>Zarządzanie użytkownikami</h1>
+	<h1><?php echo $this->lang->line('h1_users_manage'); ?></h1>
     </div>
 
 </section>
@@ -14,9 +13,12 @@
     
 <!-- content area -->    
 	<section id="content" class="wide-content">
-		<a href="<?php echo base_url(); ?>users/manage/edit/0">Nowy</a>
+		<a href="<?php echo base_url(); ?>users/manage/edit/0"><?php echo $this->lang->line('new'); ?></a>
 		<table>
-			<tr><th>#</th><th>Login</th><th>Level</th><th>Akcje</th></tr>
+			<tr><th><?php echo $this->lang->line('id'); ?></th>
+				<th><?php echo $this->lang->line('login'); ?></th>
+				<th><?php echo $this->lang->line('level'); ?></th>
+				<th><?php echo $this->lang->line('actions'); ?></th></tr>
 			<?php $i = 1; ?>
 			<?php foreach ($users as $user) { ?>
 				<tr>

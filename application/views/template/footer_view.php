@@ -1,7 +1,7 @@
 <!-- footer area -->    
 <footer>
 	<div id="colophon" class="wrapper clearfix">
-    	Warehouse by Encrypted.pl v.0.9
+    	<?php echo $this->lang->line('footer_text'); ?>
     </div>
     
     <!--You can NOT remove this attribution statement from any page, unless you get the permission from prowebdesign.ro-->
@@ -12,12 +12,12 @@
 
 <!-- jQuery -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/libs/jquery-1.9.0.min.js">\x3C/script>')</script>
+<script>window.jQuery || document.write('<script src="<?php echo base_url(); ?>js/libs/jquery-1.9.0.min.js">\x3C/script>')</script>
 
-<script defer src="js/flexslider/jquery.flexslider-min.js"></script>
+<script defer src="<?php echo base_url(); ?>js/flexslider/jquery.flexslider-min.js"></script>
 
 <!-- fire ups - read this file!  -->   
-<script src="js/main.js"></script>
+<script src="<?php echo base_url(); ?>js/main.js"></script>
 
 </body>
 </html>

@@ -1,3 +1,5 @@
+<!-- not used -->
+
 <?php if($this->session->userdata('user_id')) { ?>
 	<a href="?logout=true">Logout</a> <?php echo $this->session->userdata('user_login'); ?>
 <?php } ?>

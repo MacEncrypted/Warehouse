@@ -7,9 +7,9 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-		<title>Simple Responsive Template</title>
-		<meta name="description" content="Simple Responsive Template is a template for responsive web design. Mobile first, responsive grid layout, toggle menu, navigation bar with unlimited drop downs, responsive slideshow">
-		<meta name="keywords" content="">
+		<title><?php echo $this->lang->line('header_title'); ?></title>
+		<meta name="description" content="<?php echo $this->lang->line('header_desc'); ?>">
+		<meta name="keywords" content="<?php echo $this->lang->line('header_keywords'); ?>">
 
 		<!-- Mobile viewport -->
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
@@ -42,60 +42,60 @@
 		<header class="wrapper clearfix">
 
 			<div id="banner">        
-				<img src="http://encrypted.pl/img/logo-small.png" height="50" width="195">
+				<a href="<?php echo base_url(); ?>"><img src="http://encrypted.pl/img/logo-small.png" height="60" width="234"></a>
 			</div>
 
 			<!-- main navigation -->
 			<nav id="topnav" role="navigation">
-				<div class="menu-toggle">Menu</div>
+				<div class="menu-toggle"><?php echo $this->lang->line('menu_menu'); ?></div>
 				<ul class="srt-menu" id="menu-main-navigation">
 					<?php if ($this->session->userdata('admin_lvl')) { ?>	
-						<li><a href="#">Produkcja</a>
+						<li><a href="#"><?php echo $this->lang->line('menu_production'); ?></a>
 							<ul>						
-								<li><a href="<?php echo base_url(); ?>warehouse/add/production">W produkcji</a></li>
+								<li><a href="<?php echo base_url(); ?>warehouse/add/production"><?php echo $this->lang->line('menu_inproduction'); ?></a></li>
 							</ul>
 						</li>
 					<?php } ?>
 					<?php if ($this->session->userdata('user_lvl')) { ?>	
-						<li><a href="#">Dodanie packing listy</a>
+						<li><a href="#"><?php echo $this->lang->line('menu_add_packing'); ?></a>
 							<ul>						
-								<li><a href="<?php echo base_url(); ?>warehouse/add/onway">Packing transport</a></li>
+								<li><a href="<?php echo base_url(); ?>warehouse/add/onway"><?php echo $this->lang->line('menu_packing_transport'); ?></a></li>
 							</ul>
 						</li>
 					<?php } ?>
 					<?php if ($this->session->userdata('user_lvl')) { ?>	
-						<li><a href="#">Magazyn</a>
+						<li><a href="#"><?php echo $this->lang->line('menu_warehouse'); ?></a>
 							<ul>						
-								<li><a href="<?php echo base_url(); ?>warehouse/add/packing">Przyjęcie towaru – packing lista</a></li>
-								<li><a href="<?php echo base_url(); ?>warehouse/add/returner">Zwrot</a></li>
+								<li><a href="<?php echo base_url(); ?>warehouse/add/packing"><?php echo $this->lang->line('menu_warehouse_in'); ?></a></li>
+								<li><a href="<?php echo base_url(); ?>warehouse/add/returner"><?php echo $this->lang->line('menu_warehouse_back'); ?></a></li>
 								<?php if ($this->session->userdata('user_id')) { ?>
-									<li><a href="<?php echo base_url(); ?>warehouse/add/admin">Korekta</a></li>
+									<li><a href="<?php echo base_url(); ?>warehouse/add/admin"><?php echo $this->lang->line('menu_warehouse_correct'); ?></a></li>
 								<?php } ?>
-								<li><a href="<?php echo base_url(); ?>warehouse/add/sent">Wydanie towaru</a></li>								
-								<li><a href="<?php echo base_url(); ?>main/status">Stan magazynu</a></li>
+								<li><a href="<?php echo base_url(); ?>warehouse/add/sent"><?php echo $this->lang->line('menu_warehouse_out'); ?></a></li>								
+								<li><a href="<?php echo base_url(); ?>main/status"><?php echo $this->lang->line('menu_warehouse_report'); ?></a></li>
 							</ul>
 						</li>
 					<?php } ?>
 					<?php if ($this->session->userdata('admin_lvl')) { ?>	
-						<li><a href="#">Biblioteka</a>
+						<li><a href="#"><?php echo $this->lang->line('menu_lib'); ?></a>
 							<ul>
-								<li><a href="<?php echo base_url(); ?>warehouse/library">Produkty</a></li>							
-								<li><a href="<?php echo base_url(); ?>warehouse/packing">Packing listy</a></li>
+								<li><a href="<?php echo base_url(); ?>warehouse/library"><?php echo $this->lang->line('menu_lib_products'); ?></a></li>							
+								<li><a href="<?php echo base_url(); ?>warehouse/packing"><?php echo $this->lang->line('menu_lib_packing'); ?></a></li>
 							</ul>
 						</li>
 					<?php } ?>
 					<?php if ($this->session->userdata('admin_lvl')) { ?>	
-						<li><a href="#">Użytkownicy</a>
+						<li><a href="#"><?php echo $this->lang->line('menu_users'); ?></a>
 							<ul>
-								<li><a href="<?php echo base_url(); ?>users/manage">Zarządzaj</a></li>
+								<li><a href="<?php echo base_url(); ?>users/manage"><?php echo $this->lang->line('menu_manage'); ?></a></li>
 							</ul>
 						</li>
 					<?php } ?>
 					<?php if ($this->session->userdata('user_lvl')) { ?>	
-						<li><a href="#">System</a>
+						<li><a href="#"><?php echo $this->lang->line('menu_system'); ?></a>
 							<ul>
-								<li><a href="<?php echo base_url(); ?>main/reports">Log systemowy</a></li>								
-								<li><a href="<?php echo base_url(); ?>notes/manage">Notatki</a></li>
+								<li><a href="<?php echo base_url(); ?>main/reports"><?php echo $this->lang->line('menu_system_log'); ?></a></li>								
+								<li><a href="<?php echo base_url(); ?>notes/manage"><?php echo $this->lang->line('menu_system_notes'); ?></a></li>
 							</ul>
 						</li>
 					<?php } ?>
@@ -103,7 +103,7 @@
 						<ul>							
 							<li class="loginli">								
 								<?php if ($this->session->userdata('user_id')) { ?>
-								<?php echo $this->lang->line('menu_login_user'); ?><b><?php echo $this->session->userdata('user_login'); ?></b>	
+									<?php echo $this->lang->line('menu_login_user'); ?><b><?php echo $this->session->userdata('user_login'); ?></b>	
 									<form action="" method="POST">
 										<input type="submit" name="logout" value="<?php echo $this->lang->line('menu_login_logout'); ?>">
 									</form>

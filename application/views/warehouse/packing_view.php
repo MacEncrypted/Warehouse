@@ -16,21 +16,24 @@
 	<section id="content" class="wide-content">
 		<a href="<?php echo base_url(); ?>warehouse/library/edit/0">Nowy</a>
 		<table>
-			<tr><th>Id</th><th>Nazwa</th><th>Opis</th><th>Akcje</th></tr>
-			<?php foreach ($products as $product) { ?>
-				<tr>
-					<td><?php echo $product['id']; ?></td>
-					<td><?php echo $product['name']; ?></td>
-					<td><?php echo $product['desc']; ?></td>
-					<td>
-						<?php if ($this->session->userdata('admin_lvl')) { ?>
-						<a href="<?php echo base_url(); ?>warehouse/library/del/<?php echo $product['id']; ?>">Kasuj</a>
-						<?php } ?>
-						<a href="<?php echo base_url(); ?>warehouse/library/edit/<?php echo $product['id']; ?>">Edytuj</a>
-					</td>
-				</tr>
-			<?php } ?>			
-		</table>
+				<tr><th><?php echo $this->lang->line('id'); ?></th>
+					<th><?php echo $this->lang->line('name'); ?></th>
+					<th><?php echo $this->lang->line('desc'); ?></th>
+					<th><?php echo $this->lang->line('actions'); ?></th></tr>
+<?php foreach ($products as $product) { ?>
+					<tr>
+						<td><?php echo $product['id']; ?></td>
+						<td><?php echo $product['name']; ?></td>
+						<td><?php echo $product['desc']; ?></td>
+						<td>
+	<?php if ($this->session->userdata('admin_lvl')) { ?>
+								<a href="<?php echo base_url(); ?>warehouse/packing/del/<?php echo $product['id']; ?>"><?php echo $this->lang->line('del'); ?></a>
+					<?php } ?>
+							<a href="<?php echo base_url(); ?>warehouse/packing/edit/<?php echo $product['id']; ?>"><?php echo $this->lang->line('edi'); ?></a>
+						</td>
+					</tr>
+<?php } ?>			
+			</table>
 </section><!-- #end content area -->
          
 </div><!-- #end div #main .wrapper -->

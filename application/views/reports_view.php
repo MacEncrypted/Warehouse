@@ -1,9 +1,12 @@
 <?php $this->load->view('template/header_view.php'); ?>
 
 <section id="page-header" class="clearfix">    
-<!-- responsive FlexSlider image slideshow -->
-<div class="wrapper">
-	<h1>Generowanie raportu<?php if(isset($generate)) { echo '<br>Raport od ' . $generate['start'] . ' do ' . $generate['end']; } ?></h1>
+	<div class="wrapper">
+		<h1><?php echo $this->lang->line('h1_report'); ?> <?php
+			if (isset($generate)) {
+				echo '<br>' . $generate['start'] . ' - ' . $generate['end'];
+			}
+			?></h1>
     </div>
 
 </section>
@@ -11,37 +14,41 @@
 
 <!-- main content area -->   
 <div class="wrapper" id="main"> 
-    
-<!-- content area -->    
+
+	<!-- content area -->    
 	<section id="content" class="wide-content">
-    
+
 		<form action="" method="POST">
 			<input type="hidden" name="sent" value="yes">
-			<div class="label">Data od:</div>
-				<input type="date" name="start" placeholder="2014-01-01" required>
-			<div class="label">Data do:</div>
-				<input type="date" name="end" placeholder="2014-01-01" required>
-			<input type="submit" value="GENERUJ">
+			<div class="label"><?php echo $this->lang->line('data_start'); ?></div>
+			<input type="date" name="start" placeholder="2014-01-01" required>
+			<div class="label"><?php echo $this->lang->line('data_end'); ?></div>
+			<input type="date" name="end" placeholder="2014-01-01" required>
+			<input type="submit" value="<?php echo $this->lang->line('generate'); ?>">
 		</form>
-		
-		<?php if(isset($generate)) { ?>		
-				<table>
-					<tr><th>Data</th><th>Użytkownik</th><th>Akcja</th><th>Produkt</th><th>Ilość</th></tr>
-				<?php foreach ($reports as $log) { ?>
+
+<?php if (isset($generate)) { ?>		
+			<table>
+				<tr><th><?php echo $this->lang->line('data'); ?></th>
+					<th><?php echo $this->lang->line('login'); ?></th>
+					<th><?php echo $this->lang->line('actions'); ?></th>
+					<th><?php echo $this->lang->line('product'); ?></th>
+					<th><?php echo $this->lang->line('amount'); ?></th></tr>
+	<?php foreach ($reports as $log) { ?>
 					<tr>						
-					<td><?php echo $log['date']; ?></td>					
-					<td><?php echo $log['login']; ?></td>					
-					<td><?php echo $log['action']; ?></td>
-					<td><?php echo $log['pname']; ?></td>
-					<td><?php echo $log['amount']; ?></td>
-				</tr>
-				<?php } ?>
-				</table>
+						<td><?php echo $log['date']; ?></td>					
+						<td><?php echo $log['login']; ?></td>					
+						<td><?php echo $log['action']; ?></td>
+						<td><?php echo $log['pname']; ?></td>
+						<td><?php echo $log['amount']; ?></td>
+					</tr>
 			<?php } ?>
-		
-		
-</section><!-- #end content area -->
-   
+			</table>
+<?php } ?>
+
+
+	</section><!-- #end content area -->
+
 </div><!-- #end div #main .wrapper -->
 
- <?php $this->load->view('template/footer_view.php'); ?>
+<?php $this->load->view('template/footer_view.php'); ?>
