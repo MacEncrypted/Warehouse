@@ -11,7 +11,7 @@ class Library_model extends CI_Model {
 	}
 
 	public function getList() {
-		$query = $this->db->query("SELECT * FROM products WHERE deleted='0'");
+		$query = $this->db->query("SELECT * FROM products WHERE deleted='0' ORDER BY name ASC");
 
 		$products = array();
 
@@ -30,7 +30,7 @@ class Library_model extends CI_Model {
 	}
 	
 	public function getPackingsList() {
-		$query = $this->db->query("SELECT * FROM packings WHERE deleted='0'");
+		$query = $this->db->query("SELECT * FROM packings WHERE deleted='0' ORDER BY name ASC");
 
 		$products = array();
 

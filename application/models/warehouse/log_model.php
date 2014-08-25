@@ -17,7 +17,7 @@ class Log_model extends CI_Model {
 				. "products.description AS description, "
 				. "counter.sum AS sum "
 				. "FROM products LEFT JOIN (SELECT id_product, sum(amount) AS sum FROM `log` WHERE action=$group OR action=5 GROUP BY 1 ORDER BY 2) AS counter "
-				. "ON products.id=counter.id_product WHERE products.deleted='0' ORDER BY id DESC");
+				. "ON products.id=counter.id_product WHERE products.deleted='0' ORDER BY name ASC");
 
 		$products = array();
 
@@ -131,7 +131,7 @@ class Log_model extends CI_Model {
 				. "LEFT JOIN (SELECT id_product, sum(amount) AS sum FROM `log` WHERE action=1 OR action=5 "
 				. "GROUP BY 1 ORDER BY 2) AS production "
 				. "ON products.id=production.id_product "
-				. "WHERE products.deleted='0' ORDER BY id";
+				. "WHERE products.deleted='0' ORDER BY name ASC";
 				
 		$query = $this->db->query($q);
 
