@@ -62,7 +62,7 @@ class Add extends CI_Controller {
 		
 		if($this->input->post('sent')) {
 				$this->log_model->addAction($this->input->post('id'), (0 - $this->input->post('amount')), 4);
-				redirect('main/status','refresh');
+				redirect('warehouse/add/sent','refresh');
 			} else {
 				$this->load->view('warehouse/add/sent_view', $data);
 			}
