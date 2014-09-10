@@ -57,7 +57,7 @@ $lang['h1_users_manage']				= "Zarządzanie użytkownikami";
 $lang['h1_users_manage_add']			= "Dodawanie lub edycja użytkownika";
 $lang['h1_notes_manage']				= "Zarządzanie notatkami";
 $lang['h1_notes_manage_add']			= "Dodawanie lub edycja notatek";
-$lang['h1_report']						= "Dodawanie lub edycja notatek";
+$lang['h1_report']						= "Log akcji systemowych";
 $lang['h1_status']						= "Aktualny stan magazynu";
 
 // global strings
@@ -73,8 +73,8 @@ $lang['login']							= "Login";
 $lang['level']							= "Poziom";
 $lang['passwd']							= "Hasło";
 $lang['data']							= "Data";
-$lang['data_start']						= "Data startowa";
-$lang['data_end']						= "Data końcowa";
+$lang['data_start']						= "Data startowa (włącznie)";
+$lang['data_end']						= "Data końcowa (włącznie)";
 $lang['title']							= "Tytuł";
 $lang['text']							= "Treść";
 $lang['new']							= "Dodaj nowy wpis";
@@ -86,3 +86,4 @@ $lang['wh']								= "Magazyn";
 $lang['onway']							= "W drodze";
 $lang['production']						= "W produkcji";
 $lang['total']							= "Total";
+$lang['all']							= "Wszyscy";

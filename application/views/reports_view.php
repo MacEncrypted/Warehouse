@@ -24,6 +24,15 @@
 			<input type="date" name="start" placeholder="2014-01-01" required>
 			<div class="label"><?php echo $this->lang->line('data_end'); ?></div>
 			<input type="date" name="end" placeholder="2014-01-01" required>
+			<div class="label"><?php echo $this->lang->line('login'); ?></div>
+			<select name="id_user">
+				<option value=""><?php echo $this->lang->line('all'); ?></option>
+					<?php foreach ($users as $user) { ?>
+						<option value="<?php echo $user['id']; ?>">
+							<?php echo $user['login']; ?>
+						</option>
+					<?php } ?>
+				</select>
 			<input type="submit" value="<?php echo $this->lang->line('generate'); ?>">
 		</form>
 

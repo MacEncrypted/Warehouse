@@ -154,15 +154,15 @@ class Log_model extends CI_Model {
 		return $products;
 	}
 	
-	public function getReports($start, $end) {
+	public function getReports($start, $end, $user = null) {
 				
 		$starts = date("Y-m-d H:i:s", strtotime($start));
-		$ends = date("Y-m-d H:i:s", strtotime($end));
+		$ends = date("Y-m-d H:i:s", strtotime($end . ' + 1 day'));
 				
 		$report = array();
 		$this->load->model('warehouse/library_model');
 					
-			$query = $this->db->query("SELECT "
+			$q = "SELECT "
 					. "products.id AS pid, "
 					. "products.name AS pname, "
 					. "log.date AS date, "
@@ -173,9 +173,16 @@ class Log_model extends CI_Model {
 					. "FROM log "
 					. "JOIN products ON log.id_product=products.id "
 					. "JOIN users ON log.id_user=users.id "
-					. "WHERE (date BETWEEN '$starts' AND '$ends') "
-					. "ORDER BY log.id DESC");
+					. "WHERE (date BETWEEN '$starts' AND '$ends') ";
+			
+			if($user != null) {
+				$q = "AND users.id='$user' ";
+			}
+			
+			$q .= "ORDER BY log.id DESC";
 
+			$query = $this->db->query($q);
+			
 				if ($query->num_rows() > 0) {
 
 					foreach ($query->result() as $row) {
