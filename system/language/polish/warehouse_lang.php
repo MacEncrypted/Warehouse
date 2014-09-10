@@ -45,6 +45,7 @@ $lang['long_welcome_text']				= 'Text powitalny';
 
 $lang['h1_add_product_production']		= "Dodawanie produktu do produkcji";
 $lang['h1_add_packing_onway']			= "Dodawanie packing listy w transporcie";
+$lang['h1_add_packing_grouponway']		= "Blokowanie + Dodawanie packing listy w transporcie";
 $lang['h1_add_packing_warehouse']		= "Dodawanie packing listy na magazyn";
 $lang['h1_add_return']					= "Dodawanie produktu - zwrot";
 $lang['h1_add_correction']				= "Korekta stanu na magazynie";
