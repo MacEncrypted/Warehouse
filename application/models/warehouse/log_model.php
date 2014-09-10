@@ -176,11 +176,11 @@ class Log_model extends CI_Model {
 					. "WHERE (date BETWEEN '$starts' AND '$ends') ";
 			
 			if($user != null) {
-				$q = "AND users.id='$user' ";
+				$q .= "AND users.id='$user' ";
 			}
 			
 			$q .= "ORDER BY log.id DESC";
-
+			
 			$query = $this->db->query($q);
 			
 				if ($query->num_rows() > 0) {

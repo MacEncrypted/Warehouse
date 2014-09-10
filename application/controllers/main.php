@@ -25,11 +25,25 @@ class Main extends CI_Controller {
 		if($this->input->post('sent')) {		
 			$data['reports'] = $this->log_model->getReports($this->input->post('start'),$this->input->post('end'),$this->input->post('user'));
 			$generate['start'] = $this->input->post('start');
-			$generate['end'] = $this->input->post('end');
-			$generate['user'] = $this->input->post('user');
+			$generate['end'] = $this->input->post('end');			
 			$data['generate'] = $generate;		
+			$data['user'] = $this->manage_model->getUser($this->input->post('user'));
 		}		
 		$data['users'] = $this->manage_model->getList();
 		$this->load->view('reports_view', $data);
+	}
+	
+	public function genreports() {
+		$data = array();
+		if($this->input->post('sent')) {		
+			$data['reports'] = $this->log_model->getReports($this->input->post('start'),$this->input->post('end'),$this->input->post('user'));
+			$generate['start'] = $this->input->post('start');
+			$generate['end'] = $this->input->post('end');			
+			$data['generate'] = $generate;		
+			$data['user'] = $this->manage_model->getUser($this->input->post('user'));
+		} else {
+			redirect('main/reports');
+		}		
+		$this->load->view('reportsgen_view', $data);
 	}
 }

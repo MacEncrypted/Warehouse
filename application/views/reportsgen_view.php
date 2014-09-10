@@ -6,8 +6,10 @@
 			if (isset($generate)) {
 				echo '<br>' . $generate['start'] . ' - ' . $generate['end'];
 			}
-			if (isset($user)) {
+			if (isset($user['login'])) {
 				echo ': ' . $user['login'];
+			} else {
+				echo ': ' . $this->lang->line('all');
 			}
 			?></h1>
     </div>
@@ -20,25 +22,6 @@
 
 	<!-- content area -->    
 	<section id="content" class="wide-content">
-
-		<form action="<?php echo base_url() . 'main/genreports'; ?>" method="POST">
-			<input type="hidden" name="sent" value="yes">
-			<div class="label"><?php echo $this->lang->line('data_start'); ?></div>
-			<input type="date" name="start" placeholder="2014-01-01" required>
-			<div class="label"><?php echo $this->lang->line('data_end'); ?></div>
-			<input type="date" name="end" placeholder="2014-01-01" required>
-			<div class="label"><?php echo $this->lang->line('login'); ?></div>
-			<select name="user">
-				<option value=""><?php echo $this->lang->line('all'); ?></option>
-					<?php foreach ($users as $user) { ?>
-						<option value="<?php echo $user['id']; ?>">
-							<?php echo $user['login']; ?>
-						</option>
-					<?php } ?>
-				</select>
-			<input type="submit" value="<?php echo $this->lang->line('generate'); ?>">
-		</form>
-
 <?php if (isset($generate)) { ?>		
 			<table>
 				<tr><th><?php echo $this->lang->line('data'); ?></th>

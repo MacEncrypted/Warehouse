@@ -60,6 +60,7 @@
 						<li><a href="#"><?php echo $this->lang->line('menu_add_packing'); ?></a>
 							<ul>						
 								<li><a href="<?php echo base_url(); ?>warehouse/add/onway"><?php echo $this->lang->line('menu_packing_transport'); ?></a></li>
+								<li><a href="<?php echo base_url(); ?>warehouse/add/grouponway"><?php echo $this->lang->line('menu_group_packing_transport'); ?></a></li>
 							</ul>
 						</li>
 					<?php } ?>

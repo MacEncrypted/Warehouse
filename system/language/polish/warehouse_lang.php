@@ -15,6 +15,7 @@ $lang['menu_production']				= "Produkcja";
 $lang['menu_inproduction']				= "W produkcji";
 $lang['menu_add_packing']				= "W drodze";
 $lang['menu_packing_transport']			= "Dodanie packing listy";
+$lang['menu_group_packing_transport']	= "Grupowe dodanie packing listy";
 $lang['menu_warehouse']					= "Magazyn";
 $lang['menu_warehouse_in']				= "Przyjęcie towaru - packing lista";
 $lang['menu_warehouse_back']			= "Zwrot";
