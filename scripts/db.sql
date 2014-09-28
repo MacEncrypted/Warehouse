@@ -16,6 +16,24 @@ CREATE TABLE IF NOT EXISTS `log` (
 -- --------------------------------------------------------
 
 --
+-- Struktura tabeli dla  `log_history`
+--
+
+CREATE TABLE IF NOT EXISTS `log_history` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `id_user` int(11) NOT NULL,
+  `action` int(11) NOT NULL,
+  `amount` int(11) NOT NULL,
+  `id_product` int(11) NOT NULL,
+  `id_packing` int(11) NOT NULL,
+  `info` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin2 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Struktura tabeli dla  `notes`
 --
 

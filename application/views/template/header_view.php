@@ -96,7 +96,10 @@
 						<li><a href="#"><?php echo $this->lang->line('menu_system'); ?></a>
 							<ul>
 								<li><a href="<?php echo base_url(); ?>main/reports"><?php echo $this->lang->line('menu_system_log'); ?></a></li>								
-								<li><a href="<?php echo base_url(); ?>notes/manage"><?php echo $this->lang->line('menu_system_notes'); ?></a></li>
+								<li><a href="<?php echo base_url(); ?>notes/manage"><?php echo $this->lang->line('menu_system_notes'); ?></a></li>							
+								<?php if ($this->session->userdata('admin_lvl')) { ?>
+								<li><a href="<?php echo base_url(); ?>warehouse/zero"><?php echo $this->lang->line('menu_system_zero'); ?></a></li>	
+								<?php } ?>
 							</ul>
 						</li>
 					<?php } ?>
