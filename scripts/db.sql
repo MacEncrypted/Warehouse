@@ -1,5 +1,5 @@
 --
--- Struktura tabeli dla  `log`
+-- Structure for table  `log`
 --
 
 CREATE TABLE IF NOT EXISTS `log` (
@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS `log` (
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla  `log_history`
+-- Structure for table  `log_history`
 --
 
 CREATE TABLE IF NOT EXISTS `log_history` (
@@ -34,7 +34,7 @@ CREATE TABLE IF NOT EXISTS `log_history` (
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla  `notes`
+-- Structure for table  `notes`
 --
 
 CREATE TABLE IF NOT EXISTS `notes` (
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `notes` (
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla  `packings`
+-- Structure for table  `packings`
 --
 
 CREATE TABLE IF NOT EXISTS `packings` (
@@ -64,7 +64,7 @@ CREATE TABLE IF NOT EXISTS `packings` (
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla  `products`
+-- Structure for table  `products`
 --
 
 CREATE TABLE IF NOT EXISTS `products` (
@@ -78,7 +78,7 @@ CREATE TABLE IF NOT EXISTS `products` (
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla  `users`
+-- Structure for table  `users`
 --
 
 CREATE TABLE IF NOT EXISTS `users` (
@@ -92,8 +92,8 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 -- --------------------------------------------------------
 
--- Insert primary user
--- login: root
--- passwd: root (md5)
+--
+-- Insert of primary Warehouse user.
+--
 INSERT INTO `users` (`id`, `login`, `passwd`) VALUES ('1', 'root', '63a9f0ea7bb98050796b649e85481845');
 
