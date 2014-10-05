@@ -2,12 +2,12 @@
 
 // header
 
-$lang['header_title']					= 'Warehouse';
-$lang['header_desc']					= 'Warehouse';
-$lang['header_keywords']				= 'Warehouse';
+$lang['header_title']					= 'Warehouse by Encrypted.pl';
+$lang['header_desc']					= 'Warehouse by Encrypted.pl';
+$lang['header_keywords']				= 'Warehouse by Encrypted.pl';
 
 // footer
-$lang['footer']							= "Warehouse by Encrypted.pl v.1.0";
+$lang['footer_text']							= "Warehouse by Encrypted.pl v.1.0";
 
 // menu
 $lang['menu_menu']						= "Menu";
@@ -97,3 +97,4 @@ $lang['production']						= "W produkcji";
 $lang['total']							= "Total";
 $lang['all']							= "Wszyscy";
 $lang['confirm']						= "Potwierdzam";
+$lang['print']                                                  = "Drukuj";          

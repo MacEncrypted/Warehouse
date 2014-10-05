@@ -41,7 +41,11 @@
 			</table>
 <?php } ?>
 
-
+            <div id="print">
+                <a href="#" class="buttonlink" onclick="window.print();return false;">
+                    <?php echo $this->lang->line('print'); ?>
+                </a>
+            </div>
 	</section><!-- #end content area -->
 
 </div><!-- #end div #main .wrapper -->
