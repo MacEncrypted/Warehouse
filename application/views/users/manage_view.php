@@ -29,8 +29,8 @@
 						<?php if($user['level']==2) { echo 'Administrator'; } ?>
 					</td>
 					<td>
-						<a href="<?php echo base_url(); ?>users/manage/del/<?php echo $user['id']; ?>">Kasuj</a>
-						<a href="<?php echo base_url(); ?>users/manage/edit/<?php echo $user['id']; ?>">Edytuj</a>
+						<a href="<?php echo base_url(); ?>users/manage/del/<?php echo $user['id']; ?>" onclick="return confirm(<?php echo $this->lang->line('confirm_delete'); ?>);"><?php echo $this->lang->line('del'); ?></a>
+						<a href="<?php echo base_url(); ?>users/manage/edit/<?php echo $user['id']; ?>"><?php echo $this->lang->line('edit'); ?></a>
 					</td>
 				</tr>
 			<?php } ?>			

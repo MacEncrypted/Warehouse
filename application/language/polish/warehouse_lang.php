@@ -91,6 +91,7 @@ $lang['text']							= "Treść";
 $lang['new']							= "Dodaj nowy wpis";
 $lang['edit']							= "Edytuj";
 $lang['del']							= "Kasuj";
+$lang['confirm_delete']					= "'Proszę potwierdzić kasowanie. Operacja nie może zostać cofnięta.'";
 $lang['generate']						= "Generuj";
 $lang['lib']							= "Biblioteka";
 $lang['wh']								= "Magazyn";

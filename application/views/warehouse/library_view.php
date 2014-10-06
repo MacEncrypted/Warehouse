@@ -27,7 +27,7 @@
 					<td><?php echo $product['desc']; ?></td>
 					<td>
 						<?php if ($this->session->userdata('admin_lvl')) { ?>
-						<a href="<?php echo base_url(); ?>warehouse/library/del/<?php echo $product['id']; ?>"><?php echo $this->lang->line('del'); ?></a>
+						<a href="<?php echo base_url(); ?>warehouse/library/del/<?php echo $product['id']; ?>" onclick="return confirm(<?php echo $this->lang->line('confirm_delete'); ?>);"><?php echo $this->lang->line('del'); ?></a>
 						<?php } ?>
 						<a href="<?php echo base_url(); ?>warehouse/library/edit/<?php echo $product['id']; ?>"><?php echo $this->lang->line('edit'); ?></a>
 					</td>

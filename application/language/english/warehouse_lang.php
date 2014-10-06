@@ -89,6 +89,7 @@ $lang['title']							= "Title";
 $lang['text']							= "Content";
 $lang['new']							= "Add new";
 $lang['edit']							= "Edit";
+$lang['confirm_delete']					= "'Please confirm deleting. This operation cannot be undone.'";
 $lang['del']							= "Delete";
 $lang['generate']						= "Generate";
 $lang['lib']							= "Library";

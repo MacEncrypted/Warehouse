@@ -28,7 +28,7 @@
 					<td><?php echo $note['text']; ?></td>	
 					<td><?php echo $note['user']; ?></td>		
 					<td>
-						<a href="<?php echo base_url(); ?>notes/manage/del/<?php echo $note['id']; ?>"><?php echo $this->lang->line('del'); ?></a>
+						<a href="<?php echo base_url(); ?>notes/manage/del/<?php echo $note['id']; ?>" onclick="return confirm(<?php echo $this->lang->line('confirm_delete'); ?>);"><?php echo $this->lang->line('del'); ?></a>
 						<a href="<?php echo base_url(); ?>notes/manage/edit/<?php echo $note['id']; ?>"><?php echo $this->lang->line('edit'); ?></a>
 					</td>
 				</tr>
