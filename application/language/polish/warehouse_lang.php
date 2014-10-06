@@ -18,6 +18,7 @@ $lang['menu_packing_transport']			= "Dodanie packing listy";
 $lang['menu_group_packing_transport']	= "Grupowe dodanie packing listy";
 $lang['menu_warehouse']					= "Magazyn";
 $lang['menu_warehouse_in']				= "Przyjęcie towaru - packing lista";
+$lang['menu_warehouse_groupin']			= "Grupowe przyjęcie towaru";
 $lang['menu_warehouse_back']			= "Zwrot";
 $lang['menu_warehouse_correct']			= "Korekta";
 $lang['menu_warehouse_out']				= "Wydanie towaru";			
@@ -49,6 +50,7 @@ $lang['h1_add_product_production']		= "Dodawanie produktu do produkcji";
 $lang['h1_add_packing_onway']			= "Dodawanie packing listy w transporcie";
 $lang['h1_add_packing_grouponway']		= "Blokowanie + Dodawanie packing listy w transporcie";
 $lang['h1_add_packing_warehouse']		= "Dodawanie packing listy na magazyn";
+$lang['h1_add_grouppacking_warehouse']		= "Grupowe dodawanie packing listy na magazyn";
 $lang['h1_add_return']					= "Dodawanie produktu - zwrot";
 $lang['h1_add_correction']				= "Korekta stanu na magazynie";
 $lang['h1_add_sent']					= "Wydanie towaru";
@@ -97,4 +99,13 @@ $lang['production']						= "W produkcji";
 $lang['total']							= "Total";
 $lang['all']							= "Wszyscy";
 $lang['confirm']						= "Potwierdzam";
-$lang['print']                                                  = "Drukuj";          
+$lang['print']                          = "Drukuj"; 
+
+// actions
+
+$lang['action_1']	= 'zmiana w produkcji';
+$lang['action_2']	= 'zwrot na magazyn'; 
+$lang['action_3']	= 'korekta magazynu';
+$lang['action_4']	= 'wydanie z magazynu';
+$lang['action_5']	= 'zmiana w packing list';
+$lang['action_6']	= 'packing na magazyn';

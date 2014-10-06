@@ -18,6 +18,7 @@ $lang['menu_packing_transport']			= "Adding packing list";
 $lang['menu_group_packing_transport']	= "Group adding packing list";
 $lang['menu_warehouse']					= "Warehouse";
 $lang['menu_warehouse_in']				= "Packing list income";
+$lang['menu_warehouse_in']				= "Packing list group income";
 $lang['menu_warehouse_back']			= "Return";
 $lang['menu_warehouse_correct']			= "Correction";
 $lang['menu_warehouse_out']				= "Outcome";			
@@ -97,4 +98,13 @@ $lang['production']						= "In production";
 $lang['total']							= "Total";
 $lang['all']							= "All";
 $lang['confirm']						= "Confirm";
-$lang['print']                                                  = "Print";
+$lang['print']                          = "Print";
+
+// actions
+
+$lang['action_1']	= 'production change';
+$lang['action_2']	= 'warehouse give back'; 
+$lang['action_3']	= 'warehouse correction';
+$lang['action_4']	= 'warehouse give out';
+$lang['action_5']	= 'change on packing list';
+$lang['action_6']	= 'add packing to warehouse';

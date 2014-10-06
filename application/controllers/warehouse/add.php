@@ -83,7 +83,7 @@ class Add extends CI_Controller {
 			$this->load->view('warehouse/add/onway_view', $data);
 	}
 	
-	// id = 5 + blokowanie 1 listy
+	// id = 5 + bloack 1 list
 	public function grouponway() {		
 		$data = array();	
 		
@@ -120,4 +120,27 @@ class Add extends CI_Controller {
 
 			$this->load->view('warehouse/add/packing_view', $data);
 	}
+	
+	// id = 6
+	public function grouppacking() {			
+		$data = array();	
+		
+		if($this->input->post('pckgid')) {
+			if($this->input->post('sent') && $this->input->post('id') && $this->input->post('amount')) {				
+				$amount = $this->input->post('amount');
+				$this->log_model->addAction($this->input->post('id'), $amount, 6, $this->input->post('pckgid'));
+			}
+			
+			$data['products'] = $this->library_model->getList();
+			$data['packings'] = $this->library_model->getPackingsList();
+			$data['reports'] = $this->log_model->getPackingList(6, 0);
+			$data['lock'] = $this->input->post('pckgid');
+			
+			$this->load->view('warehouse/add/grouppacking_lock_view', $data);
+		} else {
+			$data['packings'] = $this->library_model->getPackingsList();
+			$data['reports'] = $this->log_model->getPackingList(6, 0);
+			$this->load->view('warehouse/add/grouppacking_pre_view', $data);			
+		}
+	}	
 }
