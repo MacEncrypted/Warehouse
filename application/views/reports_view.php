@@ -24,9 +24,9 @@
 		<form action="<?php echo base_url() . 'main/genreports'; ?>" method="POST">
 			<input type="hidden" name="sent" value="yes">
 			<div class="label"><?php echo $this->lang->line('data_start'); ?></div>
-			<input type="date" name="start" placeholder="2014-01-01" required>
+			<input type="date" name="start" value="<?php echo date('Y-m-d'); ?>" required>
 			<div class="label"><?php echo $this->lang->line('data_end'); ?></div>
-			<input type="date" name="end" placeholder="2014-01-01" required>
+			<input type="date" name="end" value="<?php echo date('Y-m-d'); ?>" required>
 			<div class="label"><?php echo $this->lang->line('login'); ?></div>
 			<select name="user">
 				<option value=""><?php echo $this->lang->line('all'); ?></option>
