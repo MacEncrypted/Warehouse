@@ -26,6 +26,7 @@ $lang['menu_warehouse_report']			= "Warehouse report";
 $lang['menu_lib']						= "Library";
 $lang['menu_lib_products']				= "Products";
 $lang['menu_lib_packing']				= "Packing lists";
+$lang['menu_lib_orders']				= "Orders";
 $lang['menu_users']						= "Users";
 $lang['menu_manage']					= "Manage";
 $lang['menu_system']					= "System";
@@ -56,6 +57,7 @@ $lang['h1_add_sent']					= "Product outcome";
 $lang['h1_add_product']					= "Adding new product";
 $lang['h1_lib_manage']					= "Products managment";
 $lang['h1_add_packing']					= "Adding packing list";
+$lang['h1_add_order']					= "Adding order";
 $lang['h1_users_manage']				= "Users managment";
 $lang['h1_users_manage_add']			= "Adding or editing user";
 $lang['h1_notes_manage']				= "Notes managment";
@@ -73,6 +75,7 @@ $lang['h2_zero_pro_info']				= "Products deleted!!!";
 // global strings
 
 $lang['product']						= "Prooduct";
+$lang['order']							= "Order";
 $lang['packing']						= "Packing list";
 $lang['amount']							= "Amount";
 $lang['id']								= "Id";

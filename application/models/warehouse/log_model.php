@@ -40,6 +40,49 @@ class Log_model extends CI_Model {
 		return $products;
 	}
 	
+	// $ngroup is negation group (the one with minuses)
+	public function getOrderList($group, $ngroup = 5) {		
+		$q = "SELECT "
+				. "products.id AS id, "
+				. "products.name AS name, "
+				. "products.description AS description, "
+				. "orders.id AS orderid, "
+				. "orders.name AS ordername, "
+				. "counter.sum AS sum "
+				. "FROM products "
+				. "JOIN (SELECT id_product, id_order, sum(amount) AS sum, max(id) AS id_log FROM `log` WHERE action=$group OR action=$ngroup GROUP BY 1, 2) AS counter "
+				. "ON products.id=counter.id_product "
+				. "JOIN orders "
+				. "ON orders.id=counter.id_order "
+				. "WHERE products.deleted='0' AND counter.sum<>0 ORDER BY id_log DESC";
+			
+		//echo $q; exit;
+		
+		$query = $this->db->query($q);
+
+		$products = array();
+
+		if ($query->num_rows() > 0) {
+			
+			foreach ($query->result() as $row) {
+				$product = array();
+				$product['id'] = $row->id;
+				$product['name'] = $row->name;
+				$product['desc'] = $row->description;
+				if($row->sum != '') {
+					$product['sum'] = $row->sum;
+				} else {
+					$product['sum'] = 0;
+				}
+				$product['orderid'] = $row->orderid;
+				$product['order'] = $row->ordername;
+				$products[] = $product;
+			}
+		}
+		
+		return $products;
+	}
+	
 	public function getPackingList($group, $ngroup = 0) {
 		
 		$q = "SELECT "
@@ -81,10 +124,10 @@ class Log_model extends CI_Model {
 		return $products;
 	}
 	
-	public function addAction($id_product, $amount, $action, $id_packing = 0) {
+	public function addAction($id_product, $amount, $action, $id_packing = 0, $id_order = 0) {
 		$id_user = $this->session->userdata('user_id');
-		$this->db->query("INSERT INTO log (id_user, action, amount, id_product, id_packing) "
-				. "VALUES ('$id_user', '$action', '$amount', '$id_product', '$id_packing')");
+		$this->db->query("INSERT INTO log (id_user, action, amount, id_product, id_packing, id_order) "
+				. "VALUES ('$id_user', '$action', '$amount', '$id_product', '$id_packing', '$id_order')");
 	}
 	
 	public function getStatusList() {

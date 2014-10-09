@@ -83,6 +83,7 @@
 							<ul>
 								<li><a href="<?php echo base_url(); ?>warehouse/library"><?php echo $this->lang->line('menu_lib_products'); ?></a></li>							
 								<li><a href="<?php echo base_url(); ?>warehouse/packing"><?php echo $this->lang->line('menu_lib_packing'); ?></a></li>
+								<li><a href="<?php echo base_url(); ?>warehouse/order"><?php echo $this->lang->line('menu_lib_orders'); ?></a></li>
 							</ul>
 						</li>
 					<?php } ?>

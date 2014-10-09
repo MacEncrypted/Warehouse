@@ -9,6 +9,7 @@ class Add extends CI_Controller {
 		}
 		$this->load->model('warehouse/library_model');
 		$this->load->model('warehouse/log_model');
+		$this->load->model('warehouse/order_model');
 	}
 
 	public function index()
@@ -23,13 +24,14 @@ class Add extends CI_Controller {
 		}
 		$data = array();		
 		if($this->input->post('sent')) {
-				$this->log_model->addAction($this->input->post('id'), $this->input->post('amount'), 1);
-			}
+				$this->log_model->addAction($this->input->post('id'), $this->input->post('amount'), 1, 0, $this->input->post('oid'));
+		}
 			
-			$data['products'] = $this->library_model->getList();
-			$data['reports'] = $this->log_model->getList(1);
+		$data['products'] = $this->library_model->getList();
+		$data['reports'] = $this->log_model->getOrderList(1);
+		$data['orders'] = $this->order_model->getList();
 
-			$this->load->view('warehouse/add/production_view', $data);
+		$this->load->view('warehouse/add/production_view', $data);
 	}
 	
 	public function returner() {		
