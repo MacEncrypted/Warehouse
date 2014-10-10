@@ -28,18 +28,18 @@
 						</option>
 					<?php } ?>
 				</select>
-				<div class="label"><?php echo $this->lang->line('order'); ?></div>
+<!--			<div class="label"><?php echo $this->lang->line('order'); ?></div>
 				<select name="oid">
 					<?php foreach ($orders as $order) { ?>
 						<option value="<?php if (isset($order['id'])) {
-						echo $order['id'];
+						//echo $order['id'];
 					} ?>">
 						<?php if (isset($order['name'])) {
-							echo $order['name'];
+							//echo $order['name'];
 						} ?>
 						</option>
 					<?php } ?>
-				</select>
+				</select>-->
 				<div class="label"><?php echo $this->lang->line('amount'); ?></div>
 				<input type="number" name="amount">
 				<input type="submit">
@@ -50,14 +50,14 @@
 				<tr>
 					<th><?php echo $this->lang->line('product'); ?></th>
 					<th><?php echo $this->lang->line('amount'); ?></th>
-					<th><?php echo $this->lang->line('order'); ?></th>
+<!--					<th><?php echo $this->lang->line('order'); ?></th>-->
 				</tr>
 <?php foreach ($reports as $report) {
 	$sum = 0; ?>
 					<tr>
 						<td><?php echo $report['name']; ?></td>
 						<td><?php echo $report['sum']; ?></td>
-						<td><?php echo $report['order']; ?></td>
+<!--						<td><?php echo $report['order']; ?></td>-->
 					</tr>
 <?php } ?>
 			</table>

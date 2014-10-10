@@ -50,7 +50,10 @@ class Log_model extends CI_Model {
 				. "orders.name AS ordername, "
 				. "counter.sum AS sum "
 				. "FROM products "
-				. "JOIN (SELECT id_product, id_order, sum(amount) AS sum, max(id) AS id_log FROM `log` WHERE action=$group OR action=$ngroup GROUP BY 1, 2) AS counter "
+//				hide orders
+//				. "JOIN (SELECT id_product, id_order, sum(amount) AS sum, max(id) AS id_log FROM `log` WHERE action=$group OR action=$ngroup GROUP BY 1, 2) AS counter "
+//				hide orders
+				. "JOIN (SELECT id_product, id_order, sum(amount) AS sum, max(id) AS id_log FROM `log` WHERE action=$group OR action=$ngroup GROUP BY 1) AS counter "
 				. "ON products.id=counter.id_product "
 				. "JOIN orders "
 				. "ON orders.id=counter.id_order "
