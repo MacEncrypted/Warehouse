@@ -1,0 +1,53 @@
+<?php $this->load->view('template/header_view.php'); ?>
+
+<section id="page-header" class="clearfix">    
+	<div class="wrapper">
+		<h1><?php echo $this->lang->line('h1_proreport'); ?> <?php
+			if (isset($generate)) {
+				echo '<br>' . $generate['start'] . ' - ' . $generate['end'];
+			}
+			if (isset($generate['desc']) && $generate['desc'] != '') {
+				echo ': ' . $generate['desc'];
+			} else {
+				echo ': ' . $this->lang->line('all_desc');
+			}
+			?></h1>
+    </div>
+
+</section>
+
+
+<!-- main content area -->   
+<div class="wrapper" id="main"> 
+
+	<!-- content area -->    
+	<section id="content" class="wide-content">
+<?php if (isset($generate)) { ?>		
+			<table>
+				<tr><th><?php echo $this->lang->line('data'); ?></th>
+					<th><?php echo $this->lang->line('login'); ?></th>
+					<th><?php echo $this->lang->line('desc'); ?></th>
+					<th><?php echo $this->lang->line('product'); ?></th>
+					<th><?php echo $this->lang->line('amount'); ?></th></tr>
+	<?php foreach ($reports as $log) { ?>
+					<tr>						
+						<td><?php echo $log['date']; ?></td>					
+						<td><?php echo $log['login']; ?></td>					
+						<td><?php echo $log['pdesc']; ?></td>
+						<td><?php echo $log['pname']; ?></td>
+						<td><?php echo $log['amount']; ?></td>
+					</tr>
+			<?php } ?>
+			</table>
+<?php } ?>
+
+            <div id="print">
+                <a href="#" class="buttonlink" onclick="window.print();return false;">
+                    <?php echo $this->lang->line('print'); ?>
+                </a>
+            </div>
+	</section><!-- #end content area -->
+
+</div><!-- #end div #main .wrapper -->
+
+<?php $this->load->view('template/footer_view.php'); ?>

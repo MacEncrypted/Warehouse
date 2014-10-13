@@ -42,7 +42,7 @@
 		<header class="wrapper clearfix">
 
 			<div id="banner">        
-				<a href="<?php echo base_url(); ?>"><img src="http://encrypted.pl/img/logo-small.png" height="60" width="234"></a>
+				<a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>images/warehouse-logo.png" height="60" width="234"></a>
 			</div>
 
 			<!-- main navigation -->
@@ -53,6 +53,7 @@
 						<li><a href="#"><?php echo $this->lang->line('menu_production'); ?></a>
 							<ul>						
 								<li><a href="<?php echo base_url(); ?>warehouse/add/production"><?php echo $this->lang->line('menu_inproduction'); ?></a></li>
+								<li><a href="<?php echo base_url(); ?>main/proreports"><?php echo $this->lang->line('menu_proreport'); ?></a></li>
 							</ul>
 						</li>
 					<?php } ?>

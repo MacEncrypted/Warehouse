@@ -254,6 +254,55 @@ class Log_model extends CI_Model {
 		return $report;
 	}
 	
+	public function getProReports($start, $end, $desc = null) {
+				
+		$starts = date("Y-m-d H:i:s", strtotime($start));
+		$ends = date("Y-m-d H:i:s", strtotime($end . ' + 1 day'));
+				
+		$report = array();
+		$this->load->model('warehouse/library_model');
+					
+			$q = "SELECT "
+					. "products.id AS pid, "
+					. "products.name AS pname, "
+					. "products.description AS pdesc, "
+					. "log.date AS date, "
+					. "users.id AS uid, "
+					. "users.login AS login, "
+					. "log.action AS action, "
+					. "log.amount AS amount "
+					. "FROM log "
+					. "JOIN products ON log.id_product=products.id "
+					. "JOIN users ON log.id_user=users.id "
+					. "WHERE (date BETWEEN '$starts' AND '$ends') "					
+					. "AND action=1 ";
+			
+			if ($desc != null) {
+				$q .= "AND products.description='$desc' ";
+			}
+			
+			$q .= "ORDER BY log.id DESC";
+			
+			$query = $this->db->query($q);
+			
+				if ($query->num_rows() > 0) {
+
+					foreach ($query->result() as $row) {
+						$log = array();
+						$log['pid'] = $row->pid;
+						$log['pname'] = $row->pname;
+						$log['date'] = $row->date;
+						$log['uid'] = $row->uid;
+						$log['login'] = $row->login;
+						$log['pdesc'] = $row->pdesc;
+						$log['amount'] = $row->amount;
+						$report[] = $log;
+					}
+				}
+							
+		return $report;
+	}
+	
 	private function getLongActionName($action) {
 		return $this->lang->line('action_'.$action);
 	}

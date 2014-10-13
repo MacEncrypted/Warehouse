@@ -12,6 +12,7 @@ $lang['footer_text']							= "Warehouse by Encrypted.pl v.1.0";
 // menu
 $lang['menu_menu']						= "Menu";
 $lang['menu_production']				= "Production";
+$lang['menu_proreport']					= "Production report";
 $lang['menu_inproduction']				= "In production";
 $lang['menu_add_packing']				= "On way";
 $lang['menu_packing_transport']			= "Adding packing list";
@@ -63,6 +64,7 @@ $lang['h1_users_manage_add']			= "Adding or editing user";
 $lang['h1_notes_manage']				= "Notes managment";
 $lang['h1_notes_manage_add']			= "Adding or editing notes";
 $lang['h1_report']						= "System actions log";
+$lang['h1_proreport']					= "Production log";
 $lang['h1_status']						= "Current warehouse status";
 
 // h2
