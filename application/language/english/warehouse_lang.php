@@ -103,6 +103,7 @@ $lang['onway']							= "On way";
 $lang['production']						= "In production";
 $lang['total']							= "Total";
 $lang['all']							= "All";
+$lang['all_desc']						= "All descriptions";
 $lang['confirm']						= "Confirm";
 $lang['print']                          = "Print";
 
