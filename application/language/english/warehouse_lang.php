@@ -34,6 +34,7 @@ $lang['menu_system']					= "System";
 $lang['menu_system_log']				= "System log";
 $lang['menu_system_notes']				= "Notes";
 $lang['menu_system_zero']				= "Clearing system";
+$lang['menu_system_search']				= "System search";
 $lang['menu_login']						= "Signin in";
 $lang['menu_login_user']				= "User: ";
 $lang['menu_login_logout']				= "Logout";
@@ -66,6 +67,7 @@ $lang['h1_notes_manage_add']			= "Adding or editing notes";
 $lang['h1_report']						= "System actions log";
 $lang['h1_proreport']					= "Production log";
 $lang['h1_status']						= "Current warehouse status";
+$lang['h1_search']						= "Search";
 
 // h2
 

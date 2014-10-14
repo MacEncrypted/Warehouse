@@ -189,10 +189,67 @@ class Log_model extends CI_Model {
 				$product = array();
 				$product['id'] = $row->id;
 				$product['name'] = $row->name;
+				$product['desc'] = $row->description;				
+				$product['magazyn_sum'] = intval($row->magazyn_sum);
+				$product['onway_sum'] = intval(0-$row->onway_sum);
+				$product['production_sum'] = intval($row->production_sum);
+				$products[] = $product;
+			}
+		}
+		
+		return $products;
+	}
+        
+        public function getSearchList($start, $end, $product, $packing) {
+	
+                $starts = date("Y-m-d H:i:s", strtotime($start));
+		$ends = date("Y-m-d H:i:s", strtotime($end . ' + 1 day'));
+            
+                $qand = "AND (date BETWEEN '$starts' AND '$ends') ";
+                
+                if ($packing != '') {
+                    $qand = "AND id_packing=$packing ";
+                }
+                                
+                $q = "SELECT "
+				. "products.id AS id, "
+				. "products.name AS name, "
+				. "products.description AS description, "
+				. "magazyn.sum AS magazyn_sum, "
+				. "production.sum AS production_sum, "
+				. "onway.sum AS onway_sum "
+				. "FROM products "
+				. "LEFT JOIN (SELECT id_product, sum(amount) AS sum, id_packing  FROM `log` WHERE (action=2 OR action=3 OR action=4 OR action=6) $qand"
+				. "GROUP BY 1 ORDER BY 2) AS magazyn "
+				. "ON products.id=magazyn.id_product "
+				. "LEFT JOIN (SELECT id_product, id_packing, sum(amount) AS sum FROM `log` WHERE (action=5 OR action=6) $qand"
+				. "GROUP BY 1) AS onway "
+				. "ON products.id=onway.id_product "
+				. "LEFT JOIN (SELECT id_product, sum(amount), id_packing AS sum FROM `log` WHERE (action=1 OR action=5) $qand"
+				. "GROUP BY 1 ORDER BY 2) AS production "
+				. "ON products.id=production.id_product "
+				. "WHERE products.deleted='0' ";
+                
+                if ($product != '') {
+                    $q .= "AND products.id=$product ";
+                }
+                
+                $q .= "ORDER BY name ASC";
+				
+		$query = $this->db->query($q);
+
+		$products = array();
+
+		if ($query->num_rows() > 0) {
+			
+			foreach ($query->result() as $row) {
+				$product = array();
+				$product['id'] = $row->id;
+				$product['name'] = $row->name;
 				$product['desc'] = $row->description;
-				$product['magazyn_sum'] = $row->magazyn_sum;
-				$product['onway_sum'] = (0-$row->onway_sum);
-				$product['production_sum'] = $row->production_sum;
+				$product['magazyn_sum'] = intval($row->magazyn_sum);
+				$product['onway_sum'] = intval(0-$row->onway_sum);
+				$product['production_sum'] = intval($row->production_sum);
 				$products[] = $product;
 			}
 		}

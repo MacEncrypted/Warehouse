@@ -34,6 +34,7 @@ $lang['menu_system']					= "System";
 $lang['menu_system_log']				= "Log systemowy";
 $lang['menu_system_notes']				= "Notatki";
 $lang['menu_system_zero']				= "Zerowanie systemu";
+$lang['menu_system_search']				= "Wyszukiwarka";
 $lang['menu_login']						= "Logowanie";
 $lang['menu_login_user']				= "Użytkownik: ";
 $lang['menu_login_logout']				= "Wyloguj";
@@ -67,6 +68,7 @@ $lang['h1_notes_manage_add']			= "Dodawanie lub edycja notatek";
 $lang['h1_report']						= "Log akcji systemowych";
 $lang['h1_proreport']					= "Log produkcji";
 $lang['h1_status']						= "Aktualny stan magazynu";
+$lang['h1_search']						= "Wyszukiwarka";
 
 // h2
 
@@ -103,7 +105,7 @@ $lang['wh']								= "Magazyn";
 $lang['onway']							= "W drodze";
 $lang['production']						= "W produkcji";
 $lang['total']							= "Total";
-$lang['all']							= "Wszyscy";
+$lang['all']							= "Wszystkie opcje";
 $lang['all_desc']						= "Wszystkie opisy";
 $lang['confirm']						= "Potwierdzam";
 $lang['print']                          = "Drukuj"; 
