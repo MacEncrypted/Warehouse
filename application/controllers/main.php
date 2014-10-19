@@ -92,7 +92,7 @@ class Main extends CI_Controller {
 			$generate['start'] = $this->input->post('start');
 			$generate['end'] = $this->input->post('end');
 			
-                        if ($this->input->post('packing') != '') {
+                        if ($this->input->post('packings') != '') {
                             $generate['packing'] = $this->packing_model->getPacking($this->input->post('packings'));
                         }
                         if ($this->input->post('products') != '') {
