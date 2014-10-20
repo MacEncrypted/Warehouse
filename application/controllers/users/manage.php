@@ -5,7 +5,7 @@ class Manage extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		if (!$this->session->userdata('admin_lvl')) {
-			die('Access restricted!');
+			die(redirect(base_url() . 'main/noaccess'));
 		}
 		$this->load->model('users/manage_model');
 	}

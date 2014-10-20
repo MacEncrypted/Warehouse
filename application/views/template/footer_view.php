@@ -8,7 +8,9 @@
 	<div id="attribution" class="wrapper clearfix" style="color:#666; font-size:11px;">
 		Site built with <a href="http://www.prowebdesign.ro/simple-responsive-template/" target="_blank" title="Simple Responsive Template is a free software by www.prowebdesign.ro" style="color:#777;">Simple Responsive Template</a>
 		<br/>
-		SESSION: user_id(<?php print_r($this->session->userdata('user_id')); ?>)
+                <?php if ($this->session->userdata('user_id')) {
+                    echo 'Session user_id: ('. $this->session->userdata('user_id').')';
+                } ?>
 	</div><!--end attribution-->
     
 </footer><!-- #end footer area --> 

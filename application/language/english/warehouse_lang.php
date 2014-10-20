@@ -46,6 +46,7 @@ $lang['menu_login_signin']				= "Sign in";
 
 $lang['long_welcome_header']			= 'Welcome txt (h2 text)';
 $lang['long_welcome_text']				= 'Welcome long txt (standard text)';
+$lang['long_noaccess']                          = 'You have no permission to display this page!';
 
 // h1
 
@@ -68,6 +69,7 @@ $lang['h1_report']						= "System actions log";
 $lang['h1_proreport']					= "Production log";
 $lang['h1_status']						= "Current warehouse status";
 $lang['h1_search']						= "Search";
+$lang['h1_noaccess']                                        = "No access";
 
 // h2
 

@@ -5,7 +5,7 @@ class Library extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		if (!$this->session->userdata('admin_lvl')) {
-			die('Access restricted!');
+			die(redirect(base_url() . 'main/noaccess'));
 		}
 		$this->load->model('warehouse/library_model');
 	}
@@ -40,7 +40,7 @@ class Library extends CI_Controller {
 	
 	public function del($id) {
 		if (!$this->session->userdata('admin_lvl')) {
-			die('Access restricted!');
+			die(redirect(base_url() . 'main/noaccess'));
 		}
 		$this->library_model->delProduct($id);			
 		redirect('warehouse/library','refresh');

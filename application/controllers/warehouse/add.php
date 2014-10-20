@@ -5,7 +5,7 @@ class Add extends CI_Controller {
 	public function __construct() {
 		parent::__construct();
 		if (!$this->session->userdata('user_lvl')) {
-			die('Access restricted!');
+			die(redirect(base_url() . 'main/noaccess'));
 		}
 		$this->load->model('warehouse/library_model');
 		$this->load->model('warehouse/log_model');
@@ -20,7 +20,7 @@ class Add extends CI_Controller {
 	// id = 1
 	public function production() {	
 		if (!$this->session->userdata('admin_lvl')) {
-			die('Access restricted!');
+			die(redirect(base_url() . 'main/noaccess'));
 		}
 		$data = array();		
 		if($this->input->post('sent')) {

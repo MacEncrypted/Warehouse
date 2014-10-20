@@ -46,6 +46,7 @@ $lang['menu_login_signin']				= "Zaloguj";
 
 $lang['long_welcome_header']			= 'Powitanie';
 $lang['long_welcome_text']				= 'Text powitalny';
+$lang['long_noaccess']                          = 'Nie masz uprawnień do oglądania żądanej strony!';
 
 // h1
 
@@ -69,6 +70,7 @@ $lang['h1_report']						= "Log akcji systemowych";
 $lang['h1_proreport']					= "Log produkcji";
 $lang['h1_status']						= "Aktualny stan magazynu";
 $lang['h1_search']						= "Wyszukiwarka";
+$lang['h1_noaccess']                                    = "Brak dostępu";
 
 // h2
 

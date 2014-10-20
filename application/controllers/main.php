@@ -15,4 +15,10 @@ class Main extends CI_Controller {
 		$data = array();
 		$this->load->view('index_view', $data);
 	}	
+        
+        public function noaccess()
+        {
+            $data = array();
+            $this->load->view('noaccess_view', $data);
+        }
 }
