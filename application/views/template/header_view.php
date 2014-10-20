@@ -53,7 +53,7 @@
 						<li><a href="#"><?php echo $this->lang->line('menu_production'); ?></a>
 							<ul>						
 								<li><a href="<?php echo base_url(); ?>warehouse/add/production"><?php echo $this->lang->line('menu_inproduction'); ?></a></li>
-								<li><a href="<?php echo base_url(); ?>main/proreports"><?php echo $this->lang->line('menu_proreport'); ?></a></li>
+								<li><a href="<?php echo base_url(); ?>enc/proreports"><?php echo $this->lang->line('menu_proreport'); ?></a></li>
 							</ul>
 						</li>
 					<?php } ?>
@@ -75,7 +75,7 @@
 									<li><a href="<?php echo base_url(); ?>warehouse/add/admin"><?php echo $this->lang->line('menu_warehouse_correct'); ?></a></li>
 								<?php } ?>
 								<li><a href="<?php echo base_url(); ?>warehouse/add/sent"><?php echo $this->lang->line('menu_warehouse_out'); ?></a></li>								
-								<li><a href="<?php echo base_url(); ?>main/status"><?php echo $this->lang->line('menu_warehouse_report'); ?></a></li>
+								<li><a href="<?php echo base_url(); ?>enc/status"><?php echo $this->lang->line('menu_warehouse_report'); ?></a></li>
 							</ul>
 						</li>
 					<?php } ?>
@@ -84,7 +84,7 @@
 							<ul>
 								<li><a href="<?php echo base_url(); ?>warehouse/library"><?php echo $this->lang->line('menu_lib_products'); ?></a></li>							
 								<li><a href="<?php echo base_url(); ?>warehouse/packing"><?php echo $this->lang->line('menu_lib_packing'); ?></a></li>
-								<li><a href="<?php echo base_url(); ?>warehouse/order"><?php echo $this->lang->line('menu_lib_orders'); ?></a></li>
+								<!-- <li><a href="<?php // echo base_url(); ?>warehouse/order"><?php // echo $this->lang->line('menu_lib_orders'); ?></a></li> -->
 							</ul>
 						</li>
 					<?php } ?>
@@ -98,8 +98,8 @@
 					<?php if ($this->session->userdata('user_lvl')) { ?>	
 						<li><a href="#"><?php echo $this->lang->line('menu_system'); ?></a>
 							<ul>
-								<li><a href="<?php echo base_url(); ?>main/reports"><?php echo $this->lang->line('menu_system_log'); ?></a></li>								
-								<li><a href="<?php echo base_url(); ?>main/search"><?php echo $this->lang->line('menu_system_search'); ?></a></li>								
+								<li><a href="<?php echo base_url(); ?>enc/reports"><?php echo $this->lang->line('menu_system_log'); ?></a></li>								
+								<li><a href="<?php echo base_url(); ?>enc/search"><?php echo $this->lang->line('menu_system_search'); ?></a></li>								
 								<li><a href="<?php echo base_url(); ?>notes/manage"><?php echo $this->lang->line('menu_system_notes'); ?></a></li>							
 								<?php if ($this->session->userdata('admin_lvl')) { ?>
 								<li><a href="<?php echo base_url(); ?>warehouse/zero"><?php echo $this->lang->line('menu_system_zero'); ?></a></li>	

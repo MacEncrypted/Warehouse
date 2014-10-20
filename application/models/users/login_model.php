@@ -12,6 +12,7 @@ class Login_model extends CI_Model {
 	}
 
 	public function init() {
+		$this->load->library('session');
 		if ($this->session->userdata('user_id')) {
 			$this->loadUserData();
 			$this->signout();
