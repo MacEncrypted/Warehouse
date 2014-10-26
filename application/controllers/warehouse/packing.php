@@ -41,8 +41,8 @@ class Packing extends CI_Controller {
 	public function del($id) {
 		if (!$this->session->userdata('admin_lvl')) {
 			die(redirect(base_url() . 'main/noaccess'));
-		}
-		$this->packing_model->delPacking($id);			
+		}		
+		$this->packing_model->delPacking($id);
 		redirect('warehouse/packing','refresh');
 	}
 }

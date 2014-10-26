@@ -5,7 +5,7 @@
 		<?php if (isset($user['name'])) { ?> 
 			<h1><?php echo $this->lang->line('edit'); ?> <?php echo $user['name']; ?></h1>
 		<?php } else { ?>
-			<h1><?php echo $this->lang->line('add_product'); ?></h1>
+			<h1><?php echo $this->lang->line('h1_add_product'); ?></h1>
 		<?php } ?>
     </div>
 

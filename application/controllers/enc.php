@@ -105,9 +105,6 @@ class Enc extends CI_Controller {
 
 			$data['generate'] = $generate;
 		} else {
-			echo 'nie ma sent<pre>';
-			var_dump($_POST);
-			exit;
 			redirect('system/search');
 		}
 		$this->load->view('searchgen_view', $data);

@@ -3,7 +3,7 @@
 <section id="page-header" class="clearfix">    
 <!-- responsive FlexSlider image slideshow -->
 <div class="wrapper">
-	<h1>Zarządzanie produktami</h1>
+	<h1><?php echo $this->lang->line('h1_lib_manage'); ?></h1>
     </div>
 
 </section>
