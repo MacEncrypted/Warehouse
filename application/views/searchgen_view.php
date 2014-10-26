@@ -30,7 +30,7 @@
 	<section id="content" class="wide-content">
 
 		<table>
-			<tr><th><?php echo $this->lang->line('id'); ?></th>
+			<tr><!--<th><?php //echo $this->lang->line('id'); ?></th>-->
 				<th><?php echo $this->lang->line('name'); ?></th>
 				<th><?php echo $this->lang->line('wh'); ?></th>
 				<th><?php echo $this->lang->line('onway'); ?></th>
@@ -39,7 +39,7 @@
 			<?php foreach ($products as $product) {
 				$sum = 0; ?>
 				<tr>
-					<td><?php echo $product['id']; ?></td>
+					<!--<td><?php //echo $product['id']; ?></td>-->
 					<td><?php echo $product['name']; ?></td>
 					<td><?php echo $product['magazyn_sum'];
 				$sum += $product['magazyn_sum']; ?></td>

@@ -23,6 +23,13 @@ class Zero extends CI_Controller {
 				$this->zero_model->zeroPro();
 				$data['info'] = $this->lang->line('h2_zero_pro_info');
 			}
+			if($this->input->post('zero_desc')) {
+				if ($this->zero_model->zeroDesc($this->input->post('zero_desc'))) {
+					$data['info'] = $this->lang->line('h2_zero_desc_info');
+				} else {
+					$data['info'] = $this->lang->line('h2_zero_desc_error_info');
+				}
+			}
 		}
 		$this->load->view('warehouse/zero_view', $data);
 	}

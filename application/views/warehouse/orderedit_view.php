@@ -33,13 +33,13 @@
 		</div>
 		<div class="grid_8">
 			<table>
-				<tr><th><?php echo $this->lang->line('id'); ?></th>
+				<tr><!--<th><?php //echo $this->lang->line('id'); ?></th>-->
 					<th><?php echo $this->lang->line('name'); ?></th>
 					<th><?php echo $this->lang->line('desc'); ?></th>
 					<th><?php echo $this->lang->line('actions'); ?></th></tr>
 <?php foreach ($orders as $order) { ?>
 					<tr>
-						<td><?php echo $order['id']; ?></td>
+						<!--<td><?php //echo $order['id']; ?></td>-->
 						<td><?php echo $order['name']; ?></td>
 						<td><?php echo $order['desc']; ?></td>
 						<td>

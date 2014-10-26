@@ -77,6 +77,9 @@ $lang['h2_zero_all']					= "Delete numerical values";
 $lang['h2_zero_all_info']				= "Numerical values deleted!!!";
 $lang['h2_zero_pro']					= "Delete products";
 $lang['h2_zero_pro_info']				= "Products deleted!!!";
+$lang['h2_zero_desc']					= "Delete for given description";
+$lang['h2_zero_desc_info']				= "Numerical for description delted!!!";
+$lang['h2_zero_desc_error_info']		= "Numerical for description NOT delted!!!";
 
 // global strings
 

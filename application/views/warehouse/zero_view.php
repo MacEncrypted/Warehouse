@@ -20,6 +20,14 @@
 				<input type="checkbox" class="chx" name="zero_all" value="yes" required="required"><?php echo $this->lang->line('confirm'); ?>
 				<input type="submit" >
 			</form>
+		</div>
+		<div class="grid_4">
+			<h2><?php echo $this->lang->line('h2_zero_desc'); ?></h2>
+			<form action="" method="POST">				
+				<input type="hidden" name="sent" value="yes">
+				<input type="text" name="zero_desc" required="required">
+				<input type="submit" >
+			</form>
 		</div>	
 		<div class="grid_4">
 			<h2><?php echo $this->lang->line('h2_zero_pro'); ?></h2>
@@ -29,7 +37,7 @@
 				<input type="submit" >
 			</form>
 		</div>
-		<div class="grid_4">
+		<div class="grid_12">
 			<h2><?php echo $info; ?></h2>
 		</div>
 	</section><!-- #end content area -->
