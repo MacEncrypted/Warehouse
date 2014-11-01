@@ -144,5 +144,27 @@ class Add extends CI_Controller {
 			$data['reports'] = $this->log_model->getPackingList(6, 0);
 			$this->load->view('warehouse/add/grouppacking_pre_view', $data);			
 		}
-	}	
+	}
+        
+        // id = 6
+	public function autopacking() {			
+		$data = array();	
+		
+		if($this->input->post('pckgid')) {
+			
+                    $packing_id = $this->input->post('pckgid');
+                    $this->log_model->copyActionByPacking(5, 6, $packing_id);
+			
+			$data['products'] = $this->library_model->getList();
+			$data['packings'] = $this->library_model->getPackingsList();
+			$data['reports'] = $this->log_model->getPackingList(6, 0);
+			$data['lock'] = $this->input->post('pckgid');
+			
+			$this->load->view('warehouse/add/grouppacking_lock_view', $data);
+		} else {
+			$data['packings'] = $this->library_model->getPackingsList();
+			$data['reports'] = $this->log_model->getPackingList(6, 0);
+			$this->load->view('warehouse/add/grouppacking_pre_view', $data);			
+		}
+	}
 }

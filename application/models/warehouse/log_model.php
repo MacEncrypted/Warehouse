@@ -363,4 +363,49 @@ class Log_model extends CI_Model {
 	private function getLongActionName($action) {
 		return $this->lang->line('action_'.$action);
 	}
+                
+        public function copyActionByPacking($action_from, $action_to, $id_packing) {
+            
+            $q = "SELECT "
+		. "products.id AS id, "
+		. "products.name AS name, "
+		. "products.description AS description, "
+		. "packings.id AS packingid, "
+		. "packings.name AS packing, "
+		. "counter.sum AS sum "
+		. "FROM products "
+		. "JOIN (SELECT id_product, id_packing, sum(amount) AS sum, max(id) AS id_log FROM `log` WHERE action=$action_from AND id_packing=$id_packing GROUP BY 1, 2) AS counter "
+		. "ON products.id=counter.id_product "
+		. "JOIN packings "
+		. "ON counter.id_packing = packings.id "
+		. "WHERE products.deleted='0' AND counter.sum<>0 AND packings.id =$id_packing ORDER BY id_log DESC";
+				
+            $query = $this->db->query($q);
+
+            $products = array();
+
+            if ($query->num_rows() > 0) {
+			
+            	foreach ($query->result() as $row) {
+			$product = array();
+			$product['id'] = $row->id;
+			$product['name'] = $row->name;
+			$product['desc'] = $row->description;
+			if($row->sum != '') {
+				$product['sum'] = $row->sum;
+			} else {
+				$product['sum'] = 0;
+			}
+			$product['packingid'] = $row->packingid;
+			$product['packing'] = $row->packing;
+			$products[] = $product;
+		}
+	}
+	
+        echo '<pre>';
+        print_r($products);
+        exit;
+        
+	return $products;
+    }
 }
