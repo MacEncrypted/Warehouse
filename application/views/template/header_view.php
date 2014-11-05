@@ -70,6 +70,7 @@
 							<ul>						
 								<li><a href="<?php echo base_url(); ?>warehouse/add/packing"><?php echo $this->lang->line('menu_warehouse_in'); ?></a></li>
 								<li><a href="<?php echo base_url(); ?>warehouse/add/grouppacking"><?php echo $this->lang->line('menu_warehouse_groupin'); ?></a></li>
+								<li><a href="<?php echo base_url(); ?>warehouse/add/autopacking"><?php echo $this->lang->line('menu_grouppacking_warehouse'); ?></a></li>
 								<li><a href="<?php echo base_url(); ?>warehouse/add/returner"><?php echo $this->lang->line('menu_warehouse_back'); ?></a></li>
 								<?php if ($this->session->userdata('user_id')) { ?>
 									<li><a href="<?php echo base_url(); ?>warehouse/add/admin"><?php echo $this->lang->line('menu_warehouse_correct'); ?></a></li>

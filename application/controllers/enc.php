@@ -62,7 +62,7 @@ class Enc extends CI_Controller {
 			$data['generate'] = $generate;
 			$data['user'] = $this->manage_model->getUser($this->input->post('user'));
 		} else {
-			redirect('system/reports');
+			redirect('enc/reports');
 		}
 		$this->load->view('reportsgen_view', $data);
 	}
@@ -77,7 +77,7 @@ class Enc extends CI_Controller {
 			$data['generate'] = $generate;
 			$data['user'] = $this->manage_model->getUser($this->input->post('user'));
 		} else {
-			redirect('system/proreports');
+			redirect('enc/proreports');
 		}
 		$this->load->view('proreportsgen_view', $data);
 	}
@@ -105,7 +105,7 @@ class Enc extends CI_Controller {
 
 			$data['generate'] = $generate;
 		} else {
-			redirect('system/search');
+			redirect('enc/search');
 		}
 		$this->load->view('searchgen_view', $data);
 	}

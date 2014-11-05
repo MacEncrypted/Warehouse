@@ -152,8 +152,8 @@ class Add extends CI_Controller {
 		
 		if($this->input->post('pckgid')) {
 			
-                    $packing_id = $this->input->post('pckgid');
-                    $this->log_model->copyActionByPacking(5, 6, $packing_id);
+            $packing_id = $this->input->post('pckgid');
+            $this->log_model->copyActionByPacking(5, 6, $packing_id);
 			
 			$data['products'] = $this->library_model->getList();
 			$data['packings'] = $this->library_model->getPackingsList();

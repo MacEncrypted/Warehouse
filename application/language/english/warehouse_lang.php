@@ -17,6 +17,7 @@ $lang['menu_inproduction']				= "In production";
 $lang['menu_add_packing']				= "On way";
 $lang['menu_packing_transport']			= "Adding packing list";
 $lang['menu_group_packing_transport']	= "Group adding packing list";
+$lang['menu_grouppacking_warehouse']	= "Automatic add packing list";
 $lang['menu_warehouse']					= "Warehouse";
 $lang['menu_warehouse_in']				= "Packing list income";
 $lang['menu_warehouse_in']				= "Packing list group income";
