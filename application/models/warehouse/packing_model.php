@@ -22,6 +22,11 @@ class Packing_model extends CI_Model {
 				$product['id'] = $row->id;
 				$product['name'] = $row->name;
 				$product['desc'] = $row->description;
+				if ($this->checkPackingNull($row->id)) {
+					$product['null'] = 1;
+				} else {
+					$product['null'] = 0;
+				}				
 				$products[] = $product;
 			}
 		}
@@ -73,7 +78,7 @@ class Packing_model extends CI_Model {
 				. "LEFT JOIN (SELECT id_product, id_packing, sum(amount) AS sum FROM `log` WHERE (action=5 OR action=6) AND id_packing=$id "
 				. "GROUP BY 1) AS onway "
 				. "ON products.id=onway.id_product "
-				. "LEFT JOIN (SELECT id_product, sum(amount), id_packing AS sum FROM `log` WHERE (action=1 OR action=5) AND id_packing=$id "
+				. "LEFT JOIN (SELECT id_product, sum(amount) AS sum, id_packing FROM `log` WHERE (action=1) AND id_packing=$id "
 				. "GROUP BY 1 ORDER BY 2) AS production "
 				. "ON products.id=production.id_product "
 				. "WHERE products.deleted='0' ";                
@@ -82,8 +87,7 @@ class Packing_model extends CI_Model {
 
 		$products = array();
 
-		if ($query->num_rows() > 0) {
-			
+		if ($query->num_rows() > 0) {			
 			foreach ($query->result() as $row) {
 				$product = array();
 				$product['id'] = $row->id;
@@ -97,14 +101,17 @@ class Packing_model extends CI_Model {
 		$totals = array();
 		
 		foreach($products as $product) {
-			$totals[$product['id']] = $product['magazyn_sum'] + $product['production_sum'] + $product['onway_sum'];
-			if($totals[$product['id']] != 0) {
+			//$totals[$product['id']] = $product['magazyn_sum'] + $product['production_sum'] - $product['onway_sum'];			
+			if($product['onway_sum'] != 0) {
 				return false;
 			}
 		}
 		
-		return true;
+//		echo '<pre>';
+//		echo print_r($products, true);
+//		echo print_r($totals, true);
+//		exit;
 		
-		// var_dump($totals); exit;		
+		return true;
 	}
 }

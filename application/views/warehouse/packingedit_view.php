@@ -43,8 +43,12 @@
 						<td><?php echo $product['name']; ?></td>
 						<td><?php echo $product['desc']; ?></td>
 						<td>
-	<?php if ($this->session->userdata('admin_lvl')) { ?>
+				<?php if ($this->session->userdata('admin_lvl')) { ?>
+							<?php if ($product['null'] != 0) { ?>
 								<a href="<?php echo base_url(); ?>warehouse/packing/del/<?php echo $product['id']; ?>" onclick="return confirm(<?php echo $this->lang->line('confirm_delete'); ?>);"><?php echo $this->lang->line('del'); ?></a>
+							<?php } else { ?>
+								<?php echo $this->lang->line('del'); ?>
+							<?php } ?>
 					<?php } ?>
 							<a href="<?php echo base_url(); ?>warehouse/packing/edit/<?php echo $product['id']; ?>"><?php echo $this->lang->line('edi'); ?></a>
 						</td>
