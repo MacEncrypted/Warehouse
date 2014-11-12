@@ -93,20 +93,17 @@ class Enc extends CI_Controller {
 	public function search() {
 		$data = array();
 		$data['products'] = $this->library_model->getList();
-		$data['packings'] = $this->packing_model->getList();
+		// $data['packings'] = $this->packing_model->getList();
 		$this->load->view('search_view', $data);
 	}
 
 	public function gensearch() {
 		$data = array();
 		if ($this->input->post('sent')) {
-			$data['products'] = $this->log_model->getSearchList($this->input->post('start'), $this->input->post('end'), $this->input->post('products'), $this->input->post('packings'));
+			$data['products'] = $this->log_model->getSearchList($this->input->post('start'), $this->input->post('end'), $this->input->post('products'));
 			$generate['start'] = $this->input->post('start');
 			$generate['end'] = $this->input->post('end');
 
-			if ($this->input->post('packings') != '') {
-				$generate['packing'] = $this->packing_model->getPacking($this->input->post('packings'));
-			}
 			if ($this->input->post('products') != '') {
 				$generate['product'] = $this->library_model->getProduct($this->input->post('products'));
 			}

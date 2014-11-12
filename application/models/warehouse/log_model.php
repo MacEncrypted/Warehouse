@@ -200,16 +200,12 @@ class Log_model extends CI_Model {
 		return $products;
 	}
 
-	public function getSearchList($start, $end, $product, $packing) {
+	public function getSearchList($start, $end, $product) {
 
 		$starts = date("Y-m-d H:i:s", strtotime($start));
 		$ends = date("Y-m-d H:i:s", strtotime($end . ' + 1 day'));
 
 		$qand = "AND (date BETWEEN '$starts' AND '$ends') ";
-
-		if ($packing != '') {
-			$qand = "AND id_packing=$packing ";
-		}
 
 		$q = "SELECT "
 				. "products.id AS id, "
@@ -217,17 +213,21 @@ class Log_model extends CI_Model {
 				. "products.description AS description, "
 				. "magazyn.sum AS magazyn_sum, "
 				. "production.sum AS production_sum, "
+				. "given.sum AS given_sum, "
 				. "onway.sum AS onway_sum "
 				. "FROM products "
-				. "LEFT JOIN (SELECT id_product, sum(amount) AS sum, id_packing  FROM `log` WHERE (action=2 OR action=3 OR action=4 OR action=6) $qand"
+				. "LEFT JOIN (SELECT id_product, sum(amount) AS sum FROM `log` WHERE action=2 OR action=3 OR action=4 OR action=6 "
 				. "GROUP BY 1 ORDER BY 2) AS magazyn "
 				. "ON products.id=magazyn.id_product "
-				. "LEFT JOIN (SELECT id_product, id_packing, sum(amount) AS sum FROM `log` WHERE (action=5 OR action=6) $qand"
+				. "LEFT JOIN (SELECT id_product, id_packing, sum(amount) AS sum FROM `log` WHERE action=5 OR action=6 "
 				. "GROUP BY 1) AS onway "
 				. "ON products.id=onway.id_product "
-				. "LEFT JOIN (SELECT id_product, sum(amount) AS sum, id_packing FROM `log` WHERE (action=1) $qand"
+				. "LEFT JOIN (SELECT id_product, sum(amount) AS sum FROM `log` WHERE action=1 OR action=5 "
 				. "GROUP BY 1 ORDER BY 2) AS production "
 				. "ON products.id=production.id_product "
+				. "LEFT JOIN (SELECT id_product, sum(amount) AS sum FROM `log` WHERE (action=4) $qand "
+				. "GROUP BY 1 ORDER BY 2) AS given "
+				. "ON products.id=given.id_product "
 				. "WHERE products.deleted='0' ";
 
 		if ($product != '') {
@@ -248,8 +248,10 @@ class Log_model extends CI_Model {
 				$product['name'] = $row->name;
 				$product['desc'] = $row->description;
 				$product['magazyn_sum'] = intval($row->magazyn_sum);
-				$product['onway_sum'] = intval(0 - $row->onway_sum);
+				$product['onway_sum'] = intval($row->onway_sum);
 				$product['production_sum'] = intval($row->production_sum);
+				$product['given_sum'] = intval(0 - $row->given_sum);
+				$product['total_sum'] = intval($product['magazyn_sum'] + $product['onway_sum'] + $product['production_sum'] + $product['given_sum']);
 				$products[] = $product;
 			}
 		}

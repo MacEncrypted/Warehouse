@@ -6,7 +6,7 @@ function getCSVData() {
 
 jQuery.fn.table2CSV = function(options) {
 	var options = jQuery.extend({
-		separator: ',',
+		separator: ';',
 		header: [],
 		delivery: 'popup' // popup, value
 	},

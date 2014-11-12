@@ -36,15 +36,6 @@
 					</option>
 				<?php } ?>
 			</select>
-			<div class="label"><?php echo $this->lang->line('packing'); ?></div>
-			<select name="packings">
-				<option value=""><?php echo $this->lang->line('all'); ?></option>
-				<?php foreach ($packings as $packing) { ?>
-					<option value="<?php echo $packing['id']; ?>">
-						<?php echo $packing['name']; ?>
-					</option>
-				<?php } ?>
-			</select>
 			<input type="submit" value="<?php echo $this->lang->line('generate'); ?>">
 		</form>
 

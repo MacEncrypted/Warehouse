@@ -111,6 +111,7 @@ $lang['wh'] = "Magazyn";
 $lang['onway'] = "W drodze";
 $lang['production'] = "W produkcji";
 $lang['total'] = "Total";
+$lang['given'] = "Łącznie wydano";
 $lang['all'] = "Wszystkie opcje";
 $lang['all_desc'] = "Wszystkie opisy";
 $lang['confirm'] = "Potwierdzam";
