@@ -21,11 +21,11 @@ class Zero_model extends CI_Model {
 		$this->db->query("UPDATE products SET deleted='1'");
 	}
 
-	public function zeroDesc($desc) {
+	public function zeroDesc($desc, $action) {
 		$marker = $this->session->userdata('user_login') . ' ' . time();
 		//$this->db->query("INSERT INTO log_history (id,date,id_user,action,amount,id_product,id_packing) SELECT log.id,log.date,log.id_user,log.action,log.amount,log.id_product,log.id_packing FROM log JOIN products ON products.id=log.id_product WHERE products.description='$desc'");		
 		$this->db->query("UPDATE log_history SET info='$marker' WHERE info=''");
-		$ids = $this->getIds("SELECT log.id FROM log JOIN products ON products.id=log.id_product WHERE products.description='$desc'");
+		$ids = $this->getIds("SELECT log.id FROM log JOIN products ON products.id=log.id_product WHERE products.description='$desc' AND log.action='$action'");
 		if ($ids != '') {
 			$this->db->query("DELETE FROM log WHERE log.id IN ($ids)");
 			return true;

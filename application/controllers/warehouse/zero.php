@@ -11,6 +11,7 @@ class Zero extends CI_Controller {
 			die(redirect(base_url() . 'main/noaccess'));
 		}
 		$this->load->model('warehouse/zero_model');
+		$this->load->model('warehouse/library_model');
 	}
 
 	public function index() {
@@ -26,13 +27,15 @@ class Zero extends CI_Controller {
 				$data['info'] = $this->lang->line('h2_zero_pro_info');
 			}
 			if ($this->input->post('zero_desc')) {
-				if ($this->zero_model->zeroDesc($this->input->post('zero_desc'))) {
+				// 1 = in production
+				if ($this->zero_model->zeroDesc($this->input->post('zero_desc'),1)) {
 					$data['info'] = $this->lang->line('h2_zero_desc_info');
 				} else {
 					$data['info'] = $this->lang->line('h2_zero_desc_error_info');
 				}
 			}
 		}
+		$data['descriptions'] = $this->library_model->getDescriptions();
 		$this->load->view('warehouse/zero_view', $data);
 	}
 

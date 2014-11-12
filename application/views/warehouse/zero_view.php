@@ -25,7 +25,21 @@
 			<h2><?php echo $this->lang->line('h2_zero_desc'); ?></h2>
 			<form action="" method="POST">				
 				<input type="hidden" name="sent" value="yes">
-				<input type="text" name="zero_desc" required="required">
+				<select name="zero_desc">
+					<?php foreach ($descriptions as $product) { ?>
+						<option value="<?php
+						if (isset($product['desc'])) {
+							echo $product['desc'];
+						}
+						?>">
+									<?php
+									if (isset($product['desc'])) {
+										echo $product['desc'];
+									}
+									?>
+						</option>
+					<?php } ?>
+				</select>
 				<input type="submit" >
 			</form>
 		</div>	

@@ -74,4 +74,15 @@ class Library_model extends CI_Model {
 		$this->db->query("UPDATE products SET deleted='1' WHERE id='$id'");
 	}
 
+	public function getDescriptions() {
+		$query = $this->db->query("SELECT DISTINCT description FROM products WHERE deleted=0");
+		$products = array();
+		if ($query->num_rows() > 0) {
+			foreach ($query->result() as $row) {
+				$product['desc'] = $row->description;
+				$products[] = $product;
+			}
+		}		
+		return $products;
+	}
 }

@@ -79,9 +79,9 @@ $lang['h2_zero_all'] = "Zeruj wartości liczbowe";
 $lang['h2_zero_all_info'] = "Wyzerowano wartości liczbowe!!!";
 $lang['h2_zero_pro'] = "Zeruj produkty";
 $lang['h2_zero_pro_info'] = "Wyzerowano produkty!!!";
-$lang['h2_zero_desc'] = "Zeruj wartości dla opisu";
-$lang['h2_zero_desc_info'] = "Wyzerowano dla podanego opisu!!!";
-$lang['h2_zero_desc_error_info'] = "NIE wyzerowano dla podanego opisu!!!";
+$lang['h2_zero_desc'] = "Zeruj wartości dla opisu w produkcji";
+$lang['h2_zero_desc_info'] = "Wyzerowano dla podanego opisu w produkcji!!!";
+$lang['h2_zero_desc_error_info'] = "NIE wyzerowano dla podanego opisu w produkcji!!!";
 
 // global strings
 
