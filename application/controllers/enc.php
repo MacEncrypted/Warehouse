@@ -20,6 +20,14 @@ class Enc extends CI_Controller {
 		
 	}
 
+	public function csv() {
+		$filename = time();
+		header("Content-type: application/octet-stream");
+		header("Content-Disposition: attachment; filename=\"$filename.csv\"");
+		$data = stripslashes($_REQUEST['csv_text']);
+		echo $data;
+	}
+
 	public function status() {
 		$data = array();
 		$data['products'] = $this->log_model->getNewStatusList();

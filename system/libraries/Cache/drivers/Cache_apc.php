@@ -1,4 +1,7 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+	exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
@@ -12,7 +15,6 @@
  * @since		Version 2.0
  * @filesource
  */
-
 // ------------------------------------------------------------------------
 
 /**
@@ -24,7 +26,6 @@
  * @author		ExpressionEngine Dev Team
  * @link
  */
-
 class CI_Cache_apc extends CI_Driver {
 
 	/**
@@ -36,8 +37,7 @@ class CI_Cache_apc extends CI_Driver {
 	 * @param 	string
 	 * @return 	mixed		value that is stored/FALSE on failure
 	 */
-	public function get($id)
-	{
+	public function get($id) {
 		$data = apc_fetch($id);
 
 		return (is_array($data)) ? $data[0] : FALSE;
@@ -54,8 +54,7 @@ class CI_Cache_apc extends CI_Driver {
 	 *
 	 * @return 	boolean		true on success/false on failure
 	 */
-	public function save($id, $data, $ttl = 60)
-	{
+	public function save($id, $data, $ttl = 60) {
 		return apc_store($id, array($data, time(), $ttl), $ttl);
 	}
 
@@ -67,8 +66,7 @@ class CI_Cache_apc extends CI_Driver {
 	 * @param 	mixed		unique identifier of the item in the cache
 	 * @param 	boolean		true on success/false on failure
 	 */
-	public function delete($id)
-	{
+	public function delete($id) {
 		return apc_delete($id);
 	}
 
@@ -79,8 +77,7 @@ class CI_Cache_apc extends CI_Driver {
 	 *
 	 * @return 	boolean		false on failure/true on success
 	 */
-	public function clean()
-	{
+	public function clean() {
 		return apc_clear_cache('user');
 	}
 
@@ -92,8 +89,7 @@ class CI_Cache_apc extends CI_Driver {
 	 * @param 	string		user/filehits
 	 * @return 	mixed		array on success, false on failure
 	 */
-	public function cache_info($type = NULL)
-	{
+	public function cache_info($type = NULL) {
 		return apc_cache_info($type);
 	}
 
@@ -105,21 +101,19 @@ class CI_Cache_apc extends CI_Driver {
 	 * @param 	mixed		key to get cache metadata on
 	 * @return 	mixed		array on success/false on failure
 	 */
-	public function get_metadata($id)
-	{
+	public function get_metadata($id) {
 		$stored = apc_fetch($id);
 
-		if (count($stored) !== 3)
-		{
+		if (count($stored) !== 3) {
 			return FALSE;
 		}
 
 		list($data, $time, $ttl) = $stored;
 
 		return array(
-			'expire'	=> $time + $ttl,
-			'mtime'		=> $time,
-			'data'		=> $data
+			'expire' => $time + $ttl,
+			'mtime' => $time,
+			'data' => $data
 		);
 	}
 
@@ -130,10 +124,8 @@ class CI_Cache_apc extends CI_Driver {
 	 *
 	 * Check to see if APC is available on this system, bail if it isn't.
 	 */
-	public function is_supported()
-	{
-		if ( ! extension_loaded('apc') OR ini_get('apc.enabled') != "1")
-		{
+	public function is_supported() {
+		if (!extension_loaded('apc') OR ini_get('apc.enabled') != "1") {
 			log_message('error', 'The APC PHP extension must be loaded to use APC Cache.');
 			return FALSE;
 		}

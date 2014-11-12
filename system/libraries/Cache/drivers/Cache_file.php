@@ -1,4 +1,7 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+	exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
@@ -12,7 +15,6 @@
  * @since		Version 2.0
  * @filesource
  */
-
 // ------------------------------------------------------------------------
 
 /**
@@ -24,7 +26,6 @@
  * @author		ExpressionEngine Dev Team
  * @link
  */
-
 class CI_Cache_file extends CI_Driver {
 
 	protected $_cache_path;
@@ -32,14 +33,13 @@ class CI_Cache_file extends CI_Driver {
 	/**
 	 * Constructor
 	 */
-	public function __construct()
-	{
-		$CI =& get_instance();
+	public function __construct() {
+		$CI = & get_instance();
 		$CI->load->helper('file');
 
 		$path = $CI->config->item('cache_path');
 
-		$this->_cache_path = ($path == '') ? APPPATH.'cache/' : $path;
+		$this->_cache_path = ($path == '') ? APPPATH . 'cache/' : $path;
 	}
 
 	// ------------------------------------------------------------------------
@@ -50,19 +50,16 @@ class CI_Cache_file extends CI_Driver {
 	 * @param 	mixed		unique key id
 	 * @return 	mixed		data on success/false on failure
 	 */
-	public function get($id)
-	{
-		if ( ! file_exists($this->_cache_path.$id))
-		{
+	public function get($id) {
+		if (!file_exists($this->_cache_path . $id)) {
 			return FALSE;
 		}
 
-		$data = read_file($this->_cache_path.$id);
+		$data = read_file($this->_cache_path . $id);
 		$data = unserialize($data);
 
-		if (time() >  $data['time'] + $data['ttl'])
-		{
-			unlink($this->_cache_path.$id);
+		if (time() > $data['time'] + $data['ttl']) {
+			unlink($this->_cache_path . $id);
 			return FALSE;
 		}
 
@@ -77,20 +74,18 @@ class CI_Cache_file extends CI_Driver {
 	 * @param 	string		unique key
 	 * @param 	mixed		data to store
 	 * @param 	int		length of time (in seconds) the cache is valid
-	 *					- Default is 60 seconds
+	 * 					- Default is 60 seconds
 	 * @return 	boolean		true on success/false on failure
 	 */
-	public function save($id, $data, $ttl = 60)
-	{
+	public function save($id, $data, $ttl = 60) {
 		$contents = array(
-				'time'		=> time(),
-				'ttl'		=> $ttl,
-				'data'		=> $data
-			);
+			'time' => time(),
+			'ttl' => $ttl,
+			'data' => $data
+		);
 
-		if (write_file($this->_cache_path.$id, serialize($contents)))
-		{
-			@chmod($this->_cache_path.$id, 0777);
+		if (write_file($this->_cache_path . $id, serialize($contents))) {
+			@chmod($this->_cache_path . $id, 0777);
 			return TRUE;
 		}
 
@@ -105,9 +100,8 @@ class CI_Cache_file extends CI_Driver {
 	 * @param 	mixed		unique identifier of item in cache
 	 * @return 	boolean		true on success/false on failure
 	 */
-	public function delete($id)
-	{
-		return unlink($this->_cache_path.$id);
+	public function delete($id) {
+		return unlink($this->_cache_path . $id);
 	}
 
 	// ------------------------------------------------------------------------
@@ -117,8 +111,7 @@ class CI_Cache_file extends CI_Driver {
 	 *
 	 * @return 	boolean		false on failure/true on success
 	 */
-	public function clean()
-	{
+	public function clean() {
 		return delete_files($this->_cache_path);
 	}
 
@@ -132,8 +125,7 @@ class CI_Cache_file extends CI_Driver {
 	 * @param 	string	user/filehits
 	 * @return 	mixed 	FALSE
 	 */
-	public function cache_info($type = NULL)
-	{
+	public function cache_info($type = NULL) {
 		return get_dir_file_info($this->_cache_path);
 	}
 
@@ -145,28 +137,24 @@ class CI_Cache_file extends CI_Driver {
 	 * @param 	mixed		key to get cache metadata on
 	 * @return 	mixed		FALSE on failure, array on success.
 	 */
-	public function get_metadata($id)
-	{
-		if ( ! file_exists($this->_cache_path.$id))
-		{
+	public function get_metadata($id) {
+		if (!file_exists($this->_cache_path . $id)) {
 			return FALSE;
 		}
 
-		$data = read_file($this->_cache_path.$id);
+		$data = read_file($this->_cache_path . $id);
 		$data = unserialize($data);
 
-		if (is_array($data))
-		{
-			$mtime = filemtime($this->_cache_path.$id);
+		if (is_array($data)) {
+			$mtime = filemtime($this->_cache_path . $id);
 
-			if ( ! isset($data['ttl']))
-			{
+			if (!isset($data['ttl'])) {
 				return FALSE;
 			}
 
 			return array(
-				'expire'	=> $mtime + $data['ttl'],
-				'mtime'		=> $mtime
+				'expire' => $mtime + $data['ttl'],
+				'mtime' => $mtime
 			);
 		}
 
@@ -182,8 +170,7 @@ class CI_Cache_file extends CI_Driver {
 	 *
 	 * @return boolean
 	 */
-	public function is_supported()
-	{
+	public function is_supported() {
 		return is_really_writable($this->_cache_path);
 	}
 

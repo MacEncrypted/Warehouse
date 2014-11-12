@@ -17,5 +17,3 @@ Instructions
 6. You should be able to login with following data:
 	login:		root
 	password:	root
-7. If you would like to change language to english please edit W/application/config/config.php
-	$config['language']	= 'english';

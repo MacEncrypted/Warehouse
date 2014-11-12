@@ -6,3 +6,4 @@
 */cache/!.htaccess
 /application/config/database.php
 *~*
+/cgi-bin

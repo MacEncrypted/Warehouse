@@ -16,7 +16,7 @@ class Manage_model extends CI_Model {
 		$users = array();
 
 		if ($query->num_rows() > 0) {
-			
+
 			foreach ($query->result() as $row) {
 				$user = array();
 				$user['id'] = $row->id;
@@ -25,7 +25,7 @@ class Manage_model extends CI_Model {
 				$users[] = $user;
 			}
 		}
-		
+
 		return $users;
 	}
 
@@ -33,7 +33,7 @@ class Manage_model extends CI_Model {
 		$hash = md5($passwd);
 		$this->db->query("INSERT INTO users (login, passwd, level) VALUES ('$login', '$hash', '$level')");
 	}
-	
+
 	public function updateUser($id, $login, $passwd, $level) {
 		$hash = md5($passwd);
 		$this->db->query("UPDATE users SET login='$login', passwd='$hash', level='$level' WHERE id='$id'");
@@ -42,18 +42,19 @@ class Manage_model extends CI_Model {
 	public function getUser($id) {
 		$query = $this->db->query("SELECT * FROM users WHERE id='$id'");
 		$user = array();
-		if ($query->num_rows() > 0) {			
-			foreach ($query->result() as $row) {				
+		if ($query->num_rows() > 0) {
+			foreach ($query->result() as $row) {
 				$user['id'] = $row->id;
 				$user['login'] = $row->login;
 				$user['level'] = $row->level;
 			}
 		}
-		
+
 		return $user;
 	}
 
 	public function delUser($id) {
 		$this->db->query("UPDATE users SET passwd='', deleted='1' WHERE id='$id'");
 	}
+
 }

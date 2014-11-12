@@ -30,32 +30,32 @@
 			<div class="label"><?php echo $this->lang->line('product'); ?></div>
 			<select name="products">
 				<option value=""><?php echo $this->lang->line('all'); ?></option>
-					<?php foreach ($products as $product) { ?>
-						<option value="<?php echo $product['id']; ?>">
-							<?php echo $product['name']; ?>
-						</option>
-					<?php } ?>
-                        </select>
-                        <div class="label"><?php echo $this->lang->line('packing'); ?></div>
-                        <select name="packings">
+				<?php foreach ($products as $product) { ?>
+					<option value="<?php echo $product['id']; ?>">
+						<?php echo $product['name']; ?>
+					</option>
+				<?php } ?>
+			</select>
+			<div class="label"><?php echo $this->lang->line('packing'); ?></div>
+			<select name="packings">
 				<option value=""><?php echo $this->lang->line('all'); ?></option>
-					<?php foreach ($packings as $packing) { ?>
-						<option value="<?php echo $packing['id']; ?>">
-							<?php echo $packing['name']; ?>
-						</option>
-					<?php } ?>
-                        </select>
+				<?php foreach ($packings as $packing) { ?>
+					<option value="<?php echo $packing['id']; ?>">
+						<?php echo $packing['name']; ?>
+					</option>
+				<?php } ?>
+			</select>
 			<input type="submit" value="<?php echo $this->lang->line('generate'); ?>">
 		</form>
 
-<?php if (isset($generate)) { ?>		
+		<?php if (isset($generate)) { ?>		
 			<table>
 				<tr><th><?php echo $this->lang->line('data'); ?></th>
 					<th><?php echo $this->lang->line('login'); ?></th>
 					<th><?php echo $this->lang->line('actions'); ?></th>
 					<th><?php echo $this->lang->line('product'); ?></th>
 					<th><?php echo $this->lang->line('amount'); ?></th></tr>
-	<?php foreach ($reports as $log) { ?>
+				<?php foreach ($reports as $log) { ?>
 					<tr>						
 						<td><?php echo $log['date']; ?></td>					
 						<td><?php echo $log['login']; ?></td>					
@@ -63,9 +63,9 @@
 						<td><?php echo $log['pname']; ?></td>
 						<td><?php echo $log['amount']; ?></td>
 					</tr>
-			<?php } ?>
+				<?php } ?>
 			</table>
-<?php } ?>
+		<?php } ?>
 
 
 	</section><!-- #end content area -->

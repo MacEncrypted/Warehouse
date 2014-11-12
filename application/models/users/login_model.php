@@ -40,7 +40,7 @@ class Login_model extends CI_Model {
 	public function signout() {
 		if ($this->input->post('logout') || $this->input->get('logout')) {
 			$this->session->sess_destroy();
-			redirect(base_url(),'refresh');
+			redirect(base_url(), 'refresh');
 		}
 	}
 
@@ -51,12 +51,12 @@ class Login_model extends CI_Model {
 
 		if ($query->num_rows() > 0) {
 			$row = $query->row();
-			$this->session->set_userdata('user_login', $row->login);			
-			if($row->level == 1) {
+			$this->session->set_userdata('user_login', $row->login);
+			if ($row->level == 1) {
 				// user
 				$this->session->set_userdata('user_lvl', true);
 			}
-			if($row->level == 2) {
+			if ($row->level == 2) {
 				// admin
 				$this->session->set_userdata('user_lvl', true);
 				$this->session->set_userdata('admin_lvl', true);

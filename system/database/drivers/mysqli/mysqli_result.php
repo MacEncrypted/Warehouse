@@ -1,4 +1,7 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+	exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
@@ -12,7 +15,6 @@
  * @since		Version 1.0
  * @filesource
  */
-
 // ------------------------------------------------------------------------
 
 /**
@@ -32,8 +34,7 @@ class CI_DB_mysqli_result extends CI_DB_result {
 	 * @access	public
 	 * @return	integer
 	 */
-	function num_rows()
-	{
+	function num_rows() {
 		return @mysqli_num_rows($this->result_id);
 	}
 
@@ -45,8 +46,7 @@ class CI_DB_mysqli_result extends CI_DB_result {
 	 * @access	public
 	 * @return	integer
 	 */
-	function num_fields()
-	{
+	function num_fields() {
 		return @mysqli_num_fields($this->result_id);
 	}
 
@@ -60,11 +60,9 @@ class CI_DB_mysqli_result extends CI_DB_result {
 	 * @access	public
 	 * @return	array
 	 */
-	function list_fields()
-	{
+	function list_fields() {
 		$field_names = array();
-		while ($field = mysqli_fetch_field($this->result_id))
-		{
+		while ($field = mysqli_fetch_field($this->result_id)) {
 			$field_names[] = $field->name;
 		}
 
@@ -81,21 +79,19 @@ class CI_DB_mysqli_result extends CI_DB_result {
 	 * @access	public
 	 * @return	array
 	 */
-	function field_data()
-	{
+	function field_data() {
 		$retval = array();
-		while ($field = mysqli_fetch_object($this->result_id))
-		{
+		while ($field = mysqli_fetch_object($this->result_id)) {
 			preg_match('/([a-zA-Z]+)(\(\d+\))?/', $field->Type, $matches);
 
 			$type = (array_key_exists(1, $matches)) ? $matches[1] : NULL;
 			$length = (array_key_exists(2, $matches)) ? preg_replace('/[^\d]/', '', $matches[2]) : NULL;
 
-			$F				= new stdClass();
-			$F->name		= $field->Field;
-			$F->type		= $type;
-			$F->default		= $field->Default;
-			$F->max_length	= $length;
+			$F = new stdClass();
+			$F->name = $field->Field;
+			$F->type = $type;
+			$F->default = $field->Default;
+			$F->max_length = $length;
 			$F->primary_key = ( $field->Key == 'PRI' ? 1 : 0 );
 
 			$retval[] = $F;
@@ -103,7 +99,7 @@ class CI_DB_mysqli_result extends CI_DB_result {
 
 		return $retval;
 	}
-	
+
 	// --------------------------------------------------------------------
 
 	/**
@@ -111,10 +107,8 @@ class CI_DB_mysqli_result extends CI_DB_result {
 	 *
 	 * @return	null
 	 */
-	function free_result()
-	{
-		if (is_object($this->result_id))
-		{
+	function free_result() {
+		if (is_object($this->result_id)) {
 			mysqli_free_result($this->result_id);
 			$this->result_id = FALSE;
 		}
@@ -132,8 +126,7 @@ class CI_DB_mysqli_result extends CI_DB_result {
 	 * @access	private
 	 * @return	array
 	 */
-	function _data_seek($n = 0)
-	{
+	function _data_seek($n = 0) {
 		return mysqli_data_seek($this->result_id, $n);
 	}
 
@@ -147,8 +140,7 @@ class CI_DB_mysqli_result extends CI_DB_result {
 	 * @access	private
 	 * @return	array
 	 */
-	function _fetch_assoc()
-	{
+	function _fetch_assoc() {
 		return mysqli_fetch_assoc($this->result_id);
 	}
 
@@ -162,13 +154,11 @@ class CI_DB_mysqli_result extends CI_DB_result {
 	 * @access	private
 	 * @return	object
 	 */
-	function _fetch_object()
-	{
+	function _fetch_object() {
 		return mysqli_fetch_object($this->result_id);
 	}
 
 }
-
 
 /* End of file mysqli_result.php */
 /* Location: ./system/database/drivers/mysqli/mysqli_result.php */

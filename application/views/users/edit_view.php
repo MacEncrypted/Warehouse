@@ -16,19 +16,25 @@
 		<form action="" method="POST">
 			<input type="hidden" name="sent" value="yes">
 			<div class="label"><?php echo $this->lang->line('login'); ?></div>
-			<input type="text" name="login" value="<?php if (isset($user['login'])) {
-	echo $user['login'];
-} ?>" required>
+			<input type="text" name="login" value="<?php
+			if (isset($user['login'])) {
+				echo $user['login'];
+			}
+			?>" required>
 			<div class="label"><?php echo $this->lang->line('passwd'); ?></div>
 			<input type="password" name="passwd" value="" required>
 			<div class="label"><?php echo $this->lang->line('level'); ?></div>
 			<select name="level">						
-				<option value="1" <?php if (isset($user['level']) && ($user['level'] == 1)) {
-	echo 'selected="true"';
-} ?>>Magazynier</option>
-				<option value="2" <?php if (isset($user['level']) && ($user['level'] == 2)) {
-	echo 'selected="true"';
-} ?>>Administrator</option>
+				<option value="1" <?php
+				if (isset($user['level']) && ($user['level'] == 1)) {
+					echo 'selected="true"';
+				}
+				?>>Magazynier</option>
+				<option value="2" <?php
+				if (isset($user['level']) && ($user['level'] == 2)) {
+					echo 'selected="true"';
+				}
+				?>>Administrator</option>
 			</select>
 			<input type="submit" value="ZAPISZ">
 		</form>

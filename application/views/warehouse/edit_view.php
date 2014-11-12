@@ -21,35 +21,39 @@
 			<form action="" method="POST">				
 				<input type="hidden" name="sent" value="yes">
 				<div class="label"><?php echo $this->lang->line('name'); ?></div>
-				<input type="text" name="name" value="<?php if (isset($user['name'])) {
-			echo $user['name'];
-		} ?>" required>
+				<input type="text" name="name" value="<?php
+				if (isset($user['name'])) {
+					echo $user['name'];
+				}
+				?>" required>
 				<div class="label"><?php echo $this->lang->line('desc'); ?></div>
-				<input type="text" name="desc" value="<?php if (isset($user['desc'])) {
-			echo $user['desc'];
-		} ?>" required>
+				<input type="text" name="desc" value="<?php
+				if (isset($user['desc'])) {
+					echo $user['desc'];
+				}
+				?>" required>
 				<input type="submit" >
 			</form>
 		</div>
 		<div class="grid_8">
 			<table>
-				<tr><!--<th><?php //echo $this->lang->line('id'); ?></th>-->
+				<tr><!--<th><?php //echo $this->lang->line('id');  ?></th>-->
 					<th><?php echo $this->lang->line('name'); ?></th>
 					<th><?php echo $this->lang->line('desc'); ?></th>
 					<th><?php echo $this->lang->line('actions'); ?></th></tr>
-<?php foreach ($products as $product) { ?>
+				<?php foreach ($products as $product) { ?>
 					<tr>
-						<!--<td><?php //echo $product['id']; ?></td>-->
+						<!--<td><?php //echo $product['id'];  ?></td>-->
 						<td><?php echo $product['name']; ?></td>
 						<td><?php echo $product['desc']; ?></td>
 						<td>
-	<?php if ($this->session->userdata('admin_lvl')) { ?>
+							<?php if ($this->session->userdata('admin_lvl')) { ?>
 								<a href="<?php echo base_url(); ?>warehouse/library/del/<?php echo $product['id']; ?>" onclick="return confirm(<?php echo $this->lang->line('confirm_delete'); ?>);"><?php echo $this->lang->line('del'); ?></a>
-					<?php } ?>
+							<?php } ?>
 							<a href="<?php echo base_url(); ?>warehouse/library/edit/<?php echo $product['id']; ?>"><?php echo $this->lang->line('edit'); ?></a>
 						</td>
 					</tr>
-<?php } ?>			
+				<?php } ?>			
 			</table>
 		</div>
 	</section><!-- #end content area -->

@@ -18,14 +18,18 @@
 			<div class="label"><?php echo $this->lang->line('product'); ?></div>
 			<select name="id">
 				<?php foreach ($products as $product) { ?>
-					<option value="<?php if (isset($product['id'])) {
-					echo $product['id'];
-				} ?>">
-					<?php if (isset($product['name'])) {
-						echo $product['name'];
-					} ?>
+					<option value="<?php
+					if (isset($product['id'])) {
+						echo $product['id'];
+					}
+					?>">
+								<?php
+								if (isset($product['name'])) {
+									echo $product['name'];
+								}
+								?>
 					</option>
-<?php } ?>
+				<?php } ?>
 			</select>
 			<div class="label"><?php echo $this->lang->line('amount'); ?></div>
 			<input type="number" name="amount">

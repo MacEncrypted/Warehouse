@@ -400,14 +400,14 @@ class Log_model extends CI_Model {
 				$products[] = $product;
 			}
 		}
-		
+
 		foreach ($products as $product) {
-			if($product['sum'] != 0) {
+			if ($product['sum'] != 0) {
 				$sum = 0 - $product['sum'];
 				$this->addAction($product['id'], $sum, $action_to, $product['packingid']);
 			}
 		}
-		
+
 		return $products;
 	}
 

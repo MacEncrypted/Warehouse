@@ -1,4 +1,7 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+	exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
@@ -12,7 +15,6 @@
  * @since		Version 1.0
  * @filesource
  */
-
 // ------------------------------------------------------------------------
 
 /**
@@ -48,8 +50,7 @@ class CI_Benchmark {
 	 * @param	string	$name	name of the marker
 	 * @return	void
 	 */
-	function mark($name)
-	{
+	function mark($name) {
 		$this->marker[$name] = microtime();
 	}
 
@@ -69,20 +70,16 @@ class CI_Benchmark {
 	 * @param	integer	the number of decimal places
 	 * @return	mixed
 	 */
-	function elapsed_time($point1 = '', $point2 = '', $decimals = 4)
-	{
-		if ($point1 == '')
-		{
+	function elapsed_time($point1 = '', $point2 = '', $decimals = 4) {
+		if ($point1 == '') {
 			return '{elapsed_time}';
 		}
 
-		if ( ! isset($this->marker[$point1]))
-		{
+		if (!isset($this->marker[$point1])) {
 			return '';
 		}
 
-		if ( ! isset($this->marker[$point2]))
-		{
+		if (!isset($this->marker[$point2])) {
 			$this->marker[$point2] = microtime();
 		}
 
@@ -105,8 +102,7 @@ class CI_Benchmark {
 	 * @access	public
 	 * @return	string
 	 */
-	function memory_usage()
-	{
+	function memory_usage() {
 		return '{memory_usage}';
 	}
 

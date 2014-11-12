@@ -40,8 +40,8 @@ a:hover{ text-decoration:none;}
 
 /* Box sizing. Awesome thing. Read about it here: http://www.w3schools.com/cssref/css3_pr_box-sizing.asp */
 *{	box-sizing:border-box;
-	-moz-box-sizing:border-box;}
-  
+   -moz-box-sizing:border-box;}
+
 /* structure */   
 .wrapper{
 	width: 92%; 
@@ -105,7 +105,7 @@ img{ max-width:100%; height:auto;}
 .srt-menu{
 	clear:both;
 	margin-bottom:60px;
-	
+
 }
 .srt-menu li a {
 	color:#666;
@@ -224,15 +224,15 @@ LARGER MOBILE DEVICES
 This is for mobile devices with a bit larger screens.
 */
 @media only screen and (min-width: 481px) {
-#banner{
-	float:left;
-	text-align:left;
-	margin-bottom:-20px;/*this depends on the height of the logo*/
-}
-.menu-toggle{/*make menu float right, instead of sitting under the logo*/
-	margin-top:10px; /*this depends on the height of the logo*/
-	float:right;
-}
+	#banner{
+		float:left;
+		text-align:left;
+		margin-bottom:-20px;/*this depends on the height of the logo*/
+	}
+	.menu-toggle{/*make menu float right, instead of sitting under the logo*/
+		margin-top:10px; /*this depends on the height of the logo*/
+		float:right;
+	}
 
 } 
 
@@ -243,194 +243,194 @@ But I think that some more breathing space is good:)
 */
 @media only screen and (min-width: 920px) {
 
-.wrapper{
-	max-width: 1200px; 
-	margin: .75em auto;
-}
-header{
-	padding:0;
-}
-#banner{ 
-	float:left; 
-	text-align:left;
-	margin-bottom:0px;
-	margin-top:5px;
-}
-#hero{
-	padding:0;
-}
-#hero .grid_4 { width: 100%; }
-#hero .grid_8 { width: 80%; margin:40px 10% 0;}
+	.wrapper{
+		max-width: 1200px; 
+		margin: .75em auto;
+	}
+	header{
+		padding:0;
+	}
+	#banner{ 
+		float:left; 
+		text-align:left;
+		margin-bottom:0px;
+		margin-top:5px;
+	}
+	#hero{
+		padding:0;
+	}
+	#hero .grid_4 { width: 100%; }
+	#hero .grid_8 { width: 80%; margin:40px 10% 0;}
 
-#content {  
-	float:left;
-	width:65%;
-}
-#content.wide-content{
-	float:none;
-	width:100%;
-}
+	#content {  
+		float:left;
+		width:65%;
+	}
+	#content.wide-content{
+		float:none;
+		width:100%;
+	}
 
-.flexslider{
-	display:block;
-/*demo 1 slider theme*/	
-margin: 0; 
-}
-.flex-control-nav {bottom: 5px;}
+	.flexslider{
+		display:block;
+		/*demo 1 slider theme*/	
+		margin: 0; 
+	}
+	.flex-control-nav {bottom: 5px;}
 
 
-aside { 
-	float:right;
-	width:30%;
-}
+	aside { 
+		float:right;
+		width:30%;
+	}
 
-/*** MAIN MENU - ESSENTIAL STYLES ***/
-.menu-toggle{display:none;}
-#menu-main-navigation{display:block;}
+	/*** MAIN MENU - ESSENTIAL STYLES ***/
+	.menu-toggle{display:none;}
+	#menu-main-navigation{display:block;}
 
-.srt-menu, .srt-menu * {
-	margin:			0;
-	padding:		0;
-	list-style:		none;
-}
-.srt-menu ul {
-	position:		absolute;
-	display:none;
-	width:			12em; /* left offset of submenus need to match (see below) */
-}
-.srt-menu ul li {
-	width:			100%;
-}
-.srt-menu li:hover {
-	visibility:		inherit; /* fixes IE7 'sticky bug' */
-}
-.srt-menu li {
-	float:			left;
-	position:		relative;
-	margin-left:1px;
-	height:25px;
-}
-.srt-menu li li {
-	margin-left:0px;
-	height:auto;
-}
-.srt-menu a {
-	display:		block;
-	position:		relative;
-}
-.srt-menu li:hover ul,
-.srt-menu li.sfHover ul {
-	display:block;
-	left:			0;
-	top:			42px; /* match top ul list item height */
-	z-index:		99;
-	-webkit-box-shadow:  2px 3px 2px 0px rgba(00, 00, 00, .3);
-    box-shadow:  2px 3px 2px 0px rgba(00, 00, 00, .3);
-}
-ul.srt-menu li:hover li ul,
-ul.srt-menu li.sfHover li ul {
-	top:			-999em;
-}
-ul.srt-menu li li:hover ul,
-ul.srt-menu li li.sfHover ul {
-	left:			12em; /* match ul width */
-	top:			0;
-}
-ul.srt-menu li li:hover li ul,
-ul.srt-menu li li.sfHover li ul {
-	top:			-999em;
-}
-ul.srt-menu li li li:hover ul,
-ul.srt-menu li li li.sfHover ul {
-	left:			10em; /* match ul width */
-	top:			0;
-}
+	.srt-menu, .srt-menu * {
+		margin:			0;
+		padding:		0;
+		list-style:		none;
+	}
+	.srt-menu ul {
+		position:		absolute;
+		display:none;
+		width:			12em; /* left offset of submenus need to match (see below) */
+	}
+	.srt-menu ul li {
+		width:			100%;
+	}
+	.srt-menu li:hover {
+		visibility:		inherit; /* fixes IE7 'sticky bug' */
+	}
+	.srt-menu li {
+		float:			left;
+		position:		relative;
+		margin-left:1px;
+		height:25px;
+	}
+	.srt-menu li li {
+		margin-left:0px;
+		height:auto;
+	}
+	.srt-menu a {
+		display:		block;
+		position:		relative;
+	}
+	.srt-menu li:hover ul,
+	.srt-menu li.sfHover ul {
+		display:block;
+		left:			0;
+		top:			42px; /* match top ul list item height */
+		z-index:		99;
+		-webkit-box-shadow:  2px 3px 2px 0px rgba(00, 00, 00, .3);
+		box-shadow:  2px 3px 2px 0px rgba(00, 00, 00, .3);
+	}
+	ul.srt-menu li:hover li ul,
+	ul.srt-menu li.sfHover li ul {
+		top:			-999em;
+	}
+	ul.srt-menu li li:hover ul,
+	ul.srt-menu li li.sfHover ul {
+		left:			12em; /* match ul width */
+		top:			0;
+	}
+	ul.srt-menu li li:hover li ul,
+	ul.srt-menu li li.sfHover li ul {
+		top:			-999em;
+	}
+	ul.srt-menu li li li:hover ul,
+	ul.srt-menu li li li.sfHover ul {
+		left:			10em; /* match ul width */
+		top:			0;
+	}
 
-/*** DEMO2 SKIN ***/
-#topnav, .srt-menu {
-	float:right;
-	margin: .35em 0 0 0;
-}
-.srt-menu a {
-	text-decoration:none;
-}
-.srt-menu li a{
-	background:#fff;
-	margin:0; 
-	padding:10px 20px;
-}
-.srt-menu a, .srt-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
-	color:			#666;	
-}
-.srt-menu li li a {
+	/*** DEMO2 SKIN ***/
+	#topnav, .srt-menu {
+		float:right;
+		margin: .35em 0 0 0;
+	}
+	.srt-menu a {
+		text-decoration:none;
+	}
+	.srt-menu li a{
+		background:#fff;
+		margin:0; 
+		padding:10px 20px;
+	}
+	.srt-menu a, .srt-menu a:visited  { /* visited pseudo selector so IE6 applies text colour*/
+		color:			#666;	
+	}
+	.srt-menu li li a {
 		border-top:		1px solid rgba(255,255,255,.2);
 		background:		#333; /*fallback for old IE*/
 		background:rgba(0,0,0,.6);
 		color:	#fff;
 		padding-left:20px;
-}
-.srt-menu li li a:visited{color:#fff;}
-.srt-menu li li li a,
-.srt-menu li.current * li a{
-	padding-left:20px;
-	background:rgba(0,0,0,.6);
-}
+	}
+	.srt-menu li li a:visited{color:#fff;}
+	.srt-menu li li li a,
+	.srt-menu li.current * li a{
+		padding-left:20px;
+		background:rgba(0,0,0,.6);
+	}
 
-.srt-menu li:hover > a,
-.srt-menu li.current a{ 
-	color:#fff;
-	background:#5ec79e;
-}
-.srt-menu li li:hover > a{
-	color:#fff;
-	background:#5ec79e;
-}
+	.srt-menu li:hover > a,
+	.srt-menu li.current a{ 
+		color:#fff;
+		background:#5ec79e;
+	}
+	.srt-menu li li:hover > a{
+		color:#fff;
+		background:#5ec79e;
+	}
 
 
 
-/*GRID*/
-/*
- & Columns : 12 
+	/*GRID*/
+	/*
+	 & Columns : 12 
+	
+	*/
+	.grid_1 { width: 5%; }
+	.grid_2 { width: 13.333333333333%; }
+	.grid_3 { width: 21.666666666667%; }
+	.grid_4 { width: 30%; }
+	.grid_5 { width: 38.333333333333%; }
+	.grid_6 { width: 46.666666666667%; }
+	.grid_7 { width: 55%; }
+	.grid_8 { width: 63.333333333333%; }
+	.grid_9 { width: 71.666666666667%; }
+	.grid_10 { width: 80%; }
+	.grid_11 { width: 88.333333333333%; }
+	.grid_12 { width: 96.666666666667%; }
 
- */
-.grid_1 { width: 5%; }
-.grid_2 { width: 13.333333333333%; }
-.grid_3 { width: 21.666666666667%; }
-.grid_4 { width: 30%; }
-.grid_5 { width: 38.333333333333%; }
-.grid_6 { width: 46.666666666667%; }
-.grid_7 { width: 55%; }
-.grid_8 { width: 63.333333333333%; }
-.grid_9 { width: 71.666666666667%; }
-.grid_10 { width: 80%; }
-.grid_11 { width: 88.333333333333%; }
-.grid_12 { width: 96.666666666667%; }
+	.grid_1,
+	.grid_2,
+	.grid_3,
+	.grid_4,
+	.grid_5,
+	.grid_6,
+	.grid_7,
+	.grid_8,
+	.grid_9,
+	.grid_10,
+	.grid_11,
+	.grid_12 {
+		margin-left: 1.6666666666667%;
+		margin-right: 1.6666666666667%;
+		float: left;
+		margin-bottom:0px;
+	}
 
-.grid_1,
-.grid_2,
-.grid_3,
-.grid_4,
-.grid_5,
-.grid_6,
-.grid_7,
-.grid_8,
-.grid_9,
-.grid_10,
-.grid_11,
-.grid_12 {
-	margin-left: 1.6666666666667%;
-	margin-right: 1.6666666666667%;
-	float: left;
-	margin-bottom:0px;
-}
-
-.alpha{margin-left:0px;}
-.omega{margin-right:0px;}
-.rightfloat{float:right;}
-/* @
- * tinyfluidgrid.com
- & girlfriendnyc.com
- */
+	.alpha{margin-left:0px;}
+	.omega{margin-right:0px;}
+	.rightfloat{float:right;}
+	/* @
+	 * tinyfluidgrid.com
+	 & girlfriendnyc.com
+	*/
 
 }
 
@@ -441,9 +441,9 @@ in general anyone not viewing on a mobile device. Here's where
 you can add resource intensive styles.
 */
 @media only screen and (min-width: 1024px) {
-#hero .grid_4 { width: 30%; }
-#hero h1{ font-size:1.4em;}
-#hero .grid_8 { width: 63.333333333333%; margin:0 1.6666666666667%; }
+	#hero .grid_4 { width: 30%; }
+	#hero h1{ font-size:1.4em;}
+	#hero .grid_8 { width: 63.333333333333%; margin:0 1.6666666666667%; }
 } 
 
 /*
@@ -451,7 +451,7 @@ LARGE VIEWING SIZE
 This is for the larger monitors and possibly full screen viewers.
 */
 @media only screen and (min-width: 1240px) {
-#hero h1{ font-size:2em;}
+	#hero h1{ font-size:2em;}
 } 
 
 /*
@@ -460,8 +460,8 @@ This applies to the retina iPhone (4s) and iPad (2,3) along with
 other displays with a 2x resolution.
 */
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5),
-       only screen and (min--moz-device-pixel-ratio: 1.5),
-       only screen and (min-device-pixel-ratio: 1.5) {
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
 
 
 } 
@@ -472,23 +472,23 @@ iPhone 5 or iPod Touch 5th generation styles (you can include your own file if y
 */
 @media (device-height: 568px) and (-webkit-min-device-pixel-ratio: 2) { 
 
-  
+
 }
 
 /*
 PRINT STYLESHEET
 */
 @media print {
-  * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
-  a, a:visited { text-decoration: underline; }
-  a[href]:after { content: " (" attr(href) ")"; }
-  abbr[title]:after { content: " (" attr(title) ")"; }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
-  pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
-  thead { display: table-header-group; } /* h5bp.com/t */
-  tr, img { page-break-inside: avoid; }
-  img { max-width: 100% !important; }
-  @page { margin: 0.5cm; }
-  p, h2, h3 { orphans: 3; widows: 3; }
-  h2, h3 { page-break-after: avoid; }
+	* { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
+	a, a:visited { text-decoration: underline; }
+	a[href]:after { content: " (" attr(href) ")"; }
+	abbr[title]:after { content: " (" attr(title) ")"; }
+	.ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after { content: ""; }  /* Don't show links for images, or javascript/internal links */
+	pre, blockquote { border: 1px solid #999; page-break-inside: avoid; }
+	thead { display: table-header-group; } /* h5bp.com/t */
+	tr, img { page-break-inside: avoid; }
+	img { max-width: 100% !important; }
+	@page { margin: 0.5cm; }
+	p, h2, h3 { orphans: 3; widows: 3; }
+	h2, h3 { page-break-after: avoid; }
 }

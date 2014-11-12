@@ -1,4 +1,7 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+	exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
@@ -12,7 +15,6 @@
  * @since		Version 1.0
  * @filesource
  */
-
 // ------------------------------------------------------------------------
 
 /**
@@ -30,8 +32,7 @@ class CI_DB_mysqli_utility extends CI_DB_utility {
 	 * @access	private
 	 * @return	bool
 	 */
-	function _list_databases()
-	{
+	function _list_databases() {
 		return "SHOW DATABASES";
 	}
 
@@ -46,9 +47,8 @@ class CI_DB_mysqli_utility extends CI_DB_utility {
 	 * @param	string	the table name
 	 * @return	object
 	 */
-	function _optimize_table($table)
-	{
-		return "OPTIMIZE TABLE ".$this->db->_escape_identifiers($table);
+	function _optimize_table($table) {
+		return "OPTIMIZE TABLE " . $this->db->_escape_identifiers($table);
 	}
 
 	// --------------------------------------------------------------------
@@ -62,9 +62,8 @@ class CI_DB_mysqli_utility extends CI_DB_utility {
 	 * @param	string	the table name
 	 * @return	object
 	 */
-	function _repair_table($table)
-	{
-		return "REPAIR TABLE ".$this->db->_escape_identifiers($table);
+	function _repair_table($table) {
+		return "REPAIR TABLE " . $this->db->_escape_identifiers($table);
 	}
 
 	// --------------------------------------------------------------------
@@ -76,11 +75,11 @@ class CI_DB_mysqli_utility extends CI_DB_utility {
 	 * @param	array	Preferences
 	 * @return	mixed
 	 */
-	function _backup($params = array())
-	{
+	function _backup($params = array()) {
 		// Currently unsupported
 		return $this->db->display_error('db_unsuported_feature');
 	}
+
 }
 
 /* End of file mysqli_utility.php */

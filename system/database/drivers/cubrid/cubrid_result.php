@@ -1,4 +1,7 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php
+
+if (!defined('BASEPATH'))
+	exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
@@ -12,7 +15,6 @@
  * @since		Version 2.0.2
  * @filesource
  */
-
 // --------------------------------------------------------------------
 
 /**
@@ -32,8 +34,7 @@ class CI_DB_cubrid_result extends CI_DB_result {
 	 * @access	public
 	 * @return	integer
 	 */
-	function num_rows()
-	{
+	function num_rows() {
 		return @cubrid_num_rows($this->result_id);
 	}
 
@@ -45,8 +46,7 @@ class CI_DB_cubrid_result extends CI_DB_result {
 	 * @access	public
 	 * @return	integer
 	 */
-	function num_fields()
-	{
+	function num_fields() {
 		return @cubrid_num_fields($this->result_id);
 	}
 
@@ -60,8 +60,7 @@ class CI_DB_cubrid_result extends CI_DB_result {
 	 * @access	public
 	 * @return	array
 	 */
-	function list_fields()
-	{
+	function list_fields() {
 		return cubrid_column_names($this->result_id);
 	}
 
@@ -75,25 +74,22 @@ class CI_DB_cubrid_result extends CI_DB_result {
 	 * @access	public
 	 * @return	array
 	 */
-	function field_data()
-	{
+	function field_data() {
 		$retval = array();
 
 		$tablePrimaryKeys = array();
 
-		while ($field = cubrid_fetch_field($this->result_id))
-		{
-			$F				= new stdClass();
-			$F->name		= $field->name;
-			$F->type		= $field->type;
-			$F->default		= $field->def;
-			$F->max_length	= $field->max_length;
+		while ($field = cubrid_fetch_field($this->result_id)) {
+			$F = new stdClass();
+			$F->name = $field->name;
+			$F->type = $field->type;
+			$F->default = $field->def;
+			$F->max_length = $field->max_length;
 
 			// At this moment primary_key property is not returned when
 			// cubrid_fetch_field is called. The following code will
 			// provide a patch for it. primary_key property will be added
 			// in the next release.
-
 			// TODO: later version of CUBRID will provide primary_key
 			// property.
 			// When PK is defined in CUBRID, an index is automatically
@@ -102,24 +98,19 @@ class CI_DB_cubrid_result extends CI_DB_result {
 			// columns are there which satisfy this format.
 			// The query will search for exact single columns, thus
 			// compound PK is not supported.
-			$res = cubrid_query($this->conn_id,
-				"SELECT COUNT(*) FROM db_index WHERE class_name = '" . $field->table .
-				"' AND is_primary_key = 'YES' AND index_name = 'pk_" .
-				$field->table . "_" . $field->name . "'"
+			$res = cubrid_query($this->conn_id, "SELECT COUNT(*) FROM db_index WHERE class_name = '" . $field->table .
+					"' AND is_primary_key = 'YES' AND index_name = 'pk_" .
+					$field->table . "_" . $field->name . "'"
 			);
 
-			if ($res)
-			{
+			if ($res) {
 				$row = cubrid_fetch_array($res, CUBRID_NUM);
 				$F->primary_key = ($row[0] > 0 ? 1 : null);
-			}
-			else
-			{
+			} else {
 				$F->primary_key = null;
 			}
 
-			if (is_resource($res))
-			{
+			if (is_resource($res)) {
 				cubrid_close_request($res);
 				$this->result_id = FALSE;
 			}
@@ -137,12 +128,10 @@ class CI_DB_cubrid_result extends CI_DB_result {
 	 *
 	 * @return	null
 	 */
-	function free_result()
-	{
-		if(is_resource($this->result_id) ||
-			get_resource_type($this->result_id) == "Unknown" &&
-			preg_match('/Resource id #/', strval($this->result_id)))
-		{
+	function free_result() {
+		if (is_resource($this->result_id) ||
+				get_resource_type($this->result_id) == "Unknown" &&
+				preg_match('/Resource id #/', strval($this->result_id))) {
 			cubrid_close_request($this->result_id);
 			$this->result_id = FALSE;
 		}
@@ -160,8 +149,7 @@ class CI_DB_cubrid_result extends CI_DB_result {
 	 * @access	private
 	 * @return	array
 	 */
-	function _data_seek($n = 0)
-	{
+	function _data_seek($n = 0) {
 		return cubrid_data_seek($this->result_id, $n);
 	}
 
@@ -175,8 +163,7 @@ class CI_DB_cubrid_result extends CI_DB_result {
 	 * @access	private
 	 * @return	array
 	 */
-	function _fetch_assoc()
-	{
+	function _fetch_assoc() {
 		return cubrid_fetch_assoc($this->result_id);
 	}
 
@@ -190,13 +177,11 @@ class CI_DB_cubrid_result extends CI_DB_result {
 	 * @access	private
 	 * @return	object
 	 */
-	function _fetch_object()
-	{
+	function _fetch_object() {
 		return cubrid_fetch_object($this->result_id);
 	}
 
 }
-
 
 /* End of file cubrid_result.php */
 /* Location: ./system/database/drivers/cubrid/cubrid_result.php */

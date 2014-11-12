@@ -30,23 +30,23 @@
 			<div class="label"><?php echo $this->lang->line('login'); ?></div>
 			<select name="user">
 				<option value=""><?php echo $this->lang->line('all'); ?></option>
-					<?php foreach ($users as $user) { ?>
-						<option value="<?php echo $user['id']; ?>">
-							<?php echo $user['login']; ?>
-						</option>
-					<?php } ?>
-				</select>
+				<?php foreach ($users as $user) { ?>
+					<option value="<?php echo $user['id']; ?>">
+						<?php echo $user['login']; ?>
+					</option>
+				<?php } ?>
+			</select>
 			<input type="submit" value="<?php echo $this->lang->line('generate'); ?>">
 		</form>
 
-<?php if (isset($generate)) { ?>		
+		<?php if (isset($generate)) { ?>		
 			<table>
 				<tr><th><?php echo $this->lang->line('data'); ?></th>
 					<th><?php echo $this->lang->line('login'); ?></th>
 					<th><?php echo $this->lang->line('actions'); ?></th>
 					<th><?php echo $this->lang->line('product'); ?></th>
 					<th><?php echo $this->lang->line('amount'); ?></th></tr>
-	<?php foreach ($reports as $log) { ?>
+				<?php foreach ($reports as $log) { ?>
 					<tr>						
 						<td><?php echo $log['date']; ?></td>					
 						<td><?php echo $log['login']; ?></td>					
@@ -54,9 +54,9 @@
 						<td><?php echo $log['pname']; ?></td>
 						<td><?php echo $log['amount']; ?></td>
 					</tr>
-			<?php } ?>
+				<?php } ?>
 			</table>
-<?php } ?>
+		<?php } ?>
 
 
 	</section><!-- #end content area -->

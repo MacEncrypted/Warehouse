@@ -19,26 +19,34 @@
 				<div class="label"><?php echo $this->lang->line('product'); ?></div>
 				<select name="id">
 					<?php foreach ($products as $product) { ?>
-						<option value="<?php if (isset($product['id'])) {
-						echo $product['id'];
-					} ?>">
-						<?php if (isset($product['name'])) {
-							echo $product['name'];
-						} ?>
+						<option value="<?php
+						if (isset($product['id'])) {
+							echo $product['id'];
+						}
+						?>">
+									<?php
+									if (isset($product['name'])) {
+										echo $product['name'];
+									}
+									?>
 						</option>
 					<?php } ?>
 				</select>
 				<div class="label"><?php echo $this->lang->line('packing'); ?></div>
 				<select name="pckgid">
 					<?php foreach ($packings as $product) { ?>
-						<option value="<?php if (isset($product['id'])) {
-						echo $product['id'];
-					} ?>">
-	<?php if (isset($product['name'])) {
-		echo $product['name'];
-	} ?>
+						<option value="<?php
+						if (isset($product['id'])) {
+							echo $product['id'];
+						}
+						?>">
+									<?php
+									if (isset($product['name'])) {
+										echo $product['name'];
+									}
+									?>
 						</option>
-<?php } ?>
+					<?php } ?>
 				</select>
 				<div class="label"><?php echo $this->lang->line('amount'); ?></div>
 				<input type="number" name="amount" required>
@@ -48,13 +56,13 @@
 		<div class="grid_8">
 			<table>
 				<tr><th><?php echo $this->lang->line('product'); ?></th><th><?php echo $this->lang->line('amount'); ?></th><th><?php echo $this->lang->line('packing'); ?></th></tr>
-<?php foreach ($reports as $report) { ?>
+				<?php foreach ($reports as $report) { ?>
 					<tr>
 						<td><?php echo $report['name']; ?></td>
 						<td><?php echo (0 - $report['sum']); ?></td>
 						<td><?php echo $report['packing']; ?></td>
 					</tr>
-<?php } ?>
+				<?php } ?>
 			</table>
 		</div>
 	</section><!-- #end content area -->
