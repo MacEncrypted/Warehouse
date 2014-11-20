@@ -2,22 +2,28 @@ Warehouse
 ==========
 PHP software based on CodeIgniter 2.2 that allows you to manage warehouse.
 
-Project Sumary
+Project Summary
 ==========
-Project covers (v.1.0)
+Project covers (v 2.0)
 - user authentification (user and admin levels)
 - user managment (add, edit, delete)
 - library of products (add, edit, delete)
 - adding amount of products to warehouse (packing list or return)
 - removing amount of products from warehouse (delivery)
+- flow of the products from production (orders) to onway and to warehouse.
 - admin correction of amount of products in warehouse
 - notes reminder
 - summary table
+- search giveout in given data
 - action log
 - summary reports (from date to date)
+- backup creator
+- easy system clearing (1 button to clear all numeric values)
 
 License 
 ==========
+Following License only covers PHP files.
+
 This is a human-readable summary of (and not a substitute for) the license.
 License in LICENSE file as well as this summary is based on http://creativecommons.org
 
@@ -34,3 +40,11 @@ Under the following terms:
 Notices:
 - You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
 - No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+PHP Authors:
+==========
+PHP Files (CodeIgniter engine excluded) was created in 99% by Encrypted.pl member: Maciej 'Wampirue' Lewandowski.
+
+CSS/JS Authors:
+==========
+The CSS and design was created by Prowebdesign Romania prowebdesign.ro
