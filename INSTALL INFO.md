@@ -18,3 +18,7 @@ Instructions
 6. You should be able to login with following data:
 	login:		root
 	password:	root
+
+Languages
+==========
+Software is translated into polish and english. You can change your language directly in W/application/config/config.php

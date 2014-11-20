@@ -23,6 +23,7 @@ Project covers (v 2.0)
 - summary reports (from date to date)
 - backup creator
 - easy system clearing (1 button to clear all numeric values)
+- multilanguage translation (translate 1 file = translate whole script)
 
 Commercial use
 =========
