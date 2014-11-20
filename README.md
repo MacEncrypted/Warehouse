@@ -2,6 +2,10 @@ Warehouse
 ==========
 PHP software based on CodeIgniter 2.2 that allows you to manage warehouse.
 
+Demo
+==========
+The live demo is available under: http://warehouse.encrypted.pl
+
 Project Summary
 ==========
 Project covers (v 2.0)
@@ -19,6 +23,10 @@ Project covers (v 2.0)
 - summary reports (from date to date)
 - backup creator
 - easy system clearing (1 button to clear all numeric values)
+
+Commercial use
+=========
+If you are interested into using this application in your company simply contact me at maciej[at]encrypted.pl to get license.
 
 License 
 ==========
