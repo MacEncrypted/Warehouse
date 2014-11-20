@@ -48,7 +48,10 @@ $lang['menu_backup'] = "Backup";
 
 $lang['long_welcome_header'] = 'Warehouse demo website';
 $lang['long_welcome_text'] = 'To signin please use following admin data.<br/>'
-		. 'Please take in mind that editing admin data on this demo website is locked.<br/><br/>login: <b>root</b><br/>passwd: <b>root</b>';
+		. 'Please take in mind that editing admin data on this demo website is locked.<br/><br/>'
+		. 'login: <b>root</b><br/>'
+		. 'passwd: <b>root</b><br/><br/>'
+		. 'Codes are available at: <a href="https://github.com/Wampirue/Warehouse">https://github.com/Wampirue/Warehouse</a>';
 $lang['long_noaccess'] = 'You have no permission to display this page!';
 
 // h1
