@@ -21,6 +21,10 @@ class Manage extends CI_Controller {
 
 	public function edit($id) {
 		$data = array();
+		if (($id == 1) && (base_url() == 'http://warehouse.encrypted.pl/')) {
+			die('Editing or deleting root on demo is forbidden!<br/> <a href="' . base_url() . '">Go to main page</a>');
+		}
+		echo base_url(); exit;
 		if ($id == 0) {
 			// add new	
 			if ($this->input->post('sent')) {
@@ -42,6 +46,9 @@ class Manage extends CI_Controller {
 	}
 
 	public function del($id) {
+		if (($id == 1) && (base_url() == 'http://warehouse.encrypted.pl/')) {
+			die('Editing or deleting root on demo is forbidden!<br/> <a href="' . base_url() . '">Go to main page</a>');
+		}
 		$this->manage_model->delUser($id);
 		redirect('users/manage', 'refresh');
 	}
