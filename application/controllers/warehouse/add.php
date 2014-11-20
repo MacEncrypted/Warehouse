@@ -151,6 +151,7 @@ class Add extends CI_Controller {
 	// id = 6
 	public function autopacking() {
 		$data = array();
+		$data['auto'] = true;
 
 		if ($this->input->post('pckgid')) {
 

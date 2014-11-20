@@ -28,7 +28,7 @@ class Zero extends CI_Controller {
 			}
 			if ($this->input->post('zero_desc')) {
 				// 1 = in production
-				if ($this->zero_model->zeroDesc($this->input->post('zero_desc'),1)) {
+				if ($this->zero_model->zeroDesc($this->input->post('zero_desc'), 1)) {
 					$data['info'] = $this->lang->line('h2_zero_desc_info');
 				} else {
 					$data['info'] = $this->lang->line('h2_zero_desc_error_info');

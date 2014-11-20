@@ -115,4 +115,14 @@ class Enc extends CI_Controller {
 		$this->load->view('searchgen_view', $data);
 	}
 
+	public function backup() {
+		if (!$this->session->userdata('admin_lvl')) {
+			die(redirect(base_url() . 'main/noaccess'));
+		}
+		if ($this->input->post('generate')) {
+			$this->log_model->getBackup('backup_warehouse_' . time() . '.sql');
+		}
+		$this->load->view('backup_view');
+	}
+
 }

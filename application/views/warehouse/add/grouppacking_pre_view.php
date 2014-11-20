@@ -2,7 +2,15 @@
 
 <section id="page-header" class="clearfix">    
 	<div class="wrapper">
-		<h1><?php echo $this->lang->line('h1_add_grouppacking_warehouse'); ?></h1>
+		<h1>
+			<?php
+			if (isset($auto)) {
+				echo $this->lang->line('h1_add_autopacking_warehouse');
+			} else {
+				echo $this->lang->line('h1_add_grouppacking_warehouse');
+			}
+			?>
+		</h1>
     </div>
 
 </section>
@@ -30,7 +38,7 @@
 									}
 									?>
 						</option>
-<?php } ?>
+					<?php } ?>
 				</select>
 				<input type="submit">
 			</form>
@@ -38,13 +46,13 @@
 		<div class="grid_8">
 			<table>
 				<tr><th><?php echo $this->lang->line('product'); ?></th><th><?php echo $this->lang->line('amount'); ?></th><th><?php echo $this->lang->line('packing'); ?></th></tr>
-<?php foreach ($reports as $report) { ?>
+				<?php foreach ($reports as $report) { ?>
 					<tr>
 						<td><?php echo $report['name']; ?></td>
 						<td><?php echo $report['sum']; ?></td>
 						<td><?php echo $report['packing']; ?></td>
 					</tr>
-<?php } ?>
+				<?php } ?>
 			</table>
 		</div>
 	</section><!-- #end content area -->

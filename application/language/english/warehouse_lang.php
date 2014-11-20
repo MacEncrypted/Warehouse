@@ -7,7 +7,7 @@ $lang['header_desc'] = 'Warehouse by Encrypted.pl';
 $lang['header_keywords'] = 'Warehouse by Encrypted.pl';
 
 // footer
-$lang['footer_text'] = "Warehouse by Encrypted.pl v.1.0";
+$lang['footer_text'] = "Warehouse by Encrypted.pl 2.0 &copy; Encrypted.pl";
 
 // menu
 $lang['menu_menu'] = "Menu";
@@ -20,7 +20,7 @@ $lang['menu_group_packing_transport'] = "Group adding packing list";
 $lang['menu_grouppacking_warehouse'] = "Automatic add packing list";
 $lang['menu_warehouse'] = "Warehouse";
 $lang['menu_warehouse_in'] = "Packing list income";
-$lang['menu_warehouse_in'] = "Packing list group income";
+$lang['menu_warehouse_groupin'] = "Packing list group income";
 $lang['menu_warehouse_back'] = "Return";
 $lang['menu_warehouse_correct'] = "Correction";
 $lang['menu_warehouse_out'] = "Outcome";
@@ -42,11 +42,13 @@ $lang['menu_login_logout'] = "Logout";
 $lang['menu_login_login'] = "Login:";
 $lang['menu_login_passwd'] = "Password:";
 $lang['menu_login_signin'] = "Sign in";
+$lang['menu_backup'] = "Backup";
 
 // long txt
 
-$lang['long_welcome_header'] = 'Welcome txt (h2 text)';
-$lang['long_welcome_text'] = 'Welcome long txt (standard text)';
+$lang['long_welcome_header'] = 'Warehouse demo website';
+$lang['long_welcome_text'] = 'To signin please use following admin data.<br/>'
+		. 'Please take in mind that editing admin data on this demo website is locked.<br/><br/>login: <b>root</b><br/>passwd: <b>root</b>';
 $lang['long_noaccess'] = 'You have no permission to display this page!';
 
 // h1
@@ -55,6 +57,8 @@ $lang['h1_add_product_production'] = "Adding products to production";
 $lang['h1_add_packing_onway'] = "Adding packing list on way";
 $lang['h1_add_packing_grouponway'] = "Group adding packing list onway";
 $lang['h1_add_packing_warehouse'] = "Adding packing list to warehouse";
+$lang['h1_add_grouppacking_warehouse'] = "Group adding packing list to warehouse";
+$lang['h1_add_autopacking_warehouse'] = "Automatic adding packing list to warehouse ";
 $lang['h1_add_return'] = "Adding product - return";
 $lang['h1_add_correction'] = "Correction";
 $lang['h1_add_sent'] = "Product outcome";

@@ -82,7 +82,8 @@ class Library_model extends CI_Model {
 				$product['desc'] = $row->description;
 				$products[] = $product;
 			}
-		}		
+		}
 		return $products;
 	}
+
 }

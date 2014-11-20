@@ -16,13 +16,13 @@
 	<section id="content" class="wide-content">
 		<a href="<?php echo base_url(); ?>warehouse/library/edit/0">Nowy</a>
 		<table>
-				<tr><!--<th><?php //echo $this->lang->line('id');   ?></th>-->
+				<tr><!--<th><?php //echo $this->lang->line('id');     ?></th>-->
 				<th><?php echo $this->lang->line('name'); ?></th>
 				<th><?php echo $this->lang->line('desc'); ?></th>
 				<th><?php echo $this->lang->line('actions'); ?></th></tr>
 			<?php foreach ($products as $product) { ?>
 				<tr>
-					<!--<td><?php //echo $product['id'];   ?></td>-->
+					<!--<td><?php //echo $product['id'];     ?></td>-->
 					<td><?php echo $product['name']; ?></td>
 					<td><?php echo $product['desc']; ?></td>
 					<td>

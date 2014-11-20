@@ -35,7 +35,7 @@
 <!--			<div class="label"><?php echo $this->lang->line('order'); ?></div>
 				<select name="oid">
 				<?php foreach ($orders as $order) { ?>
-								<option value="<?php
+										<option value="<?php
 					if (isset($order['id'])) {
 						//echo $order['id'];
 					}
@@ -45,7 +45,7 @@
 						//echo $order['name'];
 					}
 					?>
-								</option>
+										</option>
 				<?php } ?>
 				</select>-->
 				<div class="label"><?php echo $this->lang->line('amount'); ?></div>
@@ -69,7 +69,7 @@
 						<td><?php echo $report['sum']; ?></td>
 	<!--						<td><?php echo $report['order']; ?></td>-->
 					</tr>
-<?php } ?>
+				<?php } ?>
 			</table>
 		</div>
 	</section><!-- #end content area -->

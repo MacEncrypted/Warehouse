@@ -7,7 +7,7 @@ $lang['header_desc'] = 'Warehouse by Encrypted.pl';
 $lang['header_keywords'] = 'Warehouse by Encrypted.pl';
 
 // footer
-$lang['footer_text'] = "Warehouse by Encrypted.pl v.1.0";
+$lang['footer_text'] = "Warehouse by Encrypted.pl 2.0 &copy; Encrypted.pl";
 
 // menu
 $lang['menu_menu'] = "Menu";
@@ -42,6 +42,7 @@ $lang['menu_login_logout'] = "Wyloguj";
 $lang['menu_login_login'] = "Login:";
 $lang['menu_login_passwd'] = "Hasło:";
 $lang['menu_login_signin'] = "Zaloguj";
+$lang['menu_backup'] = "Backup";
 
 // long txt
 
@@ -55,7 +56,8 @@ $lang['h1_add_product_production'] = "Dodawanie produktu do produkcji";
 $lang['h1_add_packing_onway'] = "Dodawanie packing listy w transporcie";
 $lang['h1_add_packing_grouponway'] = "Blokowanie + Dodawanie packing listy w transporcie";
 $lang['h1_add_packing_warehouse'] = "Dodawanie packing listy na magazyn";
-$lang['h1_add_grouppacking_warehouse'] = "Automatyczne dodawanie packing listy na magazyn";
+$lang['h1_add_grouppacking_warehouse'] = "Grupowe dodawanie packing listy na magazyn";
+$lang['h1_add_autopacking_warehouse'] = "Automatyczne dodawanie packing listy na magazyn";
 $lang['h1_add_return'] = "Dodawanie produktu - zwrot";
 $lang['h1_add_correction'] = "Korekta stanu na magazynie";
 $lang['h1_add_sent'] = "Wydanie towaru";

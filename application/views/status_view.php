@@ -15,7 +15,7 @@
 	<section id="content" class="wide-content">
 
 		<table id="print-table">
-			<tr><!--<th><?php //echo $this->lang->line('id');   ?></th>-->
+			<tr><!--<th><?php //echo $this->lang->line('id');     ?></th>-->
 				<th><?php echo $this->lang->line('name'); ?></th>
 				<th><?php echo $this->lang->line('wh'); ?></th>
 				<th><?php echo $this->lang->line('onway'); ?></th>
@@ -26,34 +26,34 @@
 				$sum = 0;
 				?>
 				<tr>
-					<!--<td><?php //echo $product['id'];   ?></td>-->
+					<!--<td><?php //echo $product['id'];     ?></td>-->
 					<td><?php echo $product['name']; ?></td>
 					<td><?php
 						echo $product['magazyn_sum'];
 						$sum += $product['magazyn_sum'];
 						?></td>
 					<td><?php
-					echo $product['onway_sum'];
-					$sum += $product['onway_sum'];
+						echo $product['onway_sum'];
+						$sum += $product['onway_sum'];
 						?></td>
 					<td><?php
-					echo $product['production_sum'];
-					$sum += $product['production_sum'];
-					?></td>
+						echo $product['production_sum'];
+						$sum += $product['production_sum'];
+						?></td>
 					<td><?php echo $sum; ?></td>
 				</tr>
-			   <?php } ?>			
+			<?php } ?>			
 		</table>
 		<div id="print">
 			<a href="#" class="buttonlink" onclick="window.print();
 					return false;">
-<?php echo $this->lang->line('print'); ?>
+				   <?php echo $this->lang->line('print'); ?>
 			</a>
 			<form action="<?php echo base_url(); ?>enc/csv" method ="post" id="csv_form"> 
 				<input type="hidden" name="csv_text" id="csv_text">
 				<a href="#" 
 				   class="buttonlink" onclick="getCSVData()">
-<?php echo $this->lang->line('print_csv'); ?>
+					<?php echo $this->lang->line('print_csv'); ?>
 				</a>
 			</form>
 		</div>
