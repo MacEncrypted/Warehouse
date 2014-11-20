@@ -27,12 +27,12 @@
 								<td>
 									<?php
 									if ($user['level'] == 1) {
-										echo 'Magazynier';
+										echo $this->lang->line('user_1');
 									}
 									?>
 									<?php
 									if ($user['level'] == 2) {
-										echo 'Administrator';
+										echo $this->lang->line('user_2');
 									}
 									?>
 								</td>

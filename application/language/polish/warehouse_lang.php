@@ -6,8 +6,12 @@ $lang['header_title'] = 'Warehouse by Encrypted.pl';
 $lang['header_desc'] = 'Warehouse by Encrypted.pl';
 $lang['header_keywords'] = 'Warehouse by Encrypted.pl';
 
+// users
+$lang['user_1'] = 'Pracownik';
+$lang['user_2'] = 'Administrator';
+
 // footer
-$lang['footer_text'] = "Warehouse by Encrypted.pl 2.0 &copy; Encrypted.pl";
+$lang['footer_text'] = "Warehouse &copy; Encrypted.pl";
 
 // menu
 $lang['menu_menu'] = "Menu";

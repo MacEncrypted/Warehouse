@@ -29,14 +29,14 @@
 				if (isset($user['level']) && ($user['level'] == 1)) {
 					echo 'selected="true"';
 				}
-				?>>Magazynier</option>
+				?>><?php echo $this->lang->line('user_1'); ?></option>
 				<option value="2" <?php
 				if (isset($user['level']) && ($user['level'] == 2)) {
 					echo 'selected="true"';
 				}
-				?>>Administrator</option>
+				?>><?php echo $this->lang->line('user_2'); ?></option>
 			</select>
-			<input type="submit" value="ZAPISZ">
+			<input type="submit">
 		</form>
 	</section><!-- #end content area -->
 

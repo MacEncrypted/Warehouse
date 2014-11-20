@@ -39,6 +39,16 @@ define('FOPEN_READ_WRITE_CREATE', 'a+b');
 define('FOPEN_WRITE_CREATE_STRICT', 'xb');
 define('FOPEN_READ_WRITE_CREATE_STRICT', 'x+b');
 
+/*
+  |--------------------------------------------------------------------------
+  | Encrypted stream defines
+  |--------------------------------------------------------------------------
+  |
+  | Needed to know are we on demo env. or not.
+  |
+ */
+
+define('DEMO_URL','http://warehouse.encrypted.pl/');
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
