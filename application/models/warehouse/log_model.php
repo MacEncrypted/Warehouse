@@ -248,10 +248,10 @@ class Log_model extends CI_Model {
 				$product['name'] = $row->name;
 				$product['desc'] = $row->description;
 				$product['magazyn_sum'] = intval($row->magazyn_sum);
-				$product['onway_sum'] = intval($row->onway_sum);
+				$product['onway_sum'] = intval(0- $row->onway_sum);
 				$product['production_sum'] = intval($row->production_sum);
 				$product['given_sum'] = intval(0 - $row->given_sum);
-				$product['total_sum'] = intval($product['magazyn_sum'] + $product['onway_sum'] + $product['production_sum'] + $product['given_sum']);
+				$product['total_sum'] = intval($product['magazyn_sum'] + $product['onway_sum'] + $product['production_sum']);
 				$products[] = $product;
 			}
 		}
