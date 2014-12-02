@@ -7,3 +7,4 @@
 /application/config/database.php
 *~*
 /cgi-bin
+*key.php*
