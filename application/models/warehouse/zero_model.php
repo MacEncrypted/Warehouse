@@ -8,6 +8,7 @@ class Zero_model extends CI_Model {
 
 	function __construct() {
 		parent::__construct();
+		$this->load->model('warehouse/log_model');
 	}
 
 	public function zeroAll() {
@@ -23,17 +24,25 @@ class Zero_model extends CI_Model {
 
 	public function zeroDesc($desc, $action) {
 		$marker = $this->session->userdata('user_login') . ' ' . time();
-		//$this->db->query("INSERT INTO log_history (id,date,id_user,action,amount,id_product,id_packing) SELECT log.id,log.date,log.id_user,log.action,log.amount,log.id_product,log.id_packing FROM log JOIN products ON products.id=log.id_product WHERE products.description='$desc'");		
-		$this->db->query("UPDATE log_history SET info='$marker' WHERE info=''");
 		$ids = $this->getIds("SELECT log.id FROM log JOIN products ON products.id=log.id_product WHERE products.description='$desc' AND log.action='$action'");
 		if ($ids != '') {
+			$this->db->query("INSERT INTO log_history (id,date,id_user,action,amount,id_product,id_packing) SELECT log.id,log.date,log.id_user,log.action,log.amount,log.id_product,log.id_packing FROM log JOIN products ON products.id=log.id_product WHERE log.id IN ($ids)");
+			$this->db->query("UPDATE log_history SET info='$marker' WHERE info=''");		
 			$this->db->query("DELETE FROM log WHERE log.id IN ($ids)");
-			return true;
-		} else {
-			return false;
 		}
+		$this->addToZero($desc);
+		return true;
 	}
 
+	public function addToZero($desc) {
+		$orders = $this->log_model->getOrderList(1);
+		foreach	($orders as $order) {
+			if ($order['desc'] == $desc) {
+				$this->log_model->addAction($order['id'], (0 - $order['sum']), 1);
+			}
+		}
+	}
+	
 	public function getIds($query_string) {
 		$query = $this->db->query($query_string);
 
