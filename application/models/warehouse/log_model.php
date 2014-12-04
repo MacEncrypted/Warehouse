@@ -46,20 +46,11 @@ class Log_model extends CI_Model {
 				. "products.id AS id, "
 				. "products.name AS name, "
 				. "products.description AS description, "
-				. "orders.id AS orderid, "
-				. "orders.name AS ordername, "
 				. "counter.sum AS sum "
 				. "FROM products "
-//				hide orders
-//				. "JOIN (SELECT id_product, id_order, sum(amount) AS sum, max(id) AS id_log FROM `log` WHERE action=$group OR action=$ngroup GROUP BY 1, 2) AS counter "
-//				hide orders
 				. "JOIN (SELECT id_product, id_order, sum(amount) AS sum, max(id) AS id_log FROM `log` WHERE action=$group OR action=$ngroup GROUP BY 1) AS counter "
 				. "ON products.id=counter.id_product "
-				. "JOIN orders "
-				. "ON orders.id=counter.id_order "
 				. "WHERE products.deleted='0' AND counter.sum<>0 ORDER BY id_log DESC";
-
-		//echo $q; exit;
 
 		$query = $this->db->query($q);
 
@@ -77,8 +68,6 @@ class Log_model extends CI_Model {
 				} else {
 					$product['sum'] = 0;
 				}
-				$product['orderid'] = $row->orderid;
-				$product['order'] = $row->ordername;
 				$products[] = $product;
 			}
 		}
