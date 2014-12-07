@@ -45,10 +45,12 @@ define('FOPEN_READ_WRITE_CREATE_STRICT', 'x+b');
   |--------------------------------------------------------------------------
   |
   | Needed to know are we on demo env. or not.
+  | DEMO_URL is needed for automaticly check for updates
   |
  */
 
 define('DEMO_URL','http://warehouse.encrypted.pl/');
+define('VERSION','2.2');
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
