@@ -28,10 +28,9 @@
 <script src="<?php echo base_url(); ?>js/main.js"></script>
 
 <!-- tables to CSV -->
+<?php if ($this->router->fetch_class() != 'main') { ?>
 <script type="text/javascript" src="http://jqueryjs.googlecode.com/files/jquery-1.3.1.min.js" ></script> 
 <script type="text/javascript" src="<?php echo base_url(); ?>js/table2CSV.js" ></script>
-
-
-
+<?php } ?>
 </body>
 </html>

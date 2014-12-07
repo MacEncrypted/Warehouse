@@ -20,6 +20,7 @@
 
 	<!-- content area -->    
 	<section id="content" class="wide-content">
+		<div class="grid_4">
 
 		<form action="<?php echo base_url() . 'enc/genreports'; ?>" method="POST">
 			<input type="hidden" name="sent" value="yes">
@@ -38,6 +39,7 @@
 			</select>
 			<input type="submit" value="<?php echo $this->lang->line('generate'); ?>">
 		</form>
+		</div>
 
 		<?php if (isset($generate)) { ?>		
 			<table>

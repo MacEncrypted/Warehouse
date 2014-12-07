@@ -13,6 +13,7 @@
 
 	<!-- content area -->    
 	<section id="content" class="wide-content">
+		<div class="grid_4">
 		<form action="" method="POST">
 			<input type="hidden" name="sent" value="yes">
 			<div class="label"><?php echo $this->lang->line('login'); ?></div>
@@ -36,8 +37,9 @@
 				}
 				?>><?php echo $this->lang->line('user_2'); ?></option>
 			</select>
-			<input type="submit">
+			<input type="submit" value="<?php echo $this->lang->line('submit'); ?>">
 		</form>
+		</div>
 	</section><!-- #end content area -->
 
 </div><!-- #end div #main .wrapper -->

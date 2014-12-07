@@ -13,7 +13,7 @@
 
 	<!-- content area -->    
 	<section id="content" class="wide-content">
-
+		<?php echo $this->lang->line('backup_info'); ?>
 		<form action="" method="POST">
 			<input type="submit" name="generate" value="<?php echo $this->lang->line('generate'); ?>">
 		</form>

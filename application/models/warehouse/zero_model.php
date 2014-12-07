@@ -13,7 +13,7 @@ class Zero_model extends CI_Model {
 
 	public function zeroAll() {
 		$marker = $this->session->userdata('user_login') . ' ' . time();
-		$this->db->query("INSERT INTO log_history (id,date,id_user,action,amount,id_product,id_packing) SELECT id,date,id_user,action,amount,id_product,id_packing FROM log");
+		$this->db->query("INSERT INTO log_history (date,id_user,action,amount,id_product,id_packing) SELECT date,id_user,action,amount,id_product,id_packing FROM log");
 		$this->db->query("UPDATE log_history SET info='$marker' WHERE info=''");
 		$this->db->query("DELETE FROM log");
 	}
@@ -26,7 +26,7 @@ class Zero_model extends CI_Model {
 		$marker = $this->session->userdata('user_login') . ' ' . time();
 		$ids = $this->getIds("SELECT log.id FROM log JOIN products ON products.id=log.id_product WHERE products.description='$desc' AND log.action='$action'");
 		if ($ids != '') {
-			$this->db->query("INSERT INTO log_history (id,date,id_user,action,amount,id_product,id_packing) SELECT log.id,log.date,log.id_user,log.action,log.amount,log.id_product,log.id_packing FROM log JOIN products ON products.id=log.id_product WHERE log.id IN ($ids)");
+			$this->db->query("INSERT INTO log_history (date,id_user,action,amount,id_product,id_packing) SELECT log.date,log.id_user,log.action,log.amount,log.id_product,log.id_packing FROM log JOIN products ON products.id=log.id_product WHERE log.id IN ($ids)");
 			$this->db->query("UPDATE log_history SET info='$marker' WHERE info=''");		
 			$this->db->query("DELETE FROM log WHERE log.id IN ($ids)");
 		}

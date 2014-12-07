@@ -40,7 +40,7 @@
 						</option>
 					<?php } ?>
 				</select>
-				<input type="submit" >
+				<input type="submit" value="<?php echo $this->lang->line('submit'); ?>">
 			</form>
 		</div>	
 		<div class="grid_4">

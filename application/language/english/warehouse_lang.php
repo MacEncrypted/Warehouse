@@ -17,7 +17,7 @@ $lang['footer_text'] = "Warehouse 2.0 &copy; Encrypted.pl";
 $lang['menu_menu'] = "Menu";
 $lang['menu_production'] = "Production";
 $lang['menu_proreport'] = "Production report";
-$lang['menu_inproduction'] = "In production";
+$lang['menu_inproduction'] = "Add to production";
 $lang['menu_add_packing'] = "On way";
 $lang['menu_packing_transport'] = "Adding packing list";
 $lang['menu_group_packing_transport'] = "Group adding packing list";
@@ -47,16 +47,6 @@ $lang['menu_login_login'] = "Login:";
 $lang['menu_login_passwd'] = "Password:";
 $lang['menu_login_signin'] = "Sign in";
 $lang['menu_backup'] = "Backup";
-
-// long txt
-
-$lang['long_welcome_header'] = 'Warehouse demo website';
-$lang['long_welcome_text'] = 'To signin please use following admin data.<br/>'
-		. 'Please take in mind that editing admin data on this demo website is locked.<br/><br/>'
-		. 'login: <b>root</b><br/>'
-		. 'passwd: <b>root</b><br/><br/>'
-		. 'Codes are available at: <a href="https://github.com/Wampirue/Warehouse">https://github.com/Wampirue/Warehouse</a>';
-$lang['long_noaccess'] = 'You have no permission to display this page!';
 
 // h1
 
@@ -95,7 +85,7 @@ $lang['h2_zero_desc_error_info'] = "Numerical for description NOT delted in prod
 
 // global strings
 
-$lang['product'] = "Prooduct";
+$lang['product'] = "Product";
 $lang['order'] = "Order";
 $lang['packing'] = "Packing list";
 $lang['amount'] = "Amount";
@@ -116,6 +106,7 @@ $lang['edit'] = "Edit";
 $lang['confirm_delete'] = "'Please confirm deleting. This operation cannot be undone.'";
 $lang['del'] = "Delete";
 $lang['generate'] = "Generate";
+$lang['submit'] = "Submit Query";
 $lang['lib'] = "Library";
 $lang['wh'] = "Warehouse";
 $lang['onway'] = "On way";
@@ -127,6 +118,7 @@ $lang['all_desc'] = "All descriptions";
 $lang['confirm'] = "Confirm";
 $lang['print'] = "Print";
 $lang['print_csv'] = "Print CSV";
+$lang['backup_info'] = "You are going to do full MySQL backup of this Warehouse database, you can restore this backup at any time, by executing downloaded SQL script on your database";
 
 // actions
 
@@ -136,3 +128,7 @@ $lang['action_3'] = 'warehouse correction';
 $lang['action_4'] = 'warehouse give out';
 $lang['action_5'] = 'change on packing list';
 $lang['action_6'] = 'add packing to warehouse';
+
+// long txt
+
+$lang['long_noaccess'] = 'You have no permission to display this page!';

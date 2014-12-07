@@ -50,7 +50,7 @@
 				</select>
 				<div class="label"><?php echo $this->lang->line('amount'); ?></div>
 				<input type="number" name="amount" required>
-				<input type="submit">
+				<input type="submit" value="<?php echo $this->lang->line('submit'); ?>">
 			</form>
 		</div>
 		<div class="grid_8">

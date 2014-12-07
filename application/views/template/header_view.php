@@ -41,10 +41,12 @@
 		<!-- header area -->
 		<header class="wrapper clearfix">
 
-			<div id="banner">        
-				<a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>images/warehouse-logo.png" height="60" width="234"></a>
-			</div>
+			<div id="banner">
+				<div id="logo">        
+					<a href="<?php echo base_url(); ?>">WAREHOUSE</a><br/>by Encrypted.pl
+				</div>
 
+			</div><!-- #banner -->
 			<!-- main navigation -->
 			<nav id="topnav" role="navigation">
 				<div class="menu-toggle"><?php echo $this->lang->line('menu_menu'); ?></div>
