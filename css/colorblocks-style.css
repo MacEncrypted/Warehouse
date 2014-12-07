@@ -198,6 +198,13 @@ a.buttonlink:hover{
 	background:#5ec79e;
 	color:#fff;
 }
+.blueelement {
+	background:#0099ff;
+	color:#fff;
+}
+.blueelement h1, .blueelement h2, .blueelement h3 {
+	color: #fff;
+}
 .violetelement{
 	background:#887dc2;
 	color:#fff;

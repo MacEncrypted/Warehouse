@@ -71,7 +71,7 @@ header{
 	background:#f3f3f3;
 	border-top:1px solid #e2e2e2;
 	border-bottom:1px solid #e2e2e2;
-	padding:20px 0;
+	padding-top: 20px;
 }
 #hero h1{ 
 	line-height:1.2em;
@@ -173,13 +173,16 @@ img{ max-width:100%; height:auto;}
 .grid_4,
 .grid_5,
 .grid_6,
-.grid_7,
 .grid_8,
 .grid_9,
 .grid_10,
 .grid_11,
 .grid_12 {
 	margin-bottom:40px;
+}
+
+.grid_7 {
+	margin-bottom:0px;	
 }
 
 /*FOOTER*/
@@ -229,6 +232,13 @@ a.buttonlink:hover{
 .greenelement{
 	background:#5ec79e;
 	color:#fff;
+}
+.blueelement {
+	background:#0099ff;
+	color:#fff;	
+}
+.blueelement h1, .blueelement h2, .blueelement h3 {
+	color: #fff;
 }
 .violetelement{
 	background:#887dc2;

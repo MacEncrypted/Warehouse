@@ -1,7 +1,7 @@
 <!-- footer area -->    
 <footer>
 	<div id="colophon" class="wrapper clearfix">
-		<?php echo $this->lang->line('footer_text'); ?>
+		<?php echo $this->lang->line('footer_text') . ' ' . VERSION; ?>
     </div>
 
     <!--You can NOT remove this attribution statement from any page, unless you get the permission from prowebdesign.ro-->
@@ -11,6 +11,9 @@
 		<?php
 		if ($this->session->userdata('user_id')) {
 			echo 'Session user_id: (' . $this->session->userdata('user_id') . ')';
+		}
+		if ($this->session->userdata('update') && $this->session->userdata('version')) {
+			echo ' This version: (' . $this->session->userdata('version') . ') Available version: (' . $this->session->userdata('update') . ')';
 		}
 		?>
 	</div><!--end attribution-->
