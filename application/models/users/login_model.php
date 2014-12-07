@@ -33,6 +33,7 @@ class Login_model extends CI_Model {
 				$row = $query->row();
 				$this->session->set_userdata('user_id', $row->id);
 				$this->loadUserData();
+				check_warehouse_update();
 			}
 		}
 	}
