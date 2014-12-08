@@ -44,13 +44,15 @@ define('FOPEN_READ_WRITE_CREATE_STRICT', 'x+b');
   | Encrypted stream defines
   |--------------------------------------------------------------------------
   |
-  | Needed to know are we on demo env. or not.
-  | DEMO_URL is needed for automaticly check for updates
+  | DEMO_URL - needed to know are we on demo env. or not.
+  | UPDATE_URL - needed for automaticly check for updates
+  | VERSION - this instance of Warehouse version
   |
  */
 
 define('DEMO_URL','http://warehouse.encrypted.pl/');
-define('VERSION','2.2');
+define('UPDATE_URL','http://warehouse.encrypted.pl/main/version/');
+define('VERSION', 2.2);
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
