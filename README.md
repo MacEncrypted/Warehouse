@@ -8,26 +8,25 @@ The live demo is available under: http://warehouse.encrypted.pl
 
 Project Summary
 ==========
-Project covers (v 2.0)
-- user authentification (user and admin levels)
-- user managment (add, edit, delete)
+Warehouse project covers:
+- user authentication (admin and worker level
+- user management (add, edit, delete)
 - library of products (add, edit, delete)
-- adding amount of products to warehouse (packing list or return)
-- removing amount of products from warehouse (delivery)
-- flow of the products from production (orders) to onway and to warehouse.
-- admin correction of amount of products in warehouse
+- adding products and management in flow (production -> on way -> in warehouse -> sold)
+- notes management
 - notes reminder
-- summary table
-- search giveout in given data
-- action log
-- summary reports (from date to date)
-- backup creator
-- easy system clearing (1 button to clear all numeric values)
-- multilanguage translation (translate 1 file = translate whole script)
+- action log (who?, when?, what?)
+- search products changes in selected time
+- one click backup
+- easy system clearing (one button to clear all numeric values)
+- multi language translation (translating one file translates whole warehouse)
+
+Upcoming changes
+- restriction of + values in some forms
 
 Commercial use
 =========
-If you are interested into using this application in your company simply contact me at maciej[at]encrypted.pl to get license.
+If you would like to test Warehouse in your company - do it! For the first 30 days it is completely free. After 30 days period please visit http://warehouse.encrypted.pl/#buy for more information.
 
 License 
 ==========

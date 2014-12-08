@@ -60,6 +60,10 @@
 			<li>easy system clearing (one button to clear all numeric values)</li>
 			<li>multi language translation (translating one file translates whole warehouse)</li>
 		</ul>
+		<h1>Upcoming changes</h1>
+		<ul>
+			<li>restriction of + values in some forms</li>
+		</ul>
 		If you would like to find out how flow in Warehouse works, please read this <a href="<?php base_url(); ?>flow.pdf" target="_blank">flow.pdf</a> document.
 	</section><!-- #end content area -->
 </div>
