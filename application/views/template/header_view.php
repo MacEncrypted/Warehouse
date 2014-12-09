@@ -14,7 +14,7 @@
 		<!-- Mobile viewport -->
 		<meta name="viewport" content="width=device-width; initial-scale=1.0">
 
-		<link rel="shortcut icon" href="<?php echo base_url(); ?>images/favicon.ico"  type="image/x-icon" />
+		<link rel="shortcut icon" href="<?php echo base_url(); ?>favicon.ico"  type="image/x-icon" />
 
 		<!-- CSS-->
 		<!-- Google web fonts. You can get your own bundle at http://www.google.com/fonts. Don't forget to update the CSS accordingly!-->

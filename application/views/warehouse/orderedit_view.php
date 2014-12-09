@@ -50,7 +50,7 @@
 							<?php if ($this->session->userdata('admin_lvl')) { ?>
 								<a href="<?php echo base_url(); ?>warehouse/order/del/<?php echo $order['id']; ?>" onclick="return confirm(<?php echo $this->lang->line('confirm_delete'); ?>);"><?php echo $this->lang->line('del'); ?></a>
 							<?php } ?>
-							<a href="<?php echo base_url(); ?>warehouse/order/edit/<?php echo $order['id']; ?>"><?php echo $this->lang->line('edi'); ?></a>
+							<a href="<?php echo base_url(); ?>warehouse/order/edit/<?php echo $order['id']; ?>"><?php echo $this->lang->line('edit'); ?></a>
 						</td>
 					</tr>
 				<?php } ?>			

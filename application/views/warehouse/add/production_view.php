@@ -58,7 +58,7 @@
 				<tr>
 					<th><?php echo $this->lang->line('product'); ?></th>
 					<th><?php echo $this->lang->line('amount'); ?></th>
-<!--					<th><?php echo $this->lang->line('order'); ?></th>-->
+<!--					<th><?php //echo $this->lang->line('order'); ?></th>-->
 				</tr>
 				<?php
 				foreach ($reports as $report) {
@@ -67,7 +67,7 @@
 					<tr>
 						<td><?php echo $report['name']; ?></td>
 						<td><?php echo $report['sum']; ?></td>
-	<!--						<td><?php echo $report['order']; ?></td>-->
+	<!--						<td><?php //echo $report['order']; ?></td>-->
 					</tr>
 				<?php } ?>
 			</table>

@@ -54,7 +54,7 @@
 									<?php echo $this->lang->line('del'); ?>
 								<?php } ?>
 							<?php } ?>
-							<a href="<?php echo base_url(); ?>warehouse/packing/edit/<?php echo $product['id']; ?>"><?php echo $this->lang->line('edi'); ?></a>
+							<a href="<?php echo base_url(); ?>warehouse/packing/edit/<?php echo $product['id']; ?>"><?php echo $this->lang->line('edit'); ?></a>
 						</td>
 					</tr>
 				<?php } ?>			
