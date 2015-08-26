@@ -1,20 +1,19 @@
-<?php
-
-if (!defined('BASEPATH'))
-	exit('No direct script access allowed');
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
  * An open source application development framework for PHP 5.1.6 or newer
  *
  * @package		CodeIgniter
- * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @author		EllisLab Dev Team
+ * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.0
  * @filesource
  */
+
 // ------------------------------------------------------------------------
 
 /**
@@ -23,7 +22,7 @@ if (!defined('BASEPATH'))
  * @package		CodeIgniter
  * @subpackage	Libraries
  * @category	Parser
- * @author		ExpressionEngine Dev Team
+ * @author		EllisLab Dev Team
  * @link		http://codeigniter.com/user_guide/libraries/parser.html
  */
 class CI_Parser {
@@ -44,8 +43,9 @@ class CI_Parser {
 	 * @param	bool
 	 * @return	string
 	 */
-	public function parse($template, $data, $return = FALSE) {
-		$CI = & get_instance();
+	public function parse($template, $data, $return = FALSE)
+	{
+		$CI =& get_instance();
 		$template = $CI->load->view($template, $data, TRUE);
 
 		return $this->_parse($template, $data, $return);
@@ -65,7 +65,8 @@ class CI_Parser {
 	 * @param	bool
 	 * @return	string
 	 */
-	function parse_string($template, $data, $return = FALSE) {
+	function parse_string($template, $data, $return = FALSE)
+	{
 		return $this->_parse($template, $data, $return);
 	}
 
@@ -83,21 +84,28 @@ class CI_Parser {
 	 * @param	bool
 	 * @return	string
 	 */
-	function _parse($template, $data, $return = FALSE) {
-		if ($template == '') {
+	function _parse($template, $data, $return = FALSE)
+	{
+		if ($template == '')
+		{
 			return FALSE;
 		}
 
-		foreach ($data as $key => $val) {
-			if (is_array($val)) {
+		foreach ($data as $key => $val)
+		{
+			if (is_array($val))
+			{
 				$template = $this->_parse_pair($key, $val, $template);
-			} else {
-				$template = $this->_parse_single($key, (string) $val, $template);
+			}
+			else
+			{
+				$template = $this->_parse_single($key, (string)$val, $template);
 			}
 		}
 
-		if ($return == FALSE) {
-			$CI = & get_instance();
+		if ($return == FALSE)
+		{
+			$CI =& get_instance();
 			$CI->output->append_output($template);
 		}
 
@@ -114,7 +122,8 @@ class CI_Parser {
 	 * @param	string
 	 * @return	void
 	 */
-	function set_delimiters($l = '{', $r = '}') {
+	function set_delimiters($l = '{', $r = '}')
+	{
 		$this->l_delim = $l;
 		$this->r_delim = $r;
 	}
@@ -130,8 +139,9 @@ class CI_Parser {
 	 * @param	string
 	 * @return	string
 	 */
-	function _parse_single($key, $val, $string) {
-		return str_replace($this->l_delim . $key . $this->r_delim, $val, $string);
+	function _parse_single($key, $val, $string)
+	{
+		return str_replace($this->l_delim.$key.$this->r_delim, $val, $string);
 	}
 
 	// --------------------------------------------------------------------
@@ -147,18 +157,25 @@ class CI_Parser {
 	 * @param	string
 	 * @return	string
 	 */
-	function _parse_pair($variable, $data, $string) {
-		if (FALSE === ($match = $this->_match_pair($string, $variable))) {
+	function _parse_pair($variable, $data, $string)
+	{
+		if (FALSE === ($match = $this->_match_pair($string, $variable)))
+		{
 			return $string;
 		}
 
 		$str = '';
-		foreach ($data as $row) {
+		foreach ($data as $row)
+		{
 			$temp = $match['1'];
-			foreach ($row as $key => $val) {
-				if (!is_array($val)) {
+			foreach ($row as $key => $val)
+			{
+				if ( ! is_array($val))
+				{
 					$temp = $this->_parse_single($key, $val, $temp);
-				} else {
+				}
+				else
+				{
 					$temp = $this->_parse_pair($key, $val, $temp);
 				}
 			}
@@ -179,8 +196,10 @@ class CI_Parser {
 	 * @param	string
 	 * @return	mixed
 	 */
-	function _match_pair($string, $variable) {
-		if (!preg_match("|" . preg_quote($this->l_delim) . $variable . preg_quote($this->r_delim) . "(.+?)" . preg_quote($this->l_delim) . '/' . $variable . preg_quote($this->r_delim) . "|s", $string, $match)) {
+	function _match_pair($string, $variable)
+	{
+		if ( ! preg_match("|" . preg_quote($this->l_delim) . $variable . preg_quote($this->r_delim) . "(.+?)". preg_quote($this->l_delim) . '/' . $variable . preg_quote($this->r_delim) . "|s", $string, $match))
+		{
 			return FALSE;
 		}
 
@@ -188,7 +207,6 @@ class CI_Parser {
 	}
 
 }
-
 // END Parser Class
 
 /* End of file Parser.php */

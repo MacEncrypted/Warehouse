@@ -1,20 +1,19 @@
-<?php
-
-if (!defined('BASEPATH'))
-	exit('No direct script access allowed');
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
  * An open source application development framework for PHP 5.1.6 or newer
  *
  * @package		CodeIgniter
- * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @author		EllisLab Dev Team
+ * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.0
  * @filesource
  */
+
 // ------------------------------------------------------------------------
 
 /**
@@ -23,9 +22,10 @@ if (!defined('BASEPATH'))
  * @package		CodeIgniter
  * @subpackage	Helpers
  * @category	Helpers
- * @author		ExpressionEngine Dev Team
+ * @author		EllisLab Dev Team
  * @link		http://codeigniter.com/user_guide/helpers/cookie_helper.html
  */
+
 // ------------------------------------------------------------------------
 
 /**
@@ -43,14 +43,14 @@ if (!defined('BASEPATH'))
  * @param	string	the cookie prefix
  * @return	void
  */
-if (!function_exists('set_cookie')) {
-
-	function set_cookie($name = '', $value = '', $expire = '', $domain = '', $path = '/', $prefix = '', $secure = FALSE) {
+if ( ! function_exists('set_cookie'))
+{
+	function set_cookie($name = '', $value = '', $expire = '', $domain = '', $path = '/', $prefix = '', $secure = FALSE)
+	{
 		// Set the config file options
-		$CI = & get_instance();
+		$CI =& get_instance();
 		$CI->input->set_cookie($name, $value, $expire, $domain, $path, $prefix, $secure);
 	}
-
 }
 
 // --------------------------------------------------------------------
@@ -63,20 +63,21 @@ if (!function_exists('set_cookie')) {
  * @param	bool
  * @return	mixed
  */
-if (!function_exists('get_cookie')) {
-
-	function get_cookie($index = '', $xss_clean = FALSE) {
-		$CI = & get_instance();
+if ( ! function_exists('get_cookie'))
+{
+	function get_cookie($index = '', $xss_clean = FALSE)
+	{
+		$CI =& get_instance();
 
 		$prefix = '';
 
-		if (!isset($_COOKIE[$index]) && config_item('cookie_prefix') != '') {
+		if ( ! isset($_COOKIE[$index]) && config_item('cookie_prefix') != '')
+		{
 			$prefix = config_item('cookie_prefix');
 		}
 
-		return $CI->input->cookie($prefix . $index, $xss_clean);
+		return $CI->input->cookie($prefix.$index, $xss_clean);
 	}
-
 }
 
 // --------------------------------------------------------------------
@@ -90,12 +91,12 @@ if (!function_exists('get_cookie')) {
  * @param	string	the cookie prefix
  * @return	void
  */
-if (!function_exists('delete_cookie')) {
-
-	function delete_cookie($name = '', $domain = '', $path = '/', $prefix = '') {
+if ( ! function_exists('delete_cookie'))
+{
+	function delete_cookie($name = '', $domain = '', $path = '/', $prefix = '')
+	{
 		set_cookie($name, '', '', $domain, $path, $prefix);
 	}
-
 }
 
 

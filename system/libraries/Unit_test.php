@@ -1,20 +1,19 @@
-<?php
-
-if (!defined('BASEPATH'))
-	exit('No direct script access allowed');
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
  * An open source application development framework for PHP 5.1.6 or newer
  *
  * @package		CodeIgniter
- * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @author		EllisLab Dev Team
+ * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.3.1
  * @filesource
  */
+
 // ------------------------------------------------------------------------
 
 /**
@@ -25,29 +24,30 @@ if (!defined('BASEPATH'))
  * @package		CodeIgniter
  * @subpackage	Libraries
  * @category	UnitTesting
- * @author		ExpressionEngine Dev Team
+ * @author		EllisLab Dev Team
  * @link		http://codeigniter.com/user_guide/libraries/uri.html
  */
 class CI_Unit_test {
 
-	var $active = TRUE;
-	var $results = array();
-	var $strict = FALSE;
-	var $_template = NULL;
-	var $_template_rows = NULL;
-	var $_test_items_visible = array();
+	var $active					= TRUE;
+	var $results				= array();
+	var $strict					= FALSE;
+	var $_template				= NULL;
+	var $_template_rows			= NULL;
+	var $_test_items_visible	= array();
 
-	public function __construct() {
+	public function __construct()
+	{
 		// These are the default items visible when a test is run.
-		$this->_test_items_visible = array(
-			'test_name',
-			'test_datatype',
-			'res_datatype',
-			'result',
-			'file',
-			'line',
-			'notes'
-		);
+		$this->_test_items_visible = array (
+							'test_name',
+							'test_datatype',
+							'res_datatype',
+							'result',
+							'file',
+							'line',
+							'notes'
+						);
 
 		log_message('debug', "Unit Testing Class Initialized");
 	}
@@ -63,8 +63,10 @@ class CI_Unit_test {
 	 * @param	array
 	 * @return	void
 	 */
-	function set_test_items($items = array()) {
-		if (!empty($items) AND is_array($items)) {
+	function set_test_items($items = array())
+	{
+		if ( ! empty($items) AND is_array($items))
+		{
 			$this->_test_items_visible = $items;
 		}
 	}
@@ -82,16 +84,21 @@ class CI_Unit_test {
 	 * @param	string
 	 * @return	string
 	 */
-	function run($test, $expected = TRUE, $test_name = 'undefined', $notes = '') {
-		if ($this->active == FALSE) {
+	function run($test, $expected = TRUE, $test_name = 'undefined', $notes = '')
+	{
+		if ($this->active == FALSE)
+		{
 			return FALSE;
 		}
 
-		if (in_array($expected, array('is_object', 'is_string', 'is_bool', 'is_true', 'is_false', 'is_int', 'is_numeric', 'is_float', 'is_double', 'is_array', 'is_null'), TRUE)) {
+		if (in_array($expected, array('is_object', 'is_string', 'is_bool', 'is_true', 'is_false', 'is_int', 'is_numeric', 'is_float', 'is_double', 'is_array', 'is_null'), TRUE))
+		{
 			$expected = str_replace('is_float', 'is_double', $expected);
 			$result = ($expected($test)) ? TRUE : FALSE;
 			$extype = str_replace(array('true', 'false'), 'bool', str_replace('is_', '', $expected));
-		} else {
+		}
+		else
+		{
 			if ($this->strict == TRUE)
 				$result = ($test === $expected) ? TRUE : FALSE;
 			else
@@ -102,15 +109,15 @@ class CI_Unit_test {
 
 		$back = $this->_backtrace();
 
-		$report[] = array(
-			'test_name' => $test_name,
-			'test_datatype' => gettype($test),
-			'res_datatype' => $extype,
-			'result' => ($result === TRUE) ? 'passed' : 'failed',
-			'file' => $back['file'],
-			'line' => $back['line'],
-			'notes' => $notes
-		);
+		$report[] = array (
+							'test_name'			=> $test_name,
+							'test_datatype'		=> gettype($test),
+							'res_datatype'		=> $extype,
+							'result'			=> ($result === TRUE) ? 'passed' : 'failed',
+							'file'				=> $back['file'],
+							'line'				=> $back['line'],
+							'notes'				=> $notes
+						);
 
 		$this->results[] = $report;
 
@@ -127,26 +134,34 @@ class CI_Unit_test {
 	 * @access	public
 	 * @return	string
 	 */
-	function report($result = array()) {
-		if (count($result) == 0) {
+	function report($result = array())
+	{
+		if (count($result) == 0)
+		{
 			$result = $this->result();
 		}
 
-		$CI = & get_instance();
+		$CI =& get_instance();
 		$CI->load->language('unit_test');
 
 		$this->_parse_template();
 
 		$r = '';
-		foreach ($result as $res) {
+		foreach ($result as $res)
+		{
 			$table = '';
 
-			foreach ($res as $key => $val) {
-				if ($key == $CI->lang->line('ut_result')) {
-					if ($val == $CI->lang->line('ut_passed')) {
-						$val = '<span style="color: #0C0;">' . $val . '</span>';
-					} elseif ($val == $CI->lang->line('ut_failed')) {
-						$val = '<span style="color: #C00;">' . $val . '</span>';
+			foreach ($res as $key => $val)
+			{
+				if ($key == $CI->lang->line('ut_result'))
+				{
+					if ($val == $CI->lang->line('ut_passed'))
+					{
+						$val = '<span style="color: #0C0;">'.$val.'</span>';
+					}
+					elseif ($val == $CI->lang->line('ut_failed'))
+					{
+						$val = '<span style="color: #C00;">'.$val.'</span>';
 					}
 				}
 
@@ -173,7 +188,8 @@ class CI_Unit_test {
 	 * @param	bool
 	 * @return	null
 	 */
-	function use_strict($state = TRUE) {
+	function use_strict($state = TRUE)
+	{
 		$this->strict = ($state == FALSE) ? FALSE : TRUE;
 	}
 
@@ -188,7 +204,8 @@ class CI_Unit_test {
 	 * @param	bool
 	 * @return	null
 	 */
-	function active($state = TRUE) {
+	function active($state = TRUE)
+	{
 		$this->active = ($state == FALSE) ? FALSE : TRUE;
 	}
 
@@ -202,34 +219,45 @@ class CI_Unit_test {
 	 * @access	public
 	 * @return	array
 	 */
-	function result($results = array()) {
-		$CI = & get_instance();
+	function result($results = array())
+	{
+		$CI =& get_instance();
 		$CI->load->language('unit_test');
 
-		if (count($results) == 0) {
+		if (count($results) == 0)
+		{
 			$results = $this->results;
 		}
 
 		$retval = array();
-		foreach ($results as $result) {
+		foreach ($results as $result)
+		{
 			$temp = array();
-			foreach ($result as $key => $val) {
-				if (!in_array($key, $this->_test_items_visible)) {
+			foreach ($result as $key => $val)
+			{
+				if ( ! in_array($key, $this->_test_items_visible))
+				{
 					continue;
 				}
 
-				if (is_array($val)) {
-					foreach ($val as $k => $v) {
-						if (FALSE !== ($line = $CI->lang->line(strtolower('ut_' . $v)))) {
+				if (is_array($val))
+				{
+					foreach ($val as $k => $v)
+					{
+						if (FALSE !== ($line = $CI->lang->line(strtolower('ut_'.$v))))
+						{
 							$v = $line;
 						}
-						$temp[$CI->lang->line('ut_' . $k)] = $v;
+						$temp[$CI->lang->line('ut_'.$k)] = $v;
 					}
-				} else {
-					if (FALSE !== ($line = $CI->lang->line(strtolower('ut_' . $val)))) {
+				}
+				else
+				{
+					if (FALSE !== ($line = $CI->lang->line(strtolower('ut_'.$val))))
+					{
 						$val = $line;
 					}
-					$temp[$CI->lang->line('ut_' . $key)] = $val;
+					$temp[$CI->lang->line('ut_'.$key)] = $val;
 				}
 			}
 
@@ -250,7 +278,8 @@ class CI_Unit_test {
 	 * @param	string
 	 * @return	void
 	 */
-	function set_template($template) {
+	function set_template($template)
+	{
 		$this->_template = $template;
 	}
 
@@ -264,12 +293,14 @@ class CI_Unit_test {
 	 * @access	private
 	 * @return	array
 	 */
-	function _backtrace() {
-		if (function_exists('debug_backtrace')) {
+	function _backtrace()
+	{
+		if (function_exists('debug_backtrace'))
+		{
 			$back = debug_backtrace();
 
-			$file = (!isset($back['1']['file'])) ? '' : $back['1']['file'];
-			$line = (!isset($back['1']['line'])) ? '' : $back['1']['line'];
+			$file = ( ! isset($back['1']['file'])) ? '' : $back['1']['file'];
+			$line = ( ! isset($back['1']['line'])) ? '' : $back['1']['line'];
 
 			return array('file' => $file, 'line' => $line);
 		}
@@ -284,15 +315,16 @@ class CI_Unit_test {
 	 * @access	private
 	 * @return	string
 	 */
-	function _default_template() {
-		$this->_template = "\n" . '<table style="width:100%; font-size:small; margin:10px 0; border-collapse:collapse; border:1px solid #CCC;">';
+	function _default_template()
+	{
+		$this->_template = "\n".'<table style="width:100%; font-size:small; margin:10px 0; border-collapse:collapse; border:1px solid #CCC;">';
 		$this->_template .= '{rows}';
-		$this->_template .= "\n" . '</table>';
+		$this->_template .= "\n".'</table>';
 
-		$this->_template_rows = "\n\t" . '<tr>';
-		$this->_template_rows .= "\n\t\t" . '<th style="text-align: left; border-bottom:1px solid #CCC;">{item}</th>';
-		$this->_template_rows .= "\n\t\t" . '<td style="border-bottom:1px solid #CCC;">{result}</td>';
-		$this->_template_rows .= "\n\t" . '</tr>';
+		$this->_template_rows = "\n\t".'<tr>';
+		$this->_template_rows .= "\n\t\t".'<th style="text-align: left; border-bottom:1px solid #CCC;">{item}</th>';
+		$this->_template_rows .= "\n\t\t".'<td style="border-bottom:1px solid #CCC;">{result}</td>';
+		$this->_template_rows .= "\n\t".'</tr>';
 	}
 
 	// --------------------------------------------------------------------
@@ -305,17 +337,21 @@ class CI_Unit_test {
 	 * @access	private
 	 * @return	void
 	 */
-	function _parse_template() {
-		if (!is_null($this->_template_rows)) {
+	function _parse_template()
+	{
+		if ( ! is_null($this->_template_rows))
+		{
 			return;
 		}
 
-		if (is_null($this->_template)) {
+		if (is_null($this->_template))
+		{
 			$this->_default_template();
 			return;
 		}
 
-		if (!preg_match("/\{rows\}(.*?)\{\/rows\}/si", $this->_template, $match)) {
+		if ( ! preg_match("/\{rows\}(.*?)\{\/rows\}/si", $this->_template, $match))
+		{
 			$this->_default_template();
 			return;
 		}
@@ -325,7 +361,6 @@ class CI_Unit_test {
 	}
 
 }
-
 // END Unit_test Class
 
 /**
@@ -335,13 +370,15 @@ class CI_Unit_test {
  * @access	private
  * @return	bool
  */
-function is_true($test) {
+function is_true($test)
+{
 	return (is_bool($test) AND $test === TRUE) ? TRUE : FALSE;
 }
-
-function is_false($test) {
+function is_false($test)
+{
 	return (is_bool($test) AND $test === FALSE) ? TRUE : FALSE;
 }
+
 
 /* End of file Unit_test.php */
 /* Location: ./system/libraries/Unit_test.php */

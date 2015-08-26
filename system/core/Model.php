@@ -1,20 +1,19 @@
-<?php
-
-if (!defined('BASEPATH'))
-	exit('No direct script access allowed');
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
  * An open source application development framework for PHP 5.1.6 or newer
  *
  * @package		CodeIgniter
- * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @author		EllisLab Dev Team
+ * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.0
  * @filesource
  */
+
 // ------------------------------------------------------------------------
 
 /**
@@ -23,7 +22,7 @@ if (!defined('BASEPATH'))
  * @package		CodeIgniter
  * @subpackage	Libraries
  * @category	Libraries
- * @author		ExpressionEngine Dev Team
+ * @author		EllisLab Dev Team
  * @link		http://codeigniter.com/user_guide/libraries/config.html
  */
 class CI_Model {
@@ -33,7 +32,8 @@ class CI_Model {
 	 *
 	 * @access public
 	 */
-	function __construct() {
+	function __construct()
+	{
 		log_message('debug', "Model Class Initialized");
 	}
 
@@ -46,13 +46,12 @@ class CI_Model {
 	 * @param	string
 	 * @access private
 	 */
-	function __get($key) {
-		$CI = & get_instance();
+	function __get($key)
+	{
+		$CI =& get_instance();
 		return $CI->$key;
 	}
-
 }
-
 // END Model Class
 
 /* End of file Model.php */

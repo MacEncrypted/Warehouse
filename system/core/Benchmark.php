@@ -1,20 +1,19 @@
-<?php
-
-if (!defined('BASEPATH'))
-	exit('No direct script access allowed');
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
  * An open source application development framework for PHP 5.1.6 or newer
  *
  * @package		CodeIgniter
- * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @author		EllisLab Dev Team
+ * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 1.0
  * @filesource
  */
+
 // ------------------------------------------------------------------------
 
 /**
@@ -26,7 +25,7 @@ if (!defined('BASEPATH'))
  * @package		CodeIgniter
  * @subpackage	Libraries
  * @category	Libraries
- * @author		ExpressionEngine Dev Team
+ * @author		EllisLab Dev Team
  * @link		http://codeigniter.com/user_guide/libraries/benchmark.html
  */
 class CI_Benchmark {
@@ -50,7 +49,8 @@ class CI_Benchmark {
 	 * @param	string	$name	name of the marker
 	 * @return	void
 	 */
-	function mark($name) {
+	function mark($name)
+	{
 		$this->marker[$name] = microtime();
 	}
 
@@ -70,16 +70,20 @@ class CI_Benchmark {
 	 * @param	integer	the number of decimal places
 	 * @return	mixed
 	 */
-	function elapsed_time($point1 = '', $point2 = '', $decimals = 4) {
-		if ($point1 == '') {
+	function elapsed_time($point1 = '', $point2 = '', $decimals = 4)
+	{
+		if ($point1 == '')
+		{
 			return '{elapsed_time}';
 		}
 
-		if (!isset($this->marker[$point1])) {
+		if ( ! isset($this->marker[$point1]))
+		{
 			return '';
 		}
 
-		if (!isset($this->marker[$point2])) {
+		if ( ! isset($this->marker[$point2]))
+		{
 			$this->marker[$point2] = microtime();
 		}
 
@@ -102,7 +106,8 @@ class CI_Benchmark {
 	 * @access	public
 	 * @return	string
 	 */
-	function memory_usage() {
+	function memory_usage()
+	{
 		return '{memory_usage}';
 	}
 

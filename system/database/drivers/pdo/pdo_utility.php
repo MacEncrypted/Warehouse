@@ -1,20 +1,19 @@
-<?php
-
-if (!defined('BASEPATH'))
-	exit('No direct script access allowed');
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
  * An open source application development framework for PHP 5.1.6 or newer
  *
  * @package		CodeIgniter
- * @copyright	Copyright (c) 2008 - 2014, EllisLab, Inc.
- * @license		http://codeigniter.com/user_guide/license.html
  * @author		EllisLab Dev Team
+ * @copyright		Copyright (c) 2008 - 2014, EllisLab, Inc.
+ * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
+ * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 2.1.2
  * @filesource
  */
+
 // ------------------------------------------------------------------------
 
 /**
@@ -32,9 +31,11 @@ class CI_DB_pdo_utility extends CI_DB_utility {
 	 * @access	private
 	 * @return	bool
 	 */
-	function _list_databases() {
+	function _list_databases()
+	{
 		// Not sure if PDO lets you list all databases...
-		if ($this->db->db_debug) {
+		if ($this->db->db_debug)
+		{
 			return $this->db->display_error('db_unsuported_feature');
 		}
 		return FALSE;
@@ -51,9 +52,11 @@ class CI_DB_pdo_utility extends CI_DB_utility {
 	 * @param	string	the table name
 	 * @return	object
 	 */
-	function _optimize_table($table) {
+	function _optimize_table($table)
+	{
 		// Not a supported PDO feature
-		if ($this->db->db_debug) {
+		if ($this->db->db_debug)
+		{
 			return $this->db->display_error('db_unsuported_feature');
 		}
 		return FALSE;
@@ -70,9 +73,11 @@ class CI_DB_pdo_utility extends CI_DB_utility {
 	 * @param	string	the table name
 	 * @return	object
 	 */
-	function _repair_table($table) {
+	function _repair_table($table)
+	{
 		// Not a supported PDO feature
-		if ($this->db->db_debug) {
+		if ($this->db->db_debug)
+		{
 			return $this->db->display_error('db_unsuported_feature');
 		}
 		return FALSE;
@@ -87,7 +92,8 @@ class CI_DB_pdo_utility extends CI_DB_utility {
 	 * @param	array	Preferences
 	 * @return	mixed
 	 */
-	function _backup($params = array()) {
+	function _backup($params = array())
+	{
 		// Currently unsupported
 		return $this->db->display_error('db_unsuported_feature');
 	}

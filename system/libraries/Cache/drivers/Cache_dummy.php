@@ -1,20 +1,19 @@
-<?php
-
-if (!defined('BASEPATH'))
-	exit('No direct script access allowed');
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
  * An open source application development framework for PHP 5.1.6 or newer
  *
  * @package		CodeIgniter
- * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2006 - 2014 EllisLab, Inc.
+ * @author		EllisLab Dev Team
+ * @copyright		Copyright (c) 2006 - 2014 EllisLab, Inc.
+ * @copyright		Copyright (c) 2014 - 2015, British Columbia Institute of Technology (http://bcit.ca/)
  * @license		http://codeigniter.com/user_guide/license.html
  * @link		http://codeigniter.com
  * @since		Version 2.0
  * @filesource
  */
+
 // ------------------------------------------------------------------------
 
 /**
@@ -23,7 +22,7 @@ if (!defined('BASEPATH'))
  * @package		CodeIgniter
  * @subpackage	Libraries
  * @category	Core
- * @author		ExpressionEngine Dev Team
+ * @author		EllisLab Dev Team
  * @link
  */
 class CI_Cache_dummy extends CI_Driver {
@@ -36,7 +35,8 @@ class CI_Cache_dummy extends CI_Driver {
 	 * @param 	string
 	 * @return 	Boolean		FALSE
 	 */
-	public function get($id) {
+	public function get($id)
+	{
 		return FALSE;
 	}
 
@@ -51,7 +51,8 @@ class CI_Cache_dummy extends CI_Driver {
 	 *
 	 * @return 	boolean		TRUE, Simulating success
 	 */
-	public function save($id, $data, $ttl = 60) {
+	public function save($id, $data, $ttl = 60)
+	{
 		return TRUE;
 	}
 
@@ -63,7 +64,8 @@ class CI_Cache_dummy extends CI_Driver {
 	 * @param 	mixed		unique identifier of the item in the cache
 	 * @param 	boolean		TRUE, simulating success
 	 */
-	public function delete($id) {
+	public function delete($id)
+	{
 		return TRUE;
 	}
 
@@ -74,7 +76,8 @@ class CI_Cache_dummy extends CI_Driver {
 	 *
 	 * @return 	boolean		TRUE, simulating success
 	 */
-	public function clean() {
+	public function clean()
+	{
 		return TRUE;
 	}
 
@@ -86,9 +89,10 @@ class CI_Cache_dummy extends CI_Driver {
 	 * @param 	string		user/filehits
 	 * @return 	boolean		FALSE
 	 */
-	public function cache_info($type = NULL) {
-		return FALSE;
-	}
+	 public function cache_info($type = NULL)
+	 {
+		 return FALSE;
+	 }
 
 	// ------------------------------------------------------------------------
 
@@ -98,7 +102,8 @@ class CI_Cache_dummy extends CI_Driver {
 	 * @param 	mixed		key to get cache metadata on
 	 * @return 	boolean		FALSE
 	 */
-	public function get_metadata($id) {
+	public function get_metadata($id)
+	{
 		return FALSE;
 	}
 
@@ -110,7 +115,8 @@ class CI_Cache_dummy extends CI_Driver {
 	 *
 	 * @return TRUE;
 	 */
-	public function is_supported() {
+	public function is_supported()
+	{
 		return TRUE;
 	}
 
