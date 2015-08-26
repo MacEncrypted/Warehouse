@@ -7,12 +7,12 @@
 		<div class="row"> 
 			<div class="grid_5">
 				<h1>This Warehouse project</h1>
-				<p>...is free for non commercial use, PHP software based on CodeIgniter 2.2 that allows you to manage warehouse. Fast, simple and mobile. </p> 
-				<p><b>Commercial use is free for 1 month, after this time requires license.</b></p>
+                                <p>...is <b>free</b> for any commercial or non commercial use, PHP software based on CodeIgniter 2.2 that allows you to manage warehouse. Fast, simple and mobile. </p> 
+				<p><b>Project is available with MIT license. Project belongs to &copy; Encrypted.pl.</b></p>
 				<p>Project covers users management (admin or worker levels), products and list management, flow of products, reports, search engine and easy backups. It can even print all results to PDF or export it to CSV (so you can view it in Excel or Calc).</p>
-				<p><a href="#buy" class="buttonlink">Buy</a>
+				<p><a href="#buy" class="buttonlink">License</a>
 					<a href="#demo" class="buttonlink">Demo</a> 
-					<a href="https://github.com/encrypted-systems/Warehouse" class="buttonlink">GitHub Sources</a> 
+					<a href="https://github.com/encrypted-systems/Warehouse" class="buttonlink">GitHub</a> 
 					<a href="https://github.com/Wampirue/Warehouse/archive/master.zip" class="buttonlink">Download</a></p>
 			</div>
 			<div class="grid_7 rightfloat">
@@ -70,33 +70,38 @@
 
 <section id="buy" class="blueelement vertical-padding">
 	<div class="wrapper clearfix">
-		<h1>Buying Warehouse for your company</h1>
-
+		<h1>Licensing MIT short summary</h1>
+                <p>MIT is a short, permissive software license. Basically, you can do whatever you want as long as you include the original copyright to <b>Encrypted.pl</b> and license notice in any copy of the software/source.</p>
 		<div class="grid_12">   	
 			<div class="grid_4">            
-				<h3>30 days license</h3>
-				<p>If you would like to test Warehouse in your company - do it! For the first 30 days it is completely free.</p>				
+				<h3>You can</h3>
+                                <p><ul>
+                                    <li>Commercial Use</li>
+                                    <li>Modify</li>
+<li>Distribute</li>
+<li>Sublicense</li>
+<li>Private Use</li>
+                                </ul></p>				
 			</div>
 
 			<div class="grid_4">        	
-				<h3>Period license</h3>
-				<p>An period license will allow the customer to use the licensed software and to download all updates for period of time. After the period ends, the software will no longer be legal unless a new license is purchased.</p>
-			</div>
+				<h3>You Cannot</h3>
+				<p><ul>
+                                    <li>Hold liable</li>
+                                </ul></p>
+                        </div>
 
 			<div class="grid_4">        	
-				<h3>Perpetual License</h3>
-				<p>An period license will allow the customer to use the licensed software and to download all updates forever.</p>
+				<h3>You Must</h3> 
+
+				<p><ul>
+                                    <li>Include Copyright</li>
+                                    <li>Include License</li>
+                                </ul></p>
 			</div>
-		</div>
-		<div class="grid_12">  
-			<div class="grid_4"><h3>$0/30 days</h3></div>
-			<div class="grid_4"><h3>$3/mo or $29/year</h3></div>
-			<div class="grid_4"><h3>$99/forever</h3></div>		
 		</div>
 		<div class="grid_12">
-			<h1>Contact us: mail@encrypted.pl</h1>
-			<small>Please take in mind that Warehouse software is licensed and sold with NWC (without any warranty). However with any of this licenses you are allowed to report bugs and download latest updates! 
-				Selling entity: Encrypted.pl Database Systems AIP, Piekna Street 68, 00-672 Warsaw, Poland</small>
+                    <small>Please take in mind that Warehouse software is licensed with MIT NWC (without any warranty). Quick Summary from tldrlegal.com</small>
 		</div>
 	</div><!-- #end div .wrapper -->
 </section>
