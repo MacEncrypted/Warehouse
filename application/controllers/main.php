@@ -26,7 +26,7 @@ class Main extends CI_Controller {
 	public function version($requestor) {
 		if($requestor != '') {
 			// DDOS SEC log
-			log_message('error', 'REQ ' . $requestor);
+			// log_message('error', 'REQ ' . $requestor);
 			echo VERSION;
 		}
 	}
