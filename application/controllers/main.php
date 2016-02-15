@@ -15,7 +15,12 @@ class Main extends CI_Controller {
 
 	public function index() {
 		$data = array();
-		$this->load->view('index_view', $data);
+
+		if ($this->config->item('language') == 'polish') {
+			$this->load->view('index_polish_view', $data);
+		} else {
+			$this->load->view('index_view', $data);
+		}
 	}
 
 	public function noaccess() {
