@@ -2,7 +2,7 @@
 -- Warehouse by Encrypted.pl
 -- Table: log
 -- ----------
-DROP TABLE log;
+DROP TABLE IF EXISTS log;
 
 CREATE TABLE `log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -20,7 +20,7 @@ CREATE TABLE `log` (
 -- Warehouse by Encrypted.pl
 -- Table: log_history
 -- ----------
-DROP TABLE log_history;
+DROP TABLE IF EXISTS log_history;
 
 CREATE TABLE `log_history` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -38,7 +38,7 @@ CREATE TABLE `log_history` (
 -- Warehouse by Encrypted.pl
 -- Table: notes
 -- ----------
-DROP TABLE notes;
+DROP TABLE IF EXISTS notes;
 
 CREATE TABLE `notes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -54,7 +54,7 @@ CREATE TABLE `notes` (
 -- Warehouse by Encrypted.pl
 -- Table: orders
 -- ----------
-DROP TABLE orders;
+DROP TABLE IF EXISTS orders;
 
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -68,7 +68,7 @@ CREATE TABLE `orders` (
 -- Warehouse by Encrypted.pl
 -- Table: packings
 -- ----------
-DROP TABLE packings;
+DROP TABLE IF EXISTS packings;
 
 CREATE TABLE `packings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -82,7 +82,7 @@ CREATE TABLE `packings` (
 -- Warehouse by Encrypted.pl
 -- Table: products
 -- ----------
-DROP TABLE products;
+DROP TABLE IF EXISTS products;
 
 CREATE TABLE `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -96,7 +96,7 @@ CREATE TABLE `products` (
 -- Warehouse by Encrypted.pl
 -- Table: users
 -- ----------
-DROP TABLE users;
+DROP TABLE IF EXISTS users;
 
 CREATE TABLE `users` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -109,3 +109,16 @@ CREATE TABLE `users` (
 
 INSERT INTO users VALUES("1","root","63a9f0ea7bb98050796b649e85481845","2","0");
 
+-- ----------
+-- Warehouse by Encrypted.pl
+-- Table: clients
+-- ----------
+DROP TABLE clients;
+
+CREATE TABLE IF EXISTS `clients` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text NOT NULL,
+  `description` text NOT NULL,
+  `deleted` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=44 DEFAULT CHARSET=latin2;

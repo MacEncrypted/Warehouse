@@ -47,6 +47,8 @@ $lang['menu_login_login'] = "Login:";
 $lang['menu_login_passwd'] = "Hasło:";
 $lang['menu_login_signin'] = "Zaloguj";
 $lang['menu_backup'] = "Backup";
+$lang['menu_crm'] = "CRM";
+$lang['menu_clients'] = "Klienci";
 
 // long txt
 
@@ -69,6 +71,7 @@ $lang['h1_add_product'] = "Dodawanie nowego produktu";
 $lang['h1_lib_manage'] = "Zarządzanie produktami";
 $lang['h1_add_packing'] = "Dodawanie packing listy";
 $lang['h1_add_order'] = "Dodawanie zamówienia";
+$lang['h1_add_client'] = "Dodawanie klienta";
 $lang['h1_users_manage'] = "Zarządzanie użytkownikami";
 $lang['h1_users_manage_add'] = "Dodawanie lub edycja użytkownika";
 $lang['h1_notes_manage'] = "Zarządzanie notatkami";
@@ -123,6 +126,8 @@ $lang['all_desc'] = "Wszystkie opisy";
 $lang['confirm'] = "Potwierdzam";
 $lang['print'] = "Drukuj";
 $lang['print_csv'] = "Drukuj CSV";
+$lang['submit'] = 'Wyślij';
+$lang['back_to_add'] = 'Przejdź do dodawania';
 
 // actions
 
@@ -132,3 +137,7 @@ $lang['action_3'] = 'korekta magazynu';
 $lang['action_4'] = 'wydanie z magazynu';
 $lang['action_5'] = 'zmiana w packing list';
 $lang['action_6'] = 'packing na magazyn';
+
+// crm
+
+

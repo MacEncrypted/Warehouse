@@ -51,9 +51,16 @@
 			<nav id="topnav" role="navigation">
 				<div class="menu-toggle"><?php echo $this->lang->line('menu_menu'); ?></div>
 				<ul class="srt-menu" id="menu-main-navigation">
-					<?php if ($this->session->userdata('admin_lvl')) { ?>	
+					<?php if ($this->session->userdata('admin_lvl') || $this->session->userdata('user_lvl')) { ?>
+						<li><a href="#"><?php echo $this->lang->line('menu_crm'); ?></a>
+							<ul>
+								<li><a href="<?php echo base_url(); ?>crm/clients"><?php echo $this->lang->line('menu_clients'); ?></a></li>
+							</ul>
+						</li>
+					<?php } ?>
+					<?php if ($this->session->userdata('admin_lvl')) { ?>
 						<li><a href="#"><?php echo $this->lang->line('menu_production'); ?></a>
-							<ul>						
+							<ul>
 								<li><a href="<?php echo base_url(); ?>warehouse/add/production"><?php echo $this->lang->line('menu_inproduction'); ?></a></li>
 								<li><a href="<?php echo base_url(); ?>enc/proreports"><?php echo $this->lang->line('menu_proreport'); ?></a></li>
 							</ul>
