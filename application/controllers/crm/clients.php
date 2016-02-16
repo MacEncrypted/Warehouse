@@ -31,7 +31,7 @@ class Clients extends CI_Controller {
         } else {
             // edit
             if ($this->input->post('sent')) {
-                $this->library_model->updateProduct($id, $this->input->post('name'), $this->input->post('desc'));
+                $this->clients_model->updateClient($id, $this->input->post('name'), $this->input->post('desc'));
                 redirect('crm/clients', 'refresh');
             } else {
                 $data['user'] = $this->clients_model->getClient($id);
@@ -44,8 +44,8 @@ class Clients extends CI_Controller {
         if (!$this->session->userdata('admin_lvl')) {
             die(redirect(base_url() . 'main/noaccess'));
         }
-        $this->library_model->delProduct($id);
-        redirect('warehouse/library', 'refresh');
+        $this->clients_model->delClient($id);
+        redirect('crm/clients', 'refresh');
     }
 
 }

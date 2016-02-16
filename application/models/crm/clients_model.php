@@ -33,8 +33,8 @@ class Clients_model extends CI_Model {
 		$this->db->query("INSERT INTO clients (name, description) VALUES ('$name', '$desc')");
 	}
 
-	public function updateProduct($id, $name, $desc) {
-		$this->db->query("UPDATE products SET name='$name', description='$desc' WHERE id='$id'");
+	public function updateClient($id, $name, $desc) {
+		$this->db->query("UPDATE clients SET name='$name', description='$desc' WHERE id='$id'");
 	}
 
 	public function getClient($id) {
@@ -51,20 +51,8 @@ class Clients_model extends CI_Model {
 		return $client;
 	}
 
-	public function delProduct($id) {
-		$this->db->query("UPDATE products SET deleted='1' WHERE id='$id'");
-	}
-
-	public function getDescriptions() {
-		$query = $this->db->query("SELECT DISTINCT description FROM products WHERE deleted=0");
-		$products = array();
-		if ($query->num_rows() > 0) {
-			foreach ($query->result() as $row) {
-				$product['desc'] = $row->description;
-				$products[] = $product;
-			}
-		}
-		return $products;
+	public function delClient($id) {
+		$this->db->query("UPDATE clients SET deleted='1' WHERE id='$id'");
 	}
 
 }
