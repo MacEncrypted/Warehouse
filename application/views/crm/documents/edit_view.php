@@ -70,6 +70,7 @@
                                        onclick="return confirm(<?php echo $this->lang->line('confirm_delete'); ?>);"><?php echo $this->lang->line('del'); ?></a>
                                 <?php } ?>
                                 <a href="<?php echo base_url(); ?>crm/documents/client/<?php echo $client['id']; ?>/<?php echo $document['id']; ?>"><?php echo $this->lang->line('edit'); ?></a>
+                                <a href="<?php echo base_url(); ?>crm/lists/document/<?php echo $document['id']; ?>"><?php echo $this->lang->line('products_list'); ?></a>
                             </td>
                         </tr>
                     <?php } ?>

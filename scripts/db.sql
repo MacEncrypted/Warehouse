@@ -139,3 +139,19 @@ CREATE TABLE `documents` (
   `deleted` int(11) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin2;
+
+-- ----------
+-- Warehouse by Encrypted.pl
+-- Table: documents
+-- ----------
+DROP TABLE IF EXISTS lists;
+
+CREATE TABLE `lists` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_document` int(11) NOT NULL,
+  `id_product` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `amount` int(11) NOT NULL,
+  `deleted` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin2;

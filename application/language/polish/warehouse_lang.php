@@ -84,6 +84,7 @@ $lang['h1_search'] = "Wyszukiwarka";
 $lang['h1_noaccess'] = "Brak dostępu";
 $lang['h1_add_documents_to_client'] = "Dodawanie dokumentów do klienta";
 $lang['h1_pick_client'] = "Dokumenty - wybór klienta";
+$lang['h1_add_products_to_document'] = 'Dodawanie produktów do dokumentu';
 
 // h2
 
@@ -100,7 +101,7 @@ $lang['h2_zero_desc_error_info'] = "NIE wyzerowano dla podanego opisu w produkcj
 $lang['product'] = "Produkt";
 $lang['order'] = "Zamówienie";
 $lang['packing'] = "Packing lista";
-$lang['amount'] = "Ilość";
+$lang['amount'] = "Liczba";
 $lang['id'] = "Id";
 $lang['desc'] = "Opis";
 $lang['name'] = "Nazwa";
@@ -136,6 +137,11 @@ $lang['file'] = 'Plik';
 $lang['start_date'] = 'Data początku';
 $lang['end_date'] = 'Data końca';
 $lang['view'] = 'Zobacz';
+$lang['products_list'] = 'Produkty';
+$lang['lists_type'] = 'Typ wpisu';
+$lang['req'] = 'Zamówione';
+$lang['bought'] = 'Kupione';
+$lang['date'] = 'Data';
 
 // actions
 
