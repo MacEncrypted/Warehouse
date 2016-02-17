@@ -9,3 +9,5 @@
 /cgi-bin
 *key.php*
 .idea/
+uploads/*
+uploads/!index.html

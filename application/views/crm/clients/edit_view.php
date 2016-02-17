@@ -34,7 +34,7 @@
                     ?>" required>
                     <input type="submit" value="<?php echo $this->lang->line('submit'); ?>">
                     <div class="label"></div>
-                    <a href="<?php base_url(); ?>crm/clients"><?php echo $this->lang->line('back_to_add'); ?></a>
+                    <a href="<?php echo base_url(); ?>crm/clients"><?php echo $this->lang->line('back_to_add'); ?></a>
                 </form>
             </div>
             <div class="grid_8">
@@ -54,6 +54,7 @@
                                        onclick="return confirm(<?php echo $this->lang->line('confirm_delete'); ?>);"><?php echo $this->lang->line('del'); ?></a>
                                 <?php } ?>
                                 <a href="<?php echo base_url(); ?>crm/clients/edit/<?php echo $client['id']; ?>"><?php echo $this->lang->line('edit'); ?></a>
+                                <a href="<?php echo base_url(); ?>crm/documents/client/<?php echo $client['id']; ?>"><?php echo $this->lang->line('documents'); ?></a>
                             </td>
                         </tr>
                     <?php } ?>

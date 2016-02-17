@@ -54,7 +54,10 @@
 					<?php if ($this->session->userdata('admin_lvl') || $this->session->userdata('user_lvl')) { ?>
 						<li><a href="#"><?php echo $this->lang->line('menu_crm'); ?></a>
 							<ul>
-								<li><a href="<?php echo base_url(); ?>crm/clients"><?php echo $this->lang->line('menu_clients'); ?></a></li>
+								<?php if ($this->session->userdata('admin_lvl')) { ?>
+									<li><a href="<?php echo base_url(); ?>crm/clients"><?php echo $this->lang->line('menu_clients'); ?></a></li>
+								<?php } ?>
+								<li><a href="<?php echo base_url(); ?>crm/documents"><?php echo $this->lang->line('menu_documents'); ?></a></li>
 							</ul>
 						</li>
 					<?php } ?>

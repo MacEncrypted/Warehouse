@@ -49,6 +49,7 @@ $lang['menu_login_signin'] = "Zaloguj";
 $lang['menu_backup'] = "Backup";
 $lang['menu_crm'] = "CRM";
 $lang['menu_clients'] = "Klienci";
+$lang['menu_documents'] = "Dokumenty";
 
 // long txt
 
@@ -81,6 +82,8 @@ $lang['h1_proreport'] = "Log produkcji";
 $lang['h1_status'] = "Aktualny stan magazynu";
 $lang['h1_search'] = "Wyszukiwarka";
 $lang['h1_noaccess'] = "Brak dostępu";
+$lang['h1_add_documents_to_client'] = "Dodawanie dokumentów do klienta";
+$lang['h1_pick_client'] = "Dokumenty - wybór klienta";
 
 // h2
 
@@ -127,7 +130,12 @@ $lang['confirm'] = "Potwierdzam";
 $lang['print'] = "Drukuj";
 $lang['print_csv'] = "Drukuj CSV";
 $lang['submit'] = 'Wyślij';
-$lang['back_to_add'] = 'Przejdź do dodawania';
+$lang['back_to_add'] = 'Przejdź do listy';
+$lang['documents'] = 'Dokumenty';
+$lang['file'] = 'Plik';
+$lang['start_date'] = 'Data początku';
+$lang['end_date'] = 'Data końca';
+$lang['view'] = 'Zobacz';
 
 // actions
 
