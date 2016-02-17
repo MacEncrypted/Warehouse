@@ -58,6 +58,7 @@
 									<li><a href="<?php echo base_url(); ?>crm/clients"><?php echo $this->lang->line('menu_clients'); ?></a></li>
 								<?php } ?>
 								<li><a href="<?php echo base_url(); ?>crm/documents"><?php echo $this->lang->line('menu_documents'); ?></a></li>
+								<li><a href="<?php echo base_url(); ?>crm/reports"><?php echo $this->lang->line('menu_reports'); ?></a></li>
 							</ul>
 						</li>
 					<?php } ?>

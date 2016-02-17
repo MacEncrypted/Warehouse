@@ -240,6 +240,10 @@ class Log_model extends CI_Model {
 				$product['onway_sum'] = intval(0- $row->onway_sum);
 				$product['production_sum'] = intval($row->production_sum);
 				$product['given_sum'] = intval(0 - $row->given_sum);
+
+				$this->load->model('crm/reports_model');
+				$product['req_sum'] = $this->reports_model->getProductReq($row->id, $start, $end);
+
 				$product['total_sum'] = intval($product['magazyn_sum'] + $product['onway_sum'] + $product['production_sum']);
 				$products[] = $product;
 			}

@@ -31,6 +31,7 @@
 				<th><?php echo $this->lang->line('onway'); ?></th>
 				<th><?php echo $this->lang->line('production'); ?></th>
 				<th><?php echo $this->lang->line('given'); ?></th>
+				<th><?php echo $this->lang->line('req'); ?></th>
 				<th><?php echo $this->lang->line('total'); ?></th></tr>
 			<?php
 			foreach ($products as $product) {
@@ -43,6 +44,7 @@
 					<td><?php echo $product['onway_sum']; ?></td>
 					<td><?php echo $product['production_sum']; ?></td>
 					<td><?php echo $product['given_sum'] ?></td>
+					<td><?php echo $product['req_sum'] ?></td>
 					<td><?php echo $product['total_sum'] ?></td>
 				</tr>
 			<?php } ?>			

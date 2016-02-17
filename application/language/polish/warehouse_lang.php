@@ -50,6 +50,7 @@ $lang['menu_backup'] = "Backup";
 $lang['menu_crm'] = "CRM";
 $lang['menu_clients'] = "Klienci";
 $lang['menu_documents'] = "Dokumenty";
+$lang['menu_reports'] = "Raporty";
 
 // long txt
 
@@ -85,6 +86,8 @@ $lang['h1_noaccess'] = "Brak dostępu";
 $lang['h1_add_documents_to_client'] = "Dodawanie dokumentów do klienta";
 $lang['h1_pick_client'] = "Dokumenty - wybór klienta";
 $lang['h1_add_products_to_document'] = 'Dodawanie produktów do dokumentu';
+$lang['h1_preparing_report'] = 'Wybierz dane do wygenerowania raportu';
+$lang['h1_report_crm'] = 'Raport CRM';
 
 // h2
 
@@ -99,6 +102,7 @@ $lang['h2_zero_desc_error_info'] = "NIE wyzerowano dla podanego opisu w produkcj
 // global strings
 
 $lang['product'] = "Produkt";
+$lang['client'] = "Klient";
 $lang['order'] = "Zamówienie";
 $lang['packing'] = "Packing lista";
 $lang['amount'] = "Liczba";
@@ -141,7 +145,9 @@ $lang['products_list'] = 'Produkty';
 $lang['lists_type'] = 'Typ wpisu';
 $lang['req'] = 'Zamówione';
 $lang['bought'] = 'Kupione';
+$lang['subject'] = 'Podmiot';
 $lang['date'] = 'Data';
+$lang['percent'] = 'Procent';
 
 // actions
 
