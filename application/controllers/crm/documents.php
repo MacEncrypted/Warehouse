@@ -9,7 +9,7 @@ class Documents extends CI_Controller
     public function __construct()
     {
         parent::__construct();
-        if (!$this->session->userdata('admin_lvl')) {
+        if (!$this->session->userdata('user_lvl')) {
             die(redirect(base_url() . 'main/noaccess'));
         }
         $this->load->model('crm/documents_model');

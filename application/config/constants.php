@@ -52,7 +52,7 @@ define('FOPEN_READ_WRITE_CREATE_STRICT', 'x+b');
 
 define('DEMO_URL','http://warehouse.encrypted.pl/');
 define('UPDATE_URL','http://warehouse.encrypted.pl/main/version/');
-define('VERSION', 2.3);
+define('VERSION', 2.5);
 
 /* End of file constants.php */
 /* Location: ./application/config/constants.php */
