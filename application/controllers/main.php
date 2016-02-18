@@ -28,11 +28,10 @@ class Main extends CI_Controller {
 		$this->load->view('noaccess_view', $data);
 	}
 	
-	public function version($requestor) {
-		if($requestor != '') {
-			// DDOS SEC log
-			// log_message('error', 'REQ ' . $requestor);
-			echo VERSION;
+	public function version($request = '') {
+		if($request != '') {
+			// save requestor?
 		}
+		echo VERSION;
 	}
 }

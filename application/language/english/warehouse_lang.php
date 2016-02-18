@@ -11,7 +11,7 @@ $lang['user_1'] = 'Worker';
 $lang['user_2'] = 'Admin';
 
 // footer
-$lang['footer_text'] = "&copy; Encrypted.pl Warehouse";
+$lang['footer_text'] = "Warehouse &copy; Encrypted.pl";
 
 // menu
 $lang['menu_menu'] = "Menu";
@@ -47,6 +47,10 @@ $lang['menu_login_login'] = "Login:";
 $lang['menu_login_passwd'] = "Password:";
 $lang['menu_login_signin'] = "Sign in";
 $lang['menu_backup'] = "Backup";
+$lang['menu_crm'] = "CRM";
+$lang['menu_clients'] = "Klienci";
+$lang['menu_documents'] = "Dokumenty";
+$lang['menu_reports'] = "Raporty";
 
 // h1
 
@@ -72,6 +76,11 @@ $lang['h1_proreport'] = "Production log";
 $lang['h1_status'] = "Current warehouse status";
 $lang['h1_search'] = "Search";
 $lang['h1_noaccess'] = "No access";
+$lang['h1_add_documents_to_client'] = "Add documents to client";
+$lang['h1_pick_client'] = "Pick client";
+$lang['h1_add_products_to_document'] = 'Add products to document';
+$lang['h1_preparing_report'] = 'Preparing report';
+$lang['h1_report_crm'] = 'CRM report';
 
 // h2
 
@@ -86,6 +95,7 @@ $lang['h2_zero_desc_error_info'] = "Numerical for description NOT delted in prod
 // global strings
 
 $lang['product'] = "Product";
+$lang['client'] = "Client";
 $lang['order'] = "Order";
 $lang['packing'] = "Packing list";
 $lang['amount'] = "Amount";
@@ -119,6 +129,20 @@ $lang['confirm'] = "Confirm";
 $lang['print'] = "Print";
 $lang['print_csv'] = "Print CSV";
 $lang['backup_info'] = "You are going to do full MySQL backup of this Warehouse database, you can restore this backup at any time, by executing downloaded SQL script on your database";
+$lang['submit'] = 'Submit';
+$lang['back_to_add'] = 'Go to list';
+$lang['documents'] = 'Documents';
+$lang['file'] = 'File';
+$lang['start_date'] = 'Start date';
+$lang['end_date'] = 'End date';
+$lang['view'] = 'View';
+$lang['products_list'] = 'List of products';
+$lang['lists_type'] = 'Type';
+$lang['req'] = 'Requested';
+$lang['bought'] = 'Bought';
+$lang['subject'] = 'Subject';
+$lang['date'] = 'Date';
+$lang['percent'] = 'Percent';
 
 // actions
 
@@ -132,3 +156,5 @@ $lang['action_6'] = 'add packing to warehouse';
 // long txt
 
 $lang['long_noaccess'] = 'You have no permission to display this page!';
+$lang['long_welcome_header'] = 'Welcome';
+$lang['long_welcome_text'] = 'Welcome text';

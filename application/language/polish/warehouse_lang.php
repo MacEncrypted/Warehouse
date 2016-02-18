@@ -52,12 +52,6 @@ $lang['menu_clients'] = "Klienci";
 $lang['menu_documents'] = "Dokumenty";
 $lang['menu_reports'] = "Raporty";
 
-// long txt
-
-$lang['long_welcome_header'] = 'Powitanie';
-$lang['long_welcome_text'] = 'Text powitalny';
-$lang['long_noaccess'] = 'Nie masz uprawnień do oglądania żądanej strony!';
-
 // h1
 
 $lang['h1_add_product_production'] = "Dodawanie produktu do produkcji";
@@ -158,6 +152,10 @@ $lang['action_4'] = 'wydanie z magazynu';
 $lang['action_5'] = 'zmiana w packing list';
 $lang['action_6'] = 'packing na magazyn';
 
-// crm
+// long txt
+
+$lang['long_welcome_header'] = 'Powitanie';
+$lang['long_welcome_text'] = 'Text powitalny';
+$lang['long_noaccess'] = 'Nie masz uprawnień do oglądania żądanej strony!';
 
 
