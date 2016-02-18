@@ -20,6 +20,7 @@ Warehouse project covers:
 - one click backup
 - easy system clearing (one button to clear all numeric values)
 - multi language translation (translating one file translates whole warehouse)
+- minimalistic CRM (clients, documents, reports)
 
 Upcoming changes
 - restriction of + values in some forms
