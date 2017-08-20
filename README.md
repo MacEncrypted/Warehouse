@@ -1,10 +1,11 @@
 Warehouse
 ==========
+Warning! This code is legacy. You should no longer expose solutions from this projects. This project is no longer maintained.
 PHP software based on CodeIgniter 2.2 that allows you to manage warehouse.
 
 Demo
 ==========
-The live demo is available under: http://warehouse.encrypted.pl
+The live demo is no longer available.
 
 Project Summary
 ==========
@@ -48,11 +49,9 @@ You Must
 - Include Copyright
 - Include License
 
-
-
 PHP Authors:
 ==========
-PHP Files (CodeIgniter engine excluded) was created in 99% by Encrypted.pl member: Maciej 'Wampirue' Lewandowski.
+Maciej Lewandowski http://encrypted.pl
 
 CSS/JS Authors:
 ==========
