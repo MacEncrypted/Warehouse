@@ -1,7 +1,22 @@
 Warehouse
 ==========
-Warning! This code is legacy. You should no longer expose solutions from this projects. This project is no longer maintained.
-PHP software based on CodeIgniter 2.2 that allows you to manage warehouse.
+Warning! This code is legacy. This project is no longer maintained but **will work and will fit as a simple warehouse project**.
+PHP software based on CodeIgniter 2.2 that allows you to manage warehouse. MNinimal skills for installation required.
+
+Screens
+==========
+![Responsive Design](https://raw.githubusercontent.com/Wampirue/Warehouse/master/images/warehouse-pic3.jpg)
+- Responsive Design
+
+![Backups](https://raw.githubusercontent.com/Wampirue/Warehouse/master/images/warehouse-pic1.jpg)
+- Backups
+
+![Excel export](https://raw.githubusercontent.com/Wampirue/Warehouse/master/images/warehouse-pic2.jpg)
+- Excel export
+
+![Easy tables](https://raw.githubusercontent.com/Wampirue/Warehouse/master/images/warehouse-pic4.jpg)
+- Easy tables
+
 
 Demo
 ==========
