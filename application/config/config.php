@@ -17,7 +17,7 @@ if (!defined('BASEPATH'))
   | path to your installation.
   |
  */
-$config['base_url'] = '';
+$config['base_url'] = 'https://warehouse.encrypted.pl/';
 
 /*
   |--------------------------------------------------------------------------
@@ -72,7 +72,7 @@ $config['url_suffix'] = '';
   | than english.
   |
  */
-$config['language'] = 'polish';
+$config['language'] = 'english';
 
 /*
   |--------------------------------------------------------------------------
