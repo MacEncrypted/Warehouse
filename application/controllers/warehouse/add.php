@@ -26,7 +26,8 @@ class Add extends CI_Controller {
 		}
 		$data = array();
 		if ($this->input->post('sent')) {
-			$this->log_model->addAction($this->input->post('id'), $this->input->post('amount'), 1, 0, $this->input->post('oid'));
+            $oid = empty($this->input->post('oid')) ? 0 : $this->input->post('oid');
+			$this->log_model->addAction($this->input->post('id'), $this->input->post('amount'), 1, 0, $oid);
 		}
 
 		$data['products'] = $this->library_model->getList();

@@ -9,8 +9,6 @@
                     <h1>Projekt Warehouse</h1>
                     <p>...to <b>idealne</b> narzędzie do monitorowania stanów magazynowych. Udostępnia wiele poziomów
                         zarządzania produktami oraz przepływem danych w firmie.</p>
-                    <b>Ta wersja systemu została wykonana dla Bibtex-pol Sp. z o.o. przez Encrypted Software Maciej
-                        Lewandowski.</b>
                 </div>
                 <div class="grid_7 rightfloat">
                     <div class="flexslider">

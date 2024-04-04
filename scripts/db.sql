@@ -46,7 +46,7 @@ CREATE TABLE `notes` (
   `title` text NOT NULL,
   `text` text NOT NULL,
   `id_user` int(11) NOT NULL,
-  `deleted` int(11) NOT NULL,
+  `deleted` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin2;
 
@@ -60,7 +60,7 @@ CREATE TABLE `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
   `description` text NOT NULL,
-  `deleted` int(11) NOT NULL,
+  `deleted` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
@@ -74,7 +74,7 @@ CREATE TABLE `packings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
   `description` text NOT NULL,
-  `deleted` int(11) NOT NULL,
+  `deleted` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin2;
 
@@ -88,7 +88,7 @@ CREATE TABLE `products` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
   `description` text NOT NULL,
-  `deleted` int(11) NOT NULL,
+  `deleted` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin2;
 
@@ -119,7 +119,7 @@ CREATE TABLE `clients` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` text NOT NULL,
   `description` text NOT NULL,
-  `deleted` int(11) NOT NULL,
+  `deleted` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin2;
 
@@ -136,7 +136,7 @@ CREATE TABLE `documents` (
   `start` date NOT NULL,
   `end` date NOT NULL,
   `id_client` int(11) NOT NULL,
-  `deleted` int(11) NOT NULL,
+  `deleted` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin2;
 
@@ -152,6 +152,6 @@ CREATE TABLE `lists` (
   `id_product` int(11) NOT NULL,
   `date` date NOT NULL,
   `amount` int(11) NOT NULL,
-  `deleted` int(11) NOT NULL,
+  `deleted` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=1 DEFAULT CHARSET=latin2;
